@@ -7,9 +7,9 @@ const HomeBlogSection = ({ posts }: any) => {
       <div className="container mx-auto">
         <div className="mb-[60px]">
           <SectionTitle
-            subtitle="Our Blogs"
-            title="Our Recent News"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            subtitle="Blog"
+            title="Recent Articles"
+            paragraph="Explore articles on how WorktreeWise streamlines Git worktree management. Discover tips, best practices, and insights to level up your productivity."
             width="640px"
             center
           />
