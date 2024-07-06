@@ -9,10 +9,10 @@ const Contact = () => {
             <div className="ud-contact-content-wrapper">
               <div className="ud-contact-title mb-12 lg:mb-[150px]">
                 <span className="mb-6 block text-base font-medium text-dark dark:text-white">
-                  CONTACT US
+                  Get in Touch
                 </span>
-                <h2 className="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
-                  Let&#39;s talk about your problem.
+                <h2 className="max-w-[460px] text-[24px] font-semibold leading-[1.14] text-dark dark:text-white">
+                  Your feedback is valued. Contact us for questions or collaboration.
                 </h2>
               </div>
               <div className="mb-12 flex flex-wrap justify-between lg:mb-0">

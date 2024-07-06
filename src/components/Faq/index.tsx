@@ -7,8 +7,8 @@ const Faq = () => {
       <div className="container">
         <SectionTitle
           subtitle="FAQ"
-          title="Any Questions? Answered"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Frequently Asked Questions"
+          paragraph="Find answers to common questions about WorktreeWise."
           width="640px"
           center
         />

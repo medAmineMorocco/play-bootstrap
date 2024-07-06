@@ -44,7 +44,7 @@ const PricingBox = ({ product }: { product: Price }) => {
           </span>
           <span className="text-base font-normal text-body-color dark:text-dark-6">
             {" "}
-            Per Month
+            Lifetime Usage
           </span>
         </h2>
 

@@ -12,9 +12,9 @@ const Pricing = () => {
       <div className="container">
         <div className="mb-[60px]">
           <SectionTitle
-            subtitle="Pricing Table"
+            subtitle="One-Time Purchase"
             title="Our Pricing Plan"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            paragraph="Boost your productivity with our Basic plan and elevate your performance."
             center
           />
         </div>
