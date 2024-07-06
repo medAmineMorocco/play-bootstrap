@@ -27,17 +27,4 @@ export const pricingData: Price[] = [
       "3 Months support",
     ],
   },
-  {
-    id: "price_1NQk4eLtGdPVhGLeZsZDsCNz",
-    unit_amount: 300 * 100,
-    nickname: "Business",
-    offers: [
-      "10 Users",
-      "All UI components",
-      "Lifetime access",
-      "Free updates",
-      "Use on 1 (one) project",
-      "3 Months support",
-    ],
-  },
 ];
