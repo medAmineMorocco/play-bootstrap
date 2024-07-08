@@ -16,31 +16,37 @@ const Faq = () => {
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="How to use TailGrids?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Are there other tools available on the market ?"
+              answer="Yes, there are other tools on the market, but they often lack the comprehensive features and efficiency of WorktreeWise."
             />
             <SingleFaq
-              question="How to download icons from LineIcons?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Does WorktreeWise utilize native Git ?"
+              answer="Yes, WorktreeWise utilizes native Git functionality, which ensures compatibility with standard Git workflows."
             />
             <SingleFaq
-              question="Is GrayGrids part of UIdeck?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Is it compatible with all operating systems ?"
+              answer="
+Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
+            />
+            <SingleFaq
+              question="Can QA professionals also use it?"
+              answer="
+Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
             />
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="Can I use this template for commercial project?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Can I try it for free ?"
+              answer="Absolutely! We offer a free trial period so you can experience the benefits of our software firsthand."
             />
             <SingleFaq
-              question="Do you have plan to releasing Play Pro?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Why is this SaaS priced affordably ?"
+              answer="The reason for its affordability lies in the absence of server maintenance and infrastructure costs, enabling us to offer competitive pricing without sacrificing service quality or features."
             />
             <SingleFaq
-              question="Where and how to host this template?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              question="Who developed WorktreeWise ?"
+              answer="Mohamed Amine Ammach is the creator of WorktreeWise, bringing expertise in software development and a passion for enhancing productivity in coding environments."
             />
           </div>
         </div>

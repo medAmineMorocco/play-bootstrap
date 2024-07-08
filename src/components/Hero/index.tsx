@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
@@ -19,7 +18,9 @@ const Hero = () => {
                   Boost Your Productivity with Git Worktrees
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
-                  Unlock the full potential of your development with WorktreeWise. Seamlessly work on multiple branches, reduce context switching, and maximize productivity. Join the future of efficient coding with Git worktrees today.
+                  Unlock your development potential with WorktreeWise.<br></br>
+                  Seamlessly manage multiple branches, minimize context switching, and boost productivity.
+                  Embrace efficient coding with Git worktrees today.
                 </p>
                 <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
@@ -204,10 +205,10 @@ const Hero = () => {
                 data-wow-delay=".25s"
               >
                 <div className="mt-16">
-                  <Image
-                    src="/images/hero/hero-image.jpg"
+                  <img
+                    src="/images/hero/hero-image.png"
                     alt="hero"
-                    className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
+                    className="mx-auto max-w-full"
                     width={845}
                     height={316}
                   />
