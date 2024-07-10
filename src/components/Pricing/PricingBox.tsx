@@ -27,7 +27,7 @@ const PricingBox = ({ product }: { product: Price }) => {
         className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
         data-wow-delay=".1s"
       >
-        {product.nickname === "Premium" && (
+        {product.nickname === "Pro Plus" && (
           <p className="absolute right-[-50px] top-[60px] inline-block -rotate-90 rounded-bl-md rounded-tl-md bg-primary px-5 py-2 text-base font-medium text-white">
             Recommended
           </p>
