@@ -2,7 +2,7 @@ const SectionTitle = ({
   subtitle,
   title,
   paragraph,
-  width = "656px",
+  width = "834px",
   center,
 }: {
   subtitle?: string;

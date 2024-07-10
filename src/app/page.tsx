@@ -1,17 +1,14 @@
 import About from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
 import CallToAction from "@/components/CallToAction";
-import Clients from "@/components/Clients";
 import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
 import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
+import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "WorktreeWise | Efficient Git Worktree Solution",
@@ -44,7 +41,7 @@ const detailedFeatures2 = [
     position: "left",
     title: "Integration with your favourite IDE",
     description: "Open and manage your worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
-    features: ["JetBrains IDEs (Intellij | Webstorm | PhpStorm | Rider | PyCharm | CLion | RubyMine | GoLand)", "Visual Studio", "Eclipse", "Brackets", "Android Studio", "Sublime Text"]
+    features: ["Intellij | Webstorm | PhpStorm | Rider | PyCharm | CLion | RubyMine | GoLand", "Visual Studio", "Eclipse", "Brackets", "Android Studio", "Sublime Text"]
   },
   {
     position: "right",
@@ -71,6 +68,7 @@ export default function Home() {
       <About features={detailedFeatures1} />
       <CallToAction />
       <About features={detailedFeatures2}/>
+      <UseCases/>
       <Pricing />
       {/*<Testimonials />*/}
       <Faq />
