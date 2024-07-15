@@ -59,7 +59,7 @@ const detailedFeatures2 = [
     title: "Generate code across worktrees",
     image: "run-generator",
     description: "Speed up your development process by generating code with the built-in code generator.",
-    features: ["generate new code snippets, templates, or entire modules to kickstart your development projects.", "import existing code generators from various repositories, integrating it into your current worktrees for streamlined development.", "Execute your predefined generator on a specific worktree to automate code generation and streamline your development process."]
+    features: ["Generate new code snippets, templates, or entire modules to kickstart your development projects.", "Import existing code generators from various repositories, integrating it into your current worktrees for streamlined development.", "Execute your predefined generator on a specific worktree to automate code generation and streamline your development process."]
   }
 ];
 
