@@ -11,6 +11,7 @@ export const pricingData: Price[] = [
       "IDEs Integration",
       "Workflow Automation",
       "Git Tools",
+      "",
     ],
   },
   {

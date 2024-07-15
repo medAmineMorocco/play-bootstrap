@@ -4,7 +4,7 @@ import useCasesData from "./useCasesData";
 
 const UseCases = () => {
   return (
-    <section className="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+    <section className="pb-8 pt-20 dark:bg-dark lg:pt-[80px]">
       <div className="container">
         <SectionTitle
           subtitle="Use Cases"

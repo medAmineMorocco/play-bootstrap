@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const About = ({ features }: any[]) => {
   return (
     <section
@@ -38,13 +36,13 @@ const About = ({ features }: any[]) => {
                   <div className="-mx-2 flex flex-wrap sm:-mx-4 lg:-mx-2 xl:-mx-4">
                     <div className="w-full px-2 sm:px-4 lg:px-2 xl:px-4">
                       <div
-                        className={`relative mb-4 sm:mb-8 sm:h-[400px] md:h-[540px] lg:h-[400px] xl:h-[500px] `}
+                        className={`relative mb-4 sm:mb-8`}
                       >
-                        <Image
-                          src="/images/about/about-image-01.jpg"
+                        <img
+                          src={`/images/home/${feature.image}.png`}
                           alt="about image"
-                          fill
-                          className="h-full w-full object-cover object-center"
+                          style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
+                          className="h-full w-full rounded object-cover object-center"
                         />
                       </div>
                     </div>
@@ -60,13 +58,13 @@ const About = ({ features }: any[]) => {
                 <div className="-mx-2 flex flex-wrap sm:-mx-4 lg:-mx-2 xl:-mx-4">
                   <div className="w-full px-2 sm:px-4 lg:px-2 xl:px-4">
                     <div
-                      className={`relative mb-4 sm:mb-8 sm:h-[400px] md:h-[540px] lg:h-[400px] xl:h-[500px] `}
+                      className={`relative mb-4 sm:mb-8`}
                     >
-                      <Image
-                        src="/images/about/about-image-01.jpg"
+                      <img
+                        src={`/images/home/${feature.image}.png`}
                         alt="about image"
-                        fill
-                        className="h-full w-full object-cover object-center"
+                        style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
+                        className="h-full w-full rounded object-cover object-center"
                       />
                     </div>
                   </div>

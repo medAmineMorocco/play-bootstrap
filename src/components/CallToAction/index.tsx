@@ -18,7 +18,7 @@ const CallToAction = () => {
               </div>
             </div>
             <img
-              src="/images/hero/hero-image.png"
+              src="/images/home/dark.png"
               alt="hero"
               className="mx-auto max-w-full rounded"
               width={845}
