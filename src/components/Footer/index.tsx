@@ -22,8 +22,7 @@ const Footer = () => {
                 />
               </Link>
               <p className="mb-8 max-w-[270px] text-base text-gray-7">
-                We create digital experiences for brands and companies by using
-                technology.
+                We streamline worktree management for software engineers and companies with WorktreeWise.
               </p>
               <div className="-mx-3 flex items-center">
                 <a
