@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 const detailedFeatures1 = [
   {
-    position: "left",
+    position: "right",
     title: "Managing Worktrees",
     image: "worktrees",
-    description: "Effortlessly manage worktrees with actions like : ",
+    description: "",
     features: ["List worktrees", "Create worktree", "Edit worktree", "Move worktree", "Delete worktree", "Lock/Unlock worktree", "Prune worktrees", "Hooks triggered when creating a new worktree"]
   },
   {
@@ -31,7 +31,7 @@ const detailedFeatures1 = [
     features: []
   },
   {
-    position: "left",
+    position: "right",
     title: "Workflow Automation",
     image: "workflow",
     description: "Define and execute a series of commands across multiple worktrees, automating complex tasks for enhanced productivity.",
@@ -41,11 +41,11 @@ const detailedFeatures1 = [
 
 const detailedFeatures2 = [
   {
-    position: "left",
+    position: "right",
     title: "Integration with your favourite IDE",
     image: "editors",
     description: "Open and manage your worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
-    features: ["Intellij", "Webstorm", "PhpStorm", "Rider", "PyCharm", "CLion", "RubyMine", "GoLand", "Visual Studio", "Eclipse", "Brackets", "Android Studio", "Sublime Text"]
+    features: []
   },
   {
     position: "right",
@@ -55,10 +55,10 @@ const detailedFeatures2 = [
     features: ["View Git Log", "Git Diff Between Worktrees/Branches/Tags/Commits"]
   },
   {
-    position: "left",
+    position: "right",
     title: "Generate code across worktrees",
     image: "run-generator",
-    description: "Speed up your development process by generating code with the built-in code generator.",
+    description: "",
     features: ["Generate new code snippets, templates, or entire modules to kickstart your development projects.", "Import existing code generators from various repositories, integrating it into your current worktrees for streamlined development.", "Execute your predefined generator on a specific worktree to automate code generation and streamline your development process."]
   }
 ];
