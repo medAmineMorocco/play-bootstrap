@@ -3,7 +3,8 @@ import { Price } from "@/types/price";
 export const pricingData: Price[] = [
   {
     id: "price_1NQk5TLtGdPVhGLecVfQ7mn0",
-    unit_amount: 34 * 100,
+    original_amount: 84,
+    unit_amount: 34,
     nickname: "Pro",
     offers: [
       "Managing Worktrees",
@@ -16,7 +17,8 @@ export const pricingData: Price[] = [
   },
   {
     id: "price_1NQk55LtGdPVhGLefU8AHqHr",
-    unit_amount: 46 * 100,
+    original_amount: 100,
+    unit_amount: 46,
     nickname: "Pro Plus",
     offers: [
       "Managing Worktrees",

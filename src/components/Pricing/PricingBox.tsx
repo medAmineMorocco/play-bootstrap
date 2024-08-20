@@ -36,12 +36,16 @@ const PricingBox = ({ product }: { product: Price }) => {
           {product.nickname}
         </span>
         <h2 className="mb-11 text-4xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
-          <span className="text-xl font-medium">$ </span>
+          <span className="-ml-1 -tracking-[2px] text-body-color dark:text-dark-6">
+            <del>{product.original_amount}</del>
+            {" "}
+          </span>
           <span className="-ml-1 -tracking-[2px]">
-            {(product.unit_amount / 100).toLocaleString("en-US", {
-              currency: "USD",
+            {product.unit_amount.toLocaleString("en-US", {
+              currency: "USD"
             })}
           </span>
+          <span className="text-xl font-medium">$ </span>
           <span className="text-base font-normal text-body-color dark:text-dark-6">
             {" "}
             Lifetime Usage
@@ -49,7 +53,7 @@ const PricingBox = ({ product }: { product: Price }) => {
         </h2>
 
         <div className="mb-[50px]">
-          <h3 className="mb-5 text-lg font-medium text-dark dark:text-white">
+        <h3 className="mb-5 text-lg font-medium text-dark dark:text-white">
             Features
           </h3>
           <div className="mb-10">
