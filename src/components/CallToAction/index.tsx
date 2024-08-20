@@ -23,6 +23,7 @@ const CallToAction = () => {
               className="mx-auto max-w-full rounded"
               width={845}
               height={316}
+              loading="lazy"
             />
           </div>
         </div>

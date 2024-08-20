@@ -43,6 +43,7 @@ const About = ({ features }: any[]) => {
                           alt="about image"
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded object-cover object-center"
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -65,6 +66,7 @@ const About = ({ features }: any[]) => {
                         alt="about image"
                         style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                         className="h-full w-full rounded object-cover object-center"
+                        loading="lazy"
                       />
                     </div>
                   </div>
