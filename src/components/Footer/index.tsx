@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LinkedinOutlined, XOutlined } from "@ant-design/icons";
+import { LinkedinOutlined, XOutlined, YoutubeOutlined } from "@ant-design/icons";
 
 const Footer = () => {
   return (
@@ -38,6 +38,13 @@ const Footer = () => {
                   className="px-3 text-gray-7 hover:text-white"
                 >
                   <LinkedinOutlined />
+                </a>
+                <a
+                  aria-label="social link"
+                  href="/#"
+                  className="px-3 text-gray-7 hover:text-white"
+                >
+                  <YoutubeOutlined />
                 </a>
               </div>
             </div>
