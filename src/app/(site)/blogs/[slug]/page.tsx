@@ -177,7 +177,6 @@ export default async function Post({ params }: Props) {
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                   <div>
-                    <Newsletter />
 
                     <div className="-mx-4 mb-8 flex flex-wrap">
                       <div className="w-full px-4">
@@ -199,18 +198,6 @@ export default async function Post({ params }: Props) {
                       ))}
                     </div>
 
-                    <div
-                      className="wow fadeInUp mb-12 overflow-hidden rounded"
-                      data-wow-delay=".1s"
-                    >
-                      <Image
-                        src="/images/blog/bannder-ad.png"
-                        alt="image"
-                        className="w-full"
-                        width={408}
-                        height={254}
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
