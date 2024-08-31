@@ -16,6 +16,11 @@ const Faq = () => {
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
+              question="Can QA professionals also use it?"
+              answer="
+Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
+            />
+            <SingleFaq
               question="Are there other tools available on the market ?"
               answer="Yes, there are other tools on the market, but they often lack the comprehensive features and efficiency of WorktreeWise."
             />
@@ -27,11 +32,6 @@ const Faq = () => {
               question="Is it compatible with all operating systems ?"
               answer="
 Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
-            />
-            <SingleFaq
-              question="Can QA professionals also use it?"
-              answer="
-Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
             />
           </div>
 
