@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import OfferList from "./OfferList";
 import { Price } from "@/types/price";
+import Link from "next/link";
 
 const PricingBox = ({ product }: { product: Price }) => {
   // POST request
@@ -48,7 +49,7 @@ const PricingBox = ({ product }: { product: Price }) => {
           <span className="text-xl font-medium">$ </span>
           <span className="text-base font-normal text-body-color dark:text-dark-6">
             {" "}
-            Lifetime Usage
+            {product.periode}
           </span>
         </h2>
 
@@ -63,12 +64,13 @@ const PricingBox = ({ product }: { product: Price }) => {
           </div>
         </div>
         <div className="w-full">
-          <button
-            onClick={handleSubscription}
+          <Link
+            href={product.paymentLink}
+            target="_blank"
             className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90"
           >
-            Purchase Now
-          </button>
+            {product.nickname === 'Free Trial' ? 'Try Now' : 'Purchase Now'}
+          </Link>
         </div>
       </div>
     </div>
