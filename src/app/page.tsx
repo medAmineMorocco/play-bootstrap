@@ -1,4 +1,4 @@
-import About from "@/components/About";
+import About, { Feature } from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
 import CallToAction from "@/components/CallToAction";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "Free Next.js SaaS Boilerplate and Starter Kit designed and built for SaaS startups. It comes with all necessary integrations, pages, and components you need to launch a feature-rich SaaS websites.",
 };
 
-const detailedFeatures1 = [
+const detailedFeatures1: Feature[] = [
   {
     position: "right",
     title: "Managing Worktrees",
@@ -39,7 +39,7 @@ const detailedFeatures1 = [
   }
 ];
 
-const detailedFeatures2 = [
+const detailedFeatures2 : Feature[] = [
   {
     position: "right",
     title: "Integration with your favourite IDE",

@@ -32,7 +32,7 @@ const Tutorials = () => {
           Object.entries(videos).map(([key, values]) => {
             return <div key={key}>
               <h1>{key}</h1>
-              <div class="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-3">
                 {values.map(value => <iframe key={new Date().getTime()} height="315" width="100%" src={value}>
                 </iframe>)}
               </div>

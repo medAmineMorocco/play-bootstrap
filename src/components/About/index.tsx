@@ -1,11 +1,19 @@
-const About = ({ features }: any[]) => {
+export type Feature = {
+  title: string;
+  description: string;
+  image: string;
+  position: string;
+  features: string[];
+};
+
+const About = ({ features }: {features: Feature[]}) => {
   return (
     <section
       id="about"
       className="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]"
     >
       <div className="container">
-        {features?.map((feature: any) => {
+        {features?.map((feature: Feature) => {
           if (feature.position === "right") {
             return <div key={feature.title} className="wow fadeInUp" data-wow-delay=".2s">
               <div className="-mx-4 flex flex-wrap">
