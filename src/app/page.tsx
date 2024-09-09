@@ -70,11 +70,11 @@ export default function Home() {
     <main>
       <ScrollUp />
       <Hero />
+      <UseCases/>
       <Features />
       <About features={detailedFeatures1} />
       <CallToAction />
       <About features={detailedFeatures2}/>
-      <UseCases/>
       <Pricing />
       {/*<Testimonials />*/}
       <Faq />
