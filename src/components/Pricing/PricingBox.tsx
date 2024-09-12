@@ -1,26 +1,9 @@
-import axios from "axios";
 import React from "react";
 import OfferList from "./OfferList";
 import { Price } from "@/types/price";
 import Link from "next/link";
 
 const PricingBox = ({ product }: { product: Price }) => {
-  // POST request
-  const handleSubscription = async (e: any) => {
-    e.preventDefault();
-    const { data } = await axios.post(
-      "/api/payment",
-      {
-        priceId: product.id,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    );
-    window.location.assign(data);
-  };
 
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -58,9 +41,14 @@ const PricingBox = ({ product }: { product: Price }) => {
             Features
           </h3>
           <div className="mb-10">
-            {product?.offers.map((offer, i) => (
-              <OfferList key={i} text={offer} />
-            ))}
+            <ul className="space-y-3">
+              {product?.offers.map((offer, i) => (
+                <OfferList key={i} text={offer} included={true} />
+              ))}
+              {product?.notIncluded?.map((notIncluded, i) => (
+                <OfferList key={i} text={notIncluded} included={false} />
+              ))}
+            </ul>
           </div>
         </div>
         <div className="w-full">

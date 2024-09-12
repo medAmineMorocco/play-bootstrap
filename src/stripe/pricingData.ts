@@ -30,8 +30,8 @@ export const pricingData: Price[] = [
       "IDEs Integration",
       "Workflow Automation",
       "Git Tools",
-      "",
     ],
+    notIncluded: ["Code Generator"]
   },
   {
     id: "price_1NQk55LtGdPVhGLefU8AHqHr",

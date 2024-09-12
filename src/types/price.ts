@@ -4,6 +4,7 @@ export type Price = {
   unit_amount: number;
   nickname: string;
   offers: string[];
+  notIncluded?: string[];
   periode: string;
   paymentLink: string;
 };
