@@ -6,7 +6,7 @@ export type Feature = {
   features: string[];
 };
 
-const ListItem = ({ text }) => {
+const ListItem = ({text}: { text: string }) => {
   return (
     <li className="flex text-base text-body-color dark:text-dark-6">
       <span className="mr-2.5 mt-0.5 text-primary">
