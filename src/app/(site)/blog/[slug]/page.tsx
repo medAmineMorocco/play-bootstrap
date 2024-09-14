@@ -1,4 +1,3 @@
-import Newsletter from "@/components/Blog/Newsletter";
 import PopularArticle from "@/components/Blog/PopularArticle";
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";

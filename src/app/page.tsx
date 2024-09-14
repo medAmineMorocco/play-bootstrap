@@ -76,10 +76,8 @@ export default function Home() {
       <CallToAction />
       <About features={detailedFeatures2}/>
       <Pricing />
-      {/*<Testimonials />*/}
       <Faq />
       <HomeBlogSection posts={posts} />
-      {/*<Contact />*/}
     </main>
   );
 }
