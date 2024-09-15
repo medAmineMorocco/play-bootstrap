@@ -1,5 +1,6 @@
 "use client";
 
+import { hotjar } from 'react-hotjar'
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -19,6 +20,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    hotjar.initialize({id: 5135709, sv: 6})
     setTimeout(() => setLoading(false), 500);
   }, []);
 
