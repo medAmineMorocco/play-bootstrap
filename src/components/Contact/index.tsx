@@ -1,4 +1,34 @@
+'use client';
+
+import { toast, Toaster } from "react-hot-toast";
+import { useRef } from "react";
+
 const Contact = () => {
+  const formRef = useRef(null);
+
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      body: formData,
+    } as any);
+
+    const result = await response.json();
+
+    if (result.success) {
+      const current = formRef.current as any;
+      if (current) {
+        current.reset();
+      }
+      toast.success('Message sent successfully!');
+    } else {
+      toast.error('Failed to send message.');
+    }
+  };
+
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
@@ -72,7 +102,7 @@ const Contact = () => {
               <h3 className="mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]">
                 Send us a Message
               </h3>
-              <form method="POST" action="/api/send">
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-[22px]">
                   <label
                     htmlFor="fullName"
@@ -142,6 +172,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div><Toaster /></div>
     </section>
   );
 };
