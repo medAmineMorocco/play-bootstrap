@@ -20,7 +20,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    hotjar.initialize({id: 5135709, sv: 6})
+    hotjar.initialize({id: 5135823, sv: 6})
     setTimeout(() => setLoading(false), 500);
   }, []);
 
