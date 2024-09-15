@@ -72,7 +72,7 @@ const Contact = () => {
               <h3 className="mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]">
                 Send us a Message
               </h3>
-              <form>
+              <form method="POST" action="/api/send">
                 <div className="mb-[22px]">
                   <label
                     htmlFor="fullName"
