@@ -1,4 +1,4 @@
-const Accordion = ({ preTitle, title, children }) => {
+const Accordion = ({ preTitle, title, children }: { preTitle: string, title: string, children: any }) => {
     return (
         <div className="mb-8 w-full rounded-lg bg-white p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)] sm:p-8 lg:px-6 xl:px-8">
             <button
