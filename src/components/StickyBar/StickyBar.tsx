@@ -12,7 +12,7 @@ export default function StickyBar() {
             Limited Time Offer: Save with reduced prices—get more for less!
           </p>
           <a
-            href="#pricing"
+            href="/pricing"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary lg:text-base"
           >
             Check Out
