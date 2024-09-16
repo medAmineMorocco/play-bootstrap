@@ -12,8 +12,8 @@ import { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 import Head from "@/app/head";
 
-const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID;
-const HOTJAR_SV = process.env.NEXT_PUBLIC_HOTJAR_SV;
+const HOTJAR_ID = Number(process.env.NEXT_PUBLIC_HOTJAR_ID);
+const HOTJAR_SV = Number(process.env.NEXT_PUBLIC_HOTJAR_SV);
 
 export default function RootLayout({
   children,
