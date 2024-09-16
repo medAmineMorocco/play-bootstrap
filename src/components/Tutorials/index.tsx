@@ -1,26 +1,128 @@
 import Accordion from "@/components/Accordion/Accordion";
 
 const tutorials = {
-  'Git Add Worktree': [
+  'Add Git Worktree': [
     {
-      'title': 'Git Add Worktree From Head',
+      'title': 'Add Git Worktree From Head',
       'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
       'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
     },
     {
-      'title': 'Git Add Worktree From Head',
+      'title': 'Add Git Worktree From Existing Branch',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Add Git Worktree From Tag',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Add Git Worktree With Hooks',
       'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
       'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
     },
   ],
-  'Integrations': [
+  'Manage Git Worktrees': [
     {
-      'title': 'Git Add Worktree From Head',
+      'title': 'Change Location of a Git Worktree',
       'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
       'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
     },
     {
-      'title': 'Git Add Worktree From Head',
+      'title': 'Delete, Lock, Unlock and Rename Git Worktree',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Open Git Worktree in Terminal': [
+    {
+      'title': 'Setting up shell in WorktreeWise',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Open Git Worktree in Terminal',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Open Git Worktree in your Favourite Editor': [
+    {
+      'title': 'Setting Up Editor in WorktreeWise',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Open Git Worktree in Editor',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Git Tools': [
+    {
+      'title': 'Git Diff Between Two Git Worktrees',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Git Log',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Workflows': [
+    {
+      'title': 'Create & Run a Workflow on a Git Worktree',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Run Workflow Sequentially or in Parallel Across Selected or All Git Worktrees',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Edit, Delete and Duplicate a Workflow',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Import Existing Workflows',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Code Generator': [
+    {
+      'title': 'Create & Run a Code Generator on a Git Worktree',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Edit, Duplicate and Delete a Code Generator',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Import Existing Code Generators',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Inject Code Generator',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+  ],
+  'Preferences': [
+    {
+      'title': 'Light & Dark Mode',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
+      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    },
+    {
+      'title': 'Shortcuts',
       'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur dicta dignissimos ducimus esse et fuga fugiat ipsum magni nihil non obcaecati qui quidem reprehenderit sunt ullam, vel voluptas.',
       'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
     },
@@ -39,7 +141,7 @@ const Tutorials = () => {
               {items.map((item, index) => (
                   <div key={index} className="flex gap-4 mt-8 flex-col sm:flex-row">
                     <div className="flex-grow-2 sm:w-0 sm:pr-4">
-                      <h3>{item.title}</h3>
+                      <h1 className="h-[40px] !mb-6 !text-[32px]">{item.title}</h1>
                       <span>{item.description}</span>
                     </div>
                     <div className="flex-grow order-last sm:w-0 sm:order-first">
