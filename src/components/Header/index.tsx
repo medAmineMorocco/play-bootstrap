@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import menuData from "./menuData";
 import StickyBar from "@/components/StickyBar/StickyBar";
 
+const STICKY_BAR_ANNOUNCEMENT = process.env.NEXT_PUBLIC_STICKY_BAR_ANNOUNCEMENT;
+
 const Header = () => {
 
   const pathUrl = usePathname();
@@ -52,7 +54,7 @@ const Header = () => {
         }`}
       >
         <div className="w-full">
-          {!sticky && <StickyBar />}
+          {STICKY_BAR_ANNOUNCEMENT && !sticky && <StickyBar text={STICKY_BAR_ANNOUNCEMENT} />}
           <div className="container">
             <div className="relative -mx-4 flex items-center justify-between">
               <div className="w-60 max-w-full px-4">

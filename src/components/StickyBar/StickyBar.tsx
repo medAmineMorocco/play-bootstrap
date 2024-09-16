@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function StickyBar() {
+export default function StickyBar({text}:{text: string}) {
   return (
     <section className="border-b border-stroke bg-gray-1 px-6 py-3 dark:border-dark-3 dark:bg-dark-2">
       <div className="container">
@@ -9,7 +9,7 @@ export default function StickyBar() {
             New
           </span>
           <p className="inline-flex px-3 text-sm font-medium text-dark lg:text-base dark:text-white">
-            Limited Time Offer: Save with reduced prices—get more for less!
+            {text}
           </p>
           <a
             href="/pricing"
