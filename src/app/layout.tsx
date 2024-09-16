@@ -12,6 +12,9 @@ import { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 import Head from "@/app/head";
 
+const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID;
+const HOTJAR_SV = process.env.NEXT_PUBLIC_HOTJAR_SV;
+
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +23,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    hotjar.initialize({id: 5135823, sv: 6})
+    hotjar.initialize({id: HOTJAR_ID, sv: HOTJAR_SV})
     setTimeout(() => setLoading(false), 500);
   }, []);
 

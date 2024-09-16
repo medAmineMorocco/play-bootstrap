@@ -63,7 +63,7 @@ const Contact = () => {
                       Our Location
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Morocco, 1 Abdelmoumen Casablanca
+                      {process.env.NEXT_PUBLIC_CONTACT_LOCATION}
                     </p>
                   </div>
                 </div>
@@ -83,10 +83,7 @@ const Contact = () => {
                       How Can We Help?
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@yourdomain.com
-                    </p>
-                    <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                      contact@yourdomain.com
+                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                     </p>
                   </div>
                 </div>

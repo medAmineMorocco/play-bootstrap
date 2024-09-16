@@ -2,6 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { LinkedinOutlined, XOutlined, YoutubeOutlined } from "@ant-design/icons";
 
+const TWITTER_PAGE_URL = process.env.NEXT_PUBLIC_TWITTER_PAGE_URL;
+const LINKEDIN_PAGE_URL = process.env.NEXT_PUBLIC_LINKEDIN_PAGE_URL;
+const YOUTUBE_PAGE_URL = process.env.NEXT_PUBLIC_YOUTUBE_PAGE_URL;
+
+const TERMS_OF_SERVICE_URL = process.env.NEXT_PUBLIC_TERMS_OF_SERVICE_URL;
+const LEGAL_NOTICE_URL = process.env.NEXT_PUBLIC_LEGAL_NOTICE_URL;
+const PRIVACY_POLICY_URL = process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL;
+
 const Footer = () => {
   return (
     <footer
@@ -27,22 +35,25 @@ const Footer = () => {
               <div className="-mx-3 flex justify-center">
                 <a
                   aria-label="social link"
-                  href="/#"
+                  href={TWITTER_PAGE_URL}
+                  target="_blank"
                   className="px-3 text-gray-7 hover:text-white"
                 >
                   <XOutlined />
                 </a>
                 <a
                   aria-label="social link"
-                  href="/#"
+                  href={LINKEDIN_PAGE_URL}
+                  target="_blank"
                   className="px-3 text-gray-7 hover:text-white"
                 >
                   <LinkedinOutlined />
                 </a>
                 <a
                   aria-label="social link"
-                  href="/#"
-                  className="px-3 text-gray-7 hover:text-white"
+                  href={YOUTUBE_PAGE_URL}
+                  target="_blank"
+                  className="px-3 text-gray-7 hover:text-white hover:underline"
                 >
                   <YoutubeOutlined />
                 </a>
@@ -53,19 +64,22 @@ const Footer = () => {
             <div className="container">
               <div className="flex justify-center">
                 <a
-                  href="/#"
+                  href={PRIVACY_POLICY_URL}
+                  target="_blank"
                   className="px-3 text-base text-gray-7 hover:text-white hover:underline"
                 >
                   Privacy policy
                 </a>
                 <a
-                  href="/#"
+                  href={LEGAL_NOTICE_URL}
+                  target="_blank"
                   className="px-3 text-base text-gray-7 hover:text-white hover:underline"
                 >
                   Legal notice
                 </a>
                 <a
-                  href="/#"
+                  href={TERMS_OF_SERVICE_URL}
+                  target="_blank"
                   className="px-3 text-base text-gray-7 hover:text-white hover:underline"
                 >
                   Terms of service
