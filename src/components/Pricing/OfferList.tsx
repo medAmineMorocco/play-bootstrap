@@ -19,11 +19,6 @@ const ListItem = ({ text } : { text: string }) => {
               fill="currentColor"
             />
           </g>
-          <defs>
-            <clipPath id="clip0_980_24852">
-              <rect width={20} height={20} fill="white" />
-            </clipPath>
-          </defs>
         </svg>
       </span>
       {text}
@@ -52,11 +47,6 @@ const ListItemNotIncluded = ({ text }: { text: string }) => {
               fill="currentColor"
             />
           </g>
-          <defs>
-            <clipPath id="clip0_980_24913">
-              <rect width={20} height={20} fill="white" />
-            </clipPath>
-          </defs>
         </svg>
       </span>
       {text}
