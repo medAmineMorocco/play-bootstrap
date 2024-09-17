@@ -42,17 +42,17 @@ const Hero = () => {
                     className="wow fadeInUp flex items-center justify-center gap-4 text-center"
                     data-wow-delay=".3s"
                   >
-                    <a className="text-white/60 duration-300 ease-in-out hover:text-white">
+                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
                       <WindowsOutlined  style={{ fontSize: '36px'}}/>
-                    </a>
+                    </span>
 
-                    <a className="text-white/60 duration-300 ease-in-out hover:text-white">
+                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
                       <LinuxOutlined style={{ fontSize: '36px'}} />
-                    </a>
+                    </span>
 
-                    <a className="text-white/60 duration-300 ease-in-out hover:text-white">
+                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
                       <AppleOutlined style={{ fontSize: '36px'}} />
-                    </a>
+                    </span>
 
                   </div>
                 </div>
