@@ -17,8 +17,8 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "Worktree Management",
-    paragraph: "Effortlessly manage and organize your worktrees with comprehensive actions including creation, editing, pruning, and terminal access.",
+    title: "Efficient Git Worktree Management",
+    paragraph: "Effortlessly manage and organize your Git worktrees with comprehensive actions, including creation, editing, pruning, and terminal access.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -71,7 +71,7 @@ const featuresData: Feature[] = [
       </svg>
     ),
     title: "Workflow Automation",
-    paragraph: "Efficiently define, execute, and visualize workflows across multiple worktrees, enhanced by a built-in code generator for seamless task automation.",
+    paragraph: "Efficiently define, execute, and visualize workflows across multiple Git worktrees, with a built-in code generator for seamless task automation.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -104,7 +104,7 @@ const featuresData: Feature[] = [
       </svg>
     ),
     title: "Integration and Collaboration",
-    paragraph: "Seamlessly integrate with IDEs, view git logs, and compare worktrees for better version control and collaboration.",
+    paragraph: "Seamlessly integrate with IDEs, view Git logs, and compare Git worktrees for better version control and collaboration.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -125,7 +125,7 @@ const featuresData: Feature[] = [
       </svg>
     ),
     title: "User Experience",
-    paragraph: "Enhance your interaction with intuitive light/dark mode options, ensuring a comfortable and personalized interface.",
+    paragraph: "Enhance your interaction with WorktreeWise using intuitive light and dark mode options, ensuring a comfortable and personalized experience.",
     btn: "Learn More",
     btnLink: "/#",
   },

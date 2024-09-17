@@ -9,7 +9,7 @@ export const pricingData: Price[] = [
     periode: `${process.env.NEXT_PUBLIC_FREE_TRIAL_PERIOD} Days`,
     paymentLink: process.env.NEXT_PUBLIC_FREE_TRIAL_PAYMENT_URL || '',
     offers: [
-      "Managing Worktrees",
+      "Managing Git Worktrees",
       "Terminal Integration",
       "IDEs Integration",
       "Workflow Automation",
@@ -25,7 +25,7 @@ export const pricingData: Price[] = [
     periode: "Lifetime Usage",
     paymentLink: process.env.NEXT_PUBLIC_PRO_PAYMENT_URL || '',
     offers: [
-      "Managing Worktrees",
+      "Managing Git Worktrees",
       "Terminal Integration",
       "IDEs Integration",
       "Workflow Automation",
@@ -41,7 +41,7 @@ export const pricingData: Price[] = [
     periode: "Lifetime Usage",
     paymentLink: process.env.NEXT_PUBLIC_PRO_PLUS_PAYMENT_URL || '',
     offers: [
-      "Managing Worktrees",
+      "Managing Git Worktrees",
       "Terminal Integration",
       "IDEs Integration",
       "Workflow Automation",

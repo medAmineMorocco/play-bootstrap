@@ -8,8 +8,8 @@ const UseCases = () => {
       <div className="container">
         <SectionTitle
           subtitle="Use Cases"
-          title="Example Of Use Cases Of WorktreeWise"
-          paragraph="Explore real-world use cases to see how WorktreeWise transforms teamwork."
+          title="Git Worktree Use Cases"
+          paragraph="See How WorktreeWise Transforms Teamwork with Real-World Git Worktree Use Cases."
         />
 
         <div className="-mx-4 mt-12 flex flex-wrap lg:mt-20">

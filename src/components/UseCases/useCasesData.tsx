@@ -17,8 +17,8 @@ const useCasesData: Feature[] = [
         />
       </svg>
     ),
-    title: "Work in Multiple Git Branches Simultaneously",
-    paragraph: "Each worktree operates independently, enabling you to manage different branches or commits at the same time without any interference.",
+    title: "Work with Multiple Git Branches Simultaneously",
+    paragraph: "Each Git worktree operates independently, enabling you to manage different branches or commits simultaneously without interference.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -39,7 +39,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Run Tasks in the Background",
-    paragraph: "Run long tasks like test suites without blocking your workflow. Switch branches and continue working on another branch while tasks run in the background.",
+    paragraph: "Run long tasks like test suites without interrupting your workflow. Switch branches and continue working on another branch while tasks run in the background with Git worktrees.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -60,7 +60,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Experiment with New Features",
-    paragraph: "Use worktrees to test experimental features or major refactors without affecting your main codebase.",
+    paragraph: "Use Git worktrees to test experimental features or major refactors without impacting your main codebase.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -81,7 +81,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Review Pull Requests Easily",
-    paragraph: "Review teammates' pull requests while continuing your work in the main worktree.",
+    paragraph: "Review teammates' pull requests while continuing your work in the main Git worktree, allowing you to stay productive and focused without interruptions.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -102,7 +102,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Compare Versions Side-by-Side",
-    paragraph: "View and run multiple versions of a project simultaneously. Easily check out previous tags or commits in a worktree to compare changes and identify issues.",
+    paragraph: "View and run multiple versions of a project simultaneously. Easily check out previous tags or commits in a Git worktree to compare changes and identify issues.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -123,7 +123,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Explore Different Approaches",
-    paragraph: "Experiment with various solutions, fix bugs, or build features simultaneously without disrupting your main work.",
+    paragraph: "Experiment with different solutions, fix bugs, or develop features simultaneously without disrupting your main work using Git worktrees.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -144,7 +144,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Streamlined CI/CD Processes",
-    paragraph: "Manage multiple branches or versions simultaneously with worktrees, optimizing CI/CD processes and simplifying release management.",
+    paragraph: "Manage multiple branches or versions simultaneously with Git worktrees, optimizing CI/CD processes and streamlining release management.",
     btn: "Learn More",
     btnLink: "/#"
   },
@@ -165,7 +165,7 @@ const useCasesData: Feature[] = [
       </svg>
     ),
     title: "Proof of Concept Made Easy",
-    paragraph: "Utilize WorktreeWise for rapid proof of concept (POC) development, allowing swift validation and iteration of new concepts and features.",
+    paragraph: "Utilize WorktreeWise for rapid proof of concept (POC) development, enabling quick validation and iteration of new concepts and features with Git worktrees.",
     btn: "Learn More",
     btnLink: "/#",
   },

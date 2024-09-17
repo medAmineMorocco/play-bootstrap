@@ -17,22 +17,22 @@ export const metadata: Metadata = {
 
 const detailedFeatures1: Feature[] = [
   {
-    title: "Managing Worktrees",
+    title: "Managing Git Worktrees",
     image: "worktrees-management",
     description: "",
-    features: ["List worktrees", "Create worktree", "Edit worktree", "Move worktree", "Delete worktree", "Lock/Unlock worktree", "Prune worktrees", "Hooks triggered when creating a new worktree"]
+    features: ["List Git Worktrees", "Create Git Worktree", "Edit Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"]
   },
   {
-    title: "Opening worktree in terminal",
+    title: "Opening Git Worktree in Terminal",
     image: "terminal",
-    description: "Quickly open a worktree in your terminal, providing instant access for command-line operations and scripting.",
+    description: "Quickly open a Git worktree in your terminal for instant access to command-line operations and scripting.",
     features: []
   },
   {
     title: "Workflow Automation",
     image: "workflow",
-    description: "Define and execute a series of commands across multiple worktrees, automating complex tasks for enhanced productivity.",
-    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflow in Sequence/Parallel Across All/Selected Worktrees", "Visualize Execution and Log of the Workflow"]
+    description: "Define and execute a series of commands across multiple Git worktrees, automating complex tasks to boost productivity.",
+    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Execution and Log of the Workflow"]
   }
 ];
 
@@ -40,20 +40,20 @@ const detailedFeatures2 : Feature[] = [
   {
     title: "Integration with your favourite IDE",
     image: "editors",
-    description: "Open and manage your worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
+    description: "Open Git worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
     features: []
   },
   {
     title: "Git Tools",
     image: "diff",
-    description: "Access git logs and perform detailed comparisons between worktrees, branches, tags, and commits for robust version control.",
-    features: ["View Git Log", "Git Diff Between Worktrees/Branches/Tags/Commits"]
+    description: "Access Git logs and perform detailed comparisons between Git worktrees, branches, tags, and commits for robust version control.",
+    features: ["View Git Log", "Git Diff Between Git Worktrees, Branches, Tags, and Commits"]
   },
   {
-    title: "Generate code across worktrees",
+    title: "Generate Code Across Git Worktrees",
     image: "generator",
     description: "",
-    features: ["Generate new code snippets, templates, or entire modules to kickstart your development projects.", "Import existing code generators from various repositories, integrating it into your current worktrees for streamlined development.", "Execute your predefined generator on a specific worktree to automate code generation and streamline your development process."]
+    features: ["Generate new code snippets, templates, or entire modules across Git worktrees to kickstart your development projects.", "Import existing code generators from various repositories and integrate them into your current project’s Git worktrees for streamlined development.", "Execute your predefined code generator on a specific Git worktree to automate code generation and streamline your development process."]
   }
 ];
 

@@ -30,7 +30,7 @@ const Footer = () => {
                 />
               </Link>
               <p className="mb-8 w-full text-base text-gray-7">
-                We streamline worktree management for software engineers and companies with WorktreeWise.
+                We streamline git worktree management for software engineers and companies with WorktreeWise.
               </p>
               <div className="-mx-3 flex justify-center">
                 <a
