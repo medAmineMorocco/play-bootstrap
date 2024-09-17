@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AppleOutlined, LinuxOutlined, WindowsOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -64,12 +65,21 @@ const Hero = () => {
                 data-wow-delay=".25s"
               >
                 <div className="mt-16">
-                  <img
-                    src="/images/home/dashboard.png"
+                  <Image
+                    src="/images/home/dashboard.avif"
                     alt="hero"
-                    className="mx-auto max-w-full"
+                    className="mx-auto max-w-full dark:[display:none]"
                     width={845}
                     height={316}
+                    unoptimized
+                  />
+                  <Image
+                    src="/images/home/dashboard-dark.avif"
+                    alt="hero"
+                    className="mx-auto max-w-full [display:none] dark:block"
+                    width={845}
+                    height={316}
+                    unoptimized
                   />
                 </div>
                 <div className="absolute -left-9 bottom-0 z-[-1]">

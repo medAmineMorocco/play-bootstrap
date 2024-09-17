@@ -17,21 +17,18 @@ export const metadata: Metadata = {
 
 const detailedFeatures1: Feature[] = [
   {
-    position: "right",
     title: "Managing Worktrees",
-    image: "worktrees",
+    image: "worktrees-management",
     description: "",
     features: ["List worktrees", "Create worktree", "Edit worktree", "Move worktree", "Delete worktree", "Lock/Unlock worktree", "Prune worktrees", "Hooks triggered when creating a new worktree"]
   },
   {
-    position: "right",
     title: "Opening worktree in terminal",
     image: "terminal",
     description: "Quickly open a worktree in your terminal, providing instant access for command-line operations and scripting.",
     features: []
   },
   {
-    position: "right",
     title: "Workflow Automation",
     image: "workflow",
     description: "Define and execute a series of commands across multiple worktrees, automating complex tasks for enhanced productivity.",
@@ -41,23 +38,20 @@ const detailedFeatures1: Feature[] = [
 
 const detailedFeatures2 : Feature[] = [
   {
-    position: "right",
     title: "Integration with your favourite IDE",
     image: "editors",
     description: "Open and manage your worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
     features: []
   },
   {
-    position: "right",
     title: "Git Tools",
-    image: "git-diff",
+    image: "diff",
     description: "Access git logs and perform detailed comparisons between worktrees, branches, tags, and commits for robust version control.",
     features: ["View Git Log", "Git Diff Between Worktrees/Branches/Tags/Commits"]
   },
   {
-    position: "right",
     title: "Generate code across worktrees",
-    image: "run-generator",
+    image: "generator",
     description: "",
     features: ["Generate new code snippets, templates, or entire modules to kickstart your development projects.", "Import existing code generators from various repositories, integrating it into your current worktrees for streamlined development.", "Execute your predefined generator on a specific worktree to automate code generation and streamline your development process."]
   }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 
 const CallToAction = () => {
   return (
@@ -17,12 +17,13 @@ const CallToAction = () => {
                 </p>
               </div>
             </div>
-            <img
-              src="/images/home/dark.png"
+            <Image
+              src="/images/home/dashboard-dark.avif"
               alt="hero"
               className="mx-auto max-w-full rounded"
               width={845}
               height={316}
+              unoptimized
               loading="lazy"
             />
           </div>
