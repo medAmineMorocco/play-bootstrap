@@ -34,8 +34,8 @@ const Hero = () => {
                 </ul>
 
                 <div>
-                  <p className="mb-4 text-center text-base font-medium text-white/60">
-                    WorktreeWise supports a variety of operating systems
+                  <p className="mb-4 text-center text-base font-medium text-white">
+                    WorktreeWise supports multiple operating systems
                   </p>
                   <div
                     className="wow fadeInUp flex items-center justify-center gap-4 text-center"
