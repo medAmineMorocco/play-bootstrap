@@ -20,8 +20,7 @@ const Hero = () => {
                   Easy Git Worktree Management with WorktreeWise
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
-                  Boost Productivity with Git Worktrees<br></br>
-                  Streamline Workflow and Reduce Context Switching
+                  Boost productivity by working on multiple Git branches simultaneously with Git worktrees
                 </p>
                 <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
