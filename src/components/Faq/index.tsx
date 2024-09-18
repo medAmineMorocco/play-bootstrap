@@ -16,9 +16,14 @@ const Faq = () => {
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="Can QA professionals also use it?"
+              question="Why use Git worktrees instead of multiple clones?"
               answer="
-Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
+Git worktrees save disk space, maintain consistent settings, and simplify managing multiple environments, unlike multiple clones."
+            />
+            <SingleFaq
+              question="Does using Git worktrees take up more space?"
+              answer="
+No, Git worktrees share objects with the main repository, so they require minimal extra space compared to full clones."
             />
             <SingleFaq
               question="Are there other tools available on the market ?"
@@ -36,6 +41,11 @@ Yes, WorktreeWise is compatible with all major operating systems, including Wind
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
+            <SingleFaq
+              question="Can QA professionals also use it?"
+              answer="
+Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
+            />
             <SingleFaq
               question="Can I try it for free ?"
               answer="Absolutely! We offer a free trial period so you can experience the benefits of our software firsthand."
