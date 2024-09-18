@@ -5,6 +5,7 @@ export type Feature = {
   description: string;
   image: string;
   features: string[];
+  alt: string;
 };
 
 const ListItem = ({text}: { text: string }) => {
@@ -71,7 +72,7 @@ const About = ({ features }: {features: Feature[]}) => {
                       >
                         <Image
                           src={`/images/home/${feature.image}.avif`}
-                          alt="hero"
+                          alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded object-cover object-center dark:[display:none]"
                           loading="lazy"
@@ -81,7 +82,7 @@ const About = ({ features }: {features: Feature[]}) => {
                         />
                         <Image
                           src={`/images/home/${feature.image}-dark.avif`}
-                          alt="hero"
+                          alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded object-cover object-center [display:none] dark:block"
                           loading="lazy"

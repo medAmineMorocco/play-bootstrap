@@ -20,19 +20,22 @@ const detailedFeatures1: Feature[] = [
     title: "Managing Git Worktrees",
     image: "worktrees-management",
     description: "",
-    features: ["List Git Worktrees", "Create Git Worktree", "Edit Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"]
+    features: ["List Git Worktrees", "Create Git Worktree", "Edit Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"],
+    alt: "Menu options displayed after selecting a Git worktree, including actions to add, remove, rename, and manage Git worktrees",
   },
   {
     title: "Opening Git Worktree in Terminal",
     image: "terminal",
     description: "Quickly open a Git worktree in your terminal for instant access to command-line operations and scripting.",
-    features: []
+    features: [],
+    alt: "WorktreeWise terminal opened in a Git worktree",
   },
   {
     title: "Workflow Automation",
     image: "workflow",
     description: "Define and execute a series of commands across multiple Git worktrees, automating complex tasks to boost productivity.",
-    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Execution and Log of the Workflow"]
+    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Execution and Log of the Workflow"],
+    alt: "WorktreeWise executing workflows across multiple Git worktrees",
   }
 ];
 
@@ -41,19 +44,22 @@ const detailedFeatures2 : Feature[] = [
     title: "Integration with your favourite IDE",
     image: "editors",
     description: "Open Git worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
-    features: []
+    features: [],
+    alt: "WorktreeWise displaying supported editors after clicking 'Open In' on a Git worktree, including options like WebStorm, VS Code, and more",
   },
   {
     title: "Git Tools",
     image: "diff",
     description: "Access Git logs and perform detailed comparisons between Git worktrees, branches, tags, and commits for robust version control.",
-    features: ["View Git Log", "Git Diff Between Git Worktrees, Branches, Tags, and Commits"]
+    features: ["View Git Log", "Git Diff Between Git Worktrees, Branches, Tags, and Commits"],
+    alt: "WorktreeWise showing a Git diff comparison between two Git worktrees, highlighting differences in files and changes",
   },
   {
     title: "Generate Code Across Git Worktrees",
     image: "generator",
     description: "",
-    features: ["Generate new code snippets, templates, or entire modules across Git worktrees to kickstart your development projects.", "Import existing code generators from various repositories and integrate them into your current project’s Git worktrees for streamlined development.", "Execute your predefined code generator on a specific Git worktree to automate code generation and streamline your development process."]
+    features: ["Generate new code snippets, templates, or entire modules across Git worktrees to kickstart your development projects.", "Import existing code generators from various repositories and integrate them into your current project’s Git worktrees for streamlined development.", "Execute your predefined code generator on a specific Git worktree to automate code generation and streamline your development process."],
+    alt: "WorktreeWise showing how to run a code generator on a Git worktree",
   }
 ];
 
