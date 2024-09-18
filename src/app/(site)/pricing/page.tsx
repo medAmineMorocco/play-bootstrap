@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
     "Pricing | WorktreeWise",
-  description: "This is pricing page description",
+  description: "Discover the pricing options for WorktreeWise and find the perfect plan for your needs. Explore our flexible subscription tiers, features included in each plan, and choose the best fit for managing your Git worktrees efficiently. Get started with WorktreeWise today and enhance your development workflow.",
 };
 
 const PricingPage = () => {

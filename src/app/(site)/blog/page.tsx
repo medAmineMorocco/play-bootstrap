@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
     "Blog | WorktreeWise",
-  description: "Blog grids page description",
+  description: "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
 };
 
 const Blog = () => {

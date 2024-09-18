@@ -12,7 +12,7 @@ import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "WorktreeWise | Efficient Git Worktree Solution",
-  description: "Free Next.js SaaS Boilerplate and Starter Kit designed and built for SaaS startups. It comes with all necessary integrations, pages, and components you need to launch a feature-rich SaaS websites.",
+  description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
 };
 
 const detailedFeatures1: Feature[] = [
