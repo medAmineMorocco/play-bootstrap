@@ -21,7 +21,7 @@ const Accordion = ({ preTitle, title, children }: { preTitle: string, title: str
                 </div>
 
                 <div className="w-full">
-                    <h1 className="!mb-0 !mt-1 text-lg font-semibold text-dark dark:text-white !text-[18px] !h-[28px]">
+                    <h1 className="!mb-0 !mt-1 text-lg font-semibold text-dark dark:text-white !text-[18px] !h-auto">
                         <span className="text-primary">{preTitle} | </span>{title}
                     </h1>
                 </div>

@@ -1,4 +1,5 @@
 import Accordion from "@/components/Accordion/Accordion";
+import Video from "@/components/Video/Video";
 
 const tutorials = {
   'Add Git Worktree': [
@@ -141,12 +142,11 @@ const Tutorials = () => {
               {items.map((item, index) => (
                   <div key={index} className="flex gap-4 mt-8 flex-col sm:flex-row">
                     <div className="flex-grow-2 sm:w-0 sm:pr-4">
-                      <h1 className="h-[40px] !mb-6 !text-[32px]">{item.title}</h1>
-                      <span>{item.description}</span>
+                      <h1 className="h-[40px] mb-10 md:mb-4 !text-[32px]">{item.title}</h1>
+                      <span className="">{item.description}</span>
                     </div>
                     <div className="flex-grow order-last sm:w-0 sm:order-first">
-                      <iframe height="300" width="100%" title={item.title} allowFullScreen={true}
-                              src={item.url}></iframe>
+                      <Video url={item.url} />
                     </div>
                   </div>
               ))}
