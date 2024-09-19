@@ -1,13 +1,15 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 // Handler hook for when Outside click dropdown close
-let useClickOutside = (handler) => {
-  let domNode = useRef();
+let useClickOutside = (handler: any) => {
+  let domNode = useRef<any>();
 
   useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
+    let maybeHandler = (event: any) => {
+      const current = domNode.current as any;
+      if (current && !current.contains(event.target)) {
         handler();
       }
     };
@@ -22,10 +24,10 @@ let useClickOutside = (handler) => {
 // Handler hook for when Outside click dropdown close End Code====>>
 
 const Video = ({url} : {url: string}) => {
-  const [videoOpen, setvideoOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   let domNode = useClickOutside(() => {
-    setvideoOpen(false);
+    setVideoOpen(false);
   });
 
   return (
@@ -45,7 +47,7 @@ const Video = ({url} : {url: string}) => {
                 className={`absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
               >
                 <a
-                  onClick={() => setvideoOpen(true)}
+                  onClick={() => setVideoOpen(true)}
                   className="cursor-pointer absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-white text-primary dark:bg-dark-2 dark:text-white md:h-[100px] md:w-[100px]"
                 >
                   <svg
@@ -73,7 +75,7 @@ const Video = ({url} : {url: string}) => {
           </div>
 
           <button
-            onClick={() => setvideoOpen(false)}
+            onClick={() => setVideoOpen(false)}
             className="absolute right-0 top-0 flex h-20 w-20 cursor-pointer items-center justify-center text-body-color hover:bg-black"
           >
             <svg viewBox="0 0 16 15" className="h-8 w-8 fill-current">
