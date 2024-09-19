@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Blog | WorktreeWise",
+    "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
   description: "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
 };
 
@@ -14,7 +14,7 @@ const Blog = () => {
 
   return (
     <>
-      <Breadcrumb pageName="Articles" />
+      <Breadcrumb pageName="Blog" />
 
       <section className="pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
         <div className="container">
