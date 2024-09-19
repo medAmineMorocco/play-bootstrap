@@ -32,7 +32,7 @@ const Video = ({url} : {url: string}) => {
 
   return (
     <section className="bg-white dark:bg-dark">
-      <div ref={domNode} className="container">
+      <div ref={domNode}>
         <div className="flex flex-wrap justify-center">
           <div className="w-full">
             <div className="relative z-20 h-[300px] overflow-hidden rounded-lg">
