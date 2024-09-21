@@ -134,8 +134,22 @@ const Tutorials = () => {
   return (
     <section
       id="tutorials"
-      className="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]"
+      className="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[40px]"
     >
+      <div className="container pb-[70px]">
+        <p className="leading-snug">
+          In this section, you will find a collection of explainer videos designed to guide you through the core features
+          of WorktreeWise. These videos provide step-by-step instructions on how to manage worktrees, create workflows, set up hooks, integrate with editors, and much
+          more.<br /><br />
+
+          WorktreeWise is built to streamline your Git workflow by allowing you to efficiently manage multiple
+          worktrees, automate repetitive tasks, and ensure a smooth development experience. Each video is focused on a
+          specific part of the software, helping you get the most out of WorktreeWise. <br /><br />
+
+          Feel free to explore the videos below, and refer back to this page whenever you need a refresher or deeper
+          insight into any feature!
+        </p>
+      </div>
       <div className="container blog-details">
         {Object.entries(tutorials).map(([category, items], categoryIndex) => (
             <Accordion key={category} preTitle={'0' + (categoryIndex + 1)} title={category}>
