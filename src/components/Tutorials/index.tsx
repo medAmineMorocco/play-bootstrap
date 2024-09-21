@@ -180,7 +180,7 @@ const Tutorials = () => {
                   <div key={index} className="flex gap-4 mt-8 flex-col sm:flex-row">
                     <div className="flex-grow-2 sm:w-0 sm:pr-4">
                       <h1 className="h-auto mb-10 md:mb-4 !text-[32px]">{item.title}</h1>
-                      <small className="text-white"><ClockCircleOutlined /> Duration: {item.duration}</small><br />
+                      <small className="text-black font-semibold dark:text-white"><ClockCircleOutlined /> Duration: {item.duration}</small><br />
                       <span className="">{item.description}</span>
                     </div>
                     <div className="flex-grow order-last sm:w-0 sm:order-first">
