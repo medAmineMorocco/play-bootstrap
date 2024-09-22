@@ -15,7 +15,7 @@ const AboutMe = () => {
                   Meet the Creator
                 </h2>
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
-                  Hi, I'm <strong className="dark:text-white">AMMACH MOHAMED AMINE</strong>, the creator and developer behind <strong className="dark:text-white">WorktreeWise</strong>.
+                  Hi, I&apos;m <strong className="dark:text-white">AMMACH MOHAMED AMINE</strong>, the creator and developer behind <strong className="dark:text-white">WorktreeWise</strong>.
                   As a
                   passionate developer myself,
                   I understand the challenges of managing multiple branches and worktrees across different environments.
@@ -45,7 +45,7 @@ const AboutMe = () => {
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
                   I’m constantly working on new features and improvements for <strong className="dark:text-white">WorktreeWise</strong> based on
                   feedback from users
-                  like you. Whether it's new integrations, performance optimizations, or enhanced workflows, my goal is
+                  like you. Whether it&apos;s new integrations, performance optimizations, or enhanced workflows, my goal is
                   to make <strong className="dark:text-white">WorktreeWise</strong> even more powerful.<br/><br/>
 
                   <strong className="dark:text-white">Thank you</strong> for joining me on this journey. I’m excited to see
