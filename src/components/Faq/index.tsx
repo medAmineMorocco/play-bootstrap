@@ -33,11 +33,6 @@ No, Git worktrees share objects with the main repository, so they require minima
               question="Does WorktreeWise utilize native Git ?"
               answer="Yes, WorktreeWise utilizes native Git functionality, which ensures compatibility with standard Git workflows."
             />
-            <SingleFaq
-              question="Is it compatible with all operating systems ?"
-              answer="
-Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
-            />
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
@@ -55,8 +50,9 @@ Yes, QA professionals can also use it for testing and quality assurance tasks, b
               answer="The reason for its affordability lies in the absence of server maintenance and infrastructure costs, enabling us to offer competitive pricing without sacrificing service quality or features."
             />
             <SingleFaq
-              question="Who developed WorktreeWise ?"
-              answer="Mohamed Amine Ammach is the creator of WorktreeWise, bringing expertise in software development and a passion for enhancing productivity in coding environments."
+                question="Is it compatible with all operating systems ?"
+                answer="
+Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
             />
           </div>
         </div>
