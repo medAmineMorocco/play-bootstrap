@@ -12,7 +12,31 @@ import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "WorktreeWise | Efficient Git Worktree Solution",
-  description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+  description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+  openGraph: {
+    title: "WorktreeWise | Efficient Git Worktree Solution",
+    description:
+      "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+    url: "https://worktreewise.com",
+    siteName: "WorktreeWise",
+    images: [
+      {
+        url: "/images/home/dashboard.avif",
+        width: 1200,
+        height: 630,
+        alt: "WorktreeWise Git worktree dashboard",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WorktreeWise | Efficient Git Worktree Solution",
+    description:
+      "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+    images: ["/images/home/dashboard.avif"],
+  },
 };
 
 const detailedFeatures1: Feature[] = [

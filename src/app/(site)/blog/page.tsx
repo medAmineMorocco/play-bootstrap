@@ -7,6 +7,30 @@ export const metadata: Metadata = {
   title:
     "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
   description: "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+  openGraph: {
+    title: "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
+    description:
+      "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+    url: "https://worktreewise.com/blog",
+    siteName: "WorktreeWise",
+    images: [
+      {
+        url: "/images/home/dashboard.avif",
+        width: 1200,
+        height: 630,
+        alt: "WorktreeWise blog - Git worktree management insights",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
+    description:
+      "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+    images: ["/images/home/dashboard.avif"],
+  },
 };
 
 const Blog = () => {
