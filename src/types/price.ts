@@ -7,4 +7,5 @@ export type Price = {
   notIncluded?: string[];
   periode: string;
   paymentLink: string;
+  remark?: string;
 };

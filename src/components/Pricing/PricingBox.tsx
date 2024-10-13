@@ -33,11 +33,15 @@ const PricingBox = ({ product }: { product: Price }) => {
           <span className="text-base font-normal text-body-color dark:text-dark-6">
             {" "}
             {product.periode}
-          </span>
+          </span><br />
+          {product.remark ? <span
+            className="bg-body-color m-0 inline-block rounded border border-transparent py-1 px-2.5 text-sm font-medium text-white">
+             {product.remark}
+          </span> : <div><span></span><br /></div>}
         </h2>
 
         <div className="mb-[50px]">
-        <h3 className="mb-5 text-lg font-medium text-dark dark:text-white">
+          <h3 className="mb-5 text-lg font-medium text-dark dark:text-white">
             Features
           </h3>
           <div className="mb-10">
