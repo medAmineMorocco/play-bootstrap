@@ -23,7 +23,7 @@ export const pricingData: Price[] = [
     unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE),
     nickname: "Pro",
     periode: "One time Payment",
-    remark: "2 activations / user / lifetime usage",
+    remark: "3 activations / user / lifetime usage",
     paymentLink: process.env.NEXT_PUBLIC_PRO_PAYMENT_URL || '',
     offers: [
       "Managing Git Worktrees",
@@ -40,7 +40,7 @@ export const pricingData: Price[] = [
     unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PLUS_PRICE),
     nickname: "Pro Plus",
     periode: "One time Payment",
-    remark: "2 activations / user / lifetime usage",
+    remark: "3 activations / user / lifetime usage",
     paymentLink: process.env.NEXT_PUBLIC_PRO_PLUS_PAYMENT_URL || '',
     offers: [
       "Managing Git Worktrees",
