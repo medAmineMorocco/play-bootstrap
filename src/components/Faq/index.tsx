@@ -16,12 +16,12 @@ const Faq = () => {
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="Why use Git worktrees instead of multiple clones?"
+              question="Why use Git worktrees instead of multiple clones ?"
               answer="
 Git worktrees save disk space, maintain consistent settings, and simplify managing multiple environments, unlike multiple clones."
             />
             <SingleFaq
-              question="Does using Git worktrees take up more space?"
+              question="Does using Git worktrees take up more space ?"
               answer="
 No, Git worktrees share objects with the main repository, so they require minimal extra space compared to full clones."
             />
@@ -37,13 +37,17 @@ No, Git worktrees share objects with the main repository, so they require minima
 
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="Can QA professionals also use it?"
+              question="Can QA professionals also use it ?"
               answer="
 Yes, QA professionals can also use it for testing and quality assurance tasks, benefiting from its features like git worktrees and workflow automation."
             />
             <SingleFaq
               question="Can I try it for free ?"
               answer="Absolutely! We offer a free trial period so you can experience the benefits of our software firsthand."
+            />
+            <SingleFaq
+              question="How do I purchase WorktreeWise ?"
+              answer="You can purchase WorktreeWise by selecting a package in the pricing section. You will be redirected to our secure Payhip checkout. After completing the payment, you will receive your license key by email."
             />
             <SingleFaq
               question="Why is this SaaS priced affordably ?"

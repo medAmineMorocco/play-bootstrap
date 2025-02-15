@@ -24,6 +24,10 @@ const Pricing = () => {
             <PricingBox key={i} product={product} />
           ))}     
         </div>
+        <div>
+          📌 Click on a package to checkout via Payhip. After payment,
+          you will receive your WorktreeWise license key by email.
+        </div>
       </div>
     </section>
   );
