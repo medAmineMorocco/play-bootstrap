@@ -1,6 +1,8 @@
 import SectionTitle from "../Common/SectionTitle";
 import SingleFaq from "./SingleFaq";
 
+const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_LANDING_PAGE_URL;
+
 const Faq = () => {
   return (
     <section className="relative z-20 overflow-hidden bg-white pb-8 pt-20 dark:bg-dark lg:pb-[50px] lg:pt-[120px]">
@@ -33,6 +35,11 @@ No, Git worktrees share objects with the main repository, so they require minima
               question="Does WorktreeWise utilize native Git ?"
               answer="Yes, WorktreeWise utilizes native Git functionality, which ensures compatibility with standard Git workflows."
             />
+            <SingleFaq
+              question="Is it compatible with all operating systems ?"
+              answer="
+Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
+            />
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
@@ -54,9 +61,11 @@ Yes, QA professionals can also use it for testing and quality assurance tasks, b
               answer="The reason for its affordability lies in the absence of server maintenance and infrastructure costs, enabling us to offer competitive pricing without sacrificing service quality or features."
             />
             <SingleFaq
-                question="Is it compatible with all operating systems ?"
-                answer="
-Yes, WorktreeWise is compatible with all major operating systems, including Windows, Linux, and macOS, ensuring seamless integration across diverse development environments."
+              question="Can I buy Git Worktrees for Maximum Productivity book without purchasing WorktreeWise?"
+              answer={`Yes! You can get it on its own <a
+                  href="${WORKTREES_BOOK_LANDING_PAGE_URL}"
+                  target="_blank"
+                ><u>right here</u></a>. However, if you're planning to use WorktreeWise, the book is included for free with every paid package.`}
             />
           </div>
         </div>

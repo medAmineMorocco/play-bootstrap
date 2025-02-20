@@ -3,6 +3,9 @@ import Faq from "@/components/Faq";
 import Pricing from "@/components/Pricing";
 import { Metadata } from "next";
 
+const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_LANDING_PAGE_URL;
+
+
 export const metadata: Metadata = {
   title:
     "WorktreeWise Pricing Plans | Choose the Right Plan for You",
@@ -37,7 +40,7 @@ const PricingPage = () => {
   return (
     <>
       <Breadcrumb pageName="Plans & Pricing" />
-      <Pricing />
+      <Pricing WORKTREES_BOOK_LANDING_PAGE_URL={WORKTREES_BOOK_LANDING_PAGE_URL} />
       <Faq />
     </>
   );

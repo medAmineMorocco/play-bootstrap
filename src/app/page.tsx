@@ -10,6 +10,9 @@ import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 import UseCases from "@/components/UseCases";
 
+const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_LANDING_PAGE_URL;
+
+
 export const metadata: Metadata = {
   title: "WorktreeWise | Efficient Git Worktree Solution",
   description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
@@ -99,7 +102,7 @@ export default function Home() {
       <About features={detailedFeatures1} />
       <CallToAction />
       <About features={detailedFeatures2}/>
-      <Pricing />
+      <Pricing WORKTREES_BOOK_LANDING_PAGE_URL={WORKTREES_BOOK_LANDING_PAGE_URL} />
       <Faq />
       <HomeBlogSection posts={posts} />
     </main>
