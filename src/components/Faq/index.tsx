@@ -57,10 +57,6 @@ Yes, QA professionals can also use it for testing and quality assurance tasks, b
               answer="You can purchase WorktreeWise by selecting a package in the pricing section. You will be redirected to our secure Payhip checkout. After completing the payment, you will receive your license key by email."
             />
             <SingleFaq
-              question="Why is this SaaS priced affordably ?"
-              answer="The reason for its affordability lies in the absence of server maintenance and infrastructure costs, enabling us to offer competitive pricing without sacrificing service quality or features."
-            />
-            <SingleFaq
               question="Can I buy Git Worktrees for Maximum Productivity book without purchasing WorktreeWise?"
               answer={`Yes! You can get it on its own <a
                   href="${WORKTREES_BOOK_LANDING_PAGE_URL}"
