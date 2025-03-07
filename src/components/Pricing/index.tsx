@@ -14,7 +14,11 @@ const Pricing = ({WORKTREES_BOOK_LANDING_PAGE_URL}: any) => {
           <SectionTitle
             subtitle="One-Time Purchase"
             title="Our Pricing Plan"
-            paragraph="Boost your productivity with our Basic plan and elevate your performance."
+            paragraph={
+            <div>
+              Try Any Plan Free for <strong className="dark:text-white">{process.env.NEXT_PUBLIC_FREE_TRIAL_PERIOD} Days</strong> and Explore All Features.
+            </div>
+          }
             center
           />
         </div>

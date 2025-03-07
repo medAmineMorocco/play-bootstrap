@@ -7,7 +7,7 @@ const SectionTitle = ({
 }: {
   subtitle?: string;
   title: string;
-  paragraph: string;
+  paragraph: any;
   width?: string;
   center?: boolean;
 }) => {
