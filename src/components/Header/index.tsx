@@ -161,6 +161,7 @@ const Header = () => {
                                 className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${
                                   pathUrl === menuItem?.path && "text-primary"
                                 }`}
+                                target={menuItem.newTab ? '_blank' : '_self'}
                               >
                                 {menuItem.title}
                               </Link>
@@ -177,6 +178,7 @@ const Header = () => {
                                   sticky &&
                                   "!text-primary"
                                 }`}
+                                target={menuItem.newTab ? '_blank' : '_self'}
                               >
                                 {menuItem.title}
                               </Link>

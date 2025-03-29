@@ -1,5 +1,8 @@
 import { Menu } from "@/types/menu";
 
+const DOCUMENTATION_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL;
+
+
 const menuData: Menu[] = [
   {
     id: 1,
@@ -10,8 +13,8 @@ const menuData: Menu[] = [
   {
     id: 2,
     title: "Documentation",
-    path: "/documentation",
-    newTab: false,
+    path: DOCUMENTATION_URL,
+    newTab: true,
   },
   {
     id: 3,
