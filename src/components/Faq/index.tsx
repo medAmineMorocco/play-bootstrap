@@ -28,10 +28,6 @@ Git worktrees save disk space, maintain consistent settings, and simplify managi
 No, Git worktrees share objects with the main repository, so they require minimal extra space compared to full clones."
             />
             <SingleFaq
-              question="Are there other tools available on the market ?"
-              answer="Yes, there are other tools on the market, but they often lack the comprehensive features and efficiency of WorktreeWise."
-            />
-            <SingleFaq
               question="Does WorktreeWise utilize native Git ?"
               answer="Yes, WorktreeWise utilizes native Git functionality, which ensures compatibility with standard Git workflows."
             />
@@ -53,8 +49,8 @@ Yes, QA professionals can also use it for testing and quality assurance tasks, b
               answer="Absolutely! We offer a free trial period so you can experience the benefits of our software firsthand."
             />
             <SingleFaq
-              question="How do I purchase WorktreeWise ?"
-              answer="You can purchase WorktreeWise by selecting a package in the pricing section. You will be redirected to our secure Payhip checkout. After completing the payment, you will receive your license key by email."
+              question="Are there other tools available on the market ?"
+              answer="Yes, there are other tools on the market, but they often lack the comprehensive features and efficiency of WorktreeWise."
             />
             <SingleFaq
               question="Can I buy Git Worktrees for Maximum Productivity book without purchasing WorktreeWise?"
