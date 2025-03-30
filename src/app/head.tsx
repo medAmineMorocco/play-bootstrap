@@ -20,6 +20,7 @@ export default function Head() {
         <link rel="dns-prefetch" href="https://static.hotjar.com" />
         <link rel="dns-prefetch" href="https://script.hotjar.com" />
         <Script src="/js/accordion.js" strategy="afterInteractive" />
+        <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
         <script
           async
           src="https://app.fastbots.ai/embed.js"

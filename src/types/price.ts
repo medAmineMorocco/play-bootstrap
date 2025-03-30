@@ -1,5 +1,6 @@
 export type Price = {
   id: string;
+  productIds: string[] | null;
   original_amount?: number | null;
   unit_amount?: string;
   nickname: string;

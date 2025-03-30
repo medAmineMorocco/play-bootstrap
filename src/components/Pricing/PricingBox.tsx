@@ -1,7 +1,10 @@
 import React from "react";
 import OfferList from "./OfferList";
 import { Price } from "@/types/price";
+import PaddleCheckout from "@/components/Pricing/PaddleCheckout";
 import Link from "next/link";
+
+const PADDLE_TOKEN = process.env.NEXT_PUBLIC_PADDLE_TOKEN;
 
 const PricingBox = ({ product }: { product: Price }) => {
 
@@ -56,13 +59,13 @@ const PricingBox = ({ product }: { product: Price }) => {
           </div>
         </div>
         <div className="w-full">
-          <Link
-            href={product.paymentLink}
+          {product.productIds ? <PaddleCheckout  productIds={product.productIds} paddleToken={PADDLE_TOKEN}/> : <Link
+            href={"/contact"}
             target="_blank"
             className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90"
           >
-            {product.id === 'ENTERPRISE' ? 'Contact Us' : 'Purchase Now'}
-          </Link>
+            Contact Us
+          </Link>}
         </div>
       </div>
     </div>
