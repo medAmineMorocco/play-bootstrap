@@ -28,11 +28,11 @@ const PricingBox = ({ product }: { product: Price }) => {
             {" "}
           </span>
           <span className="-ml-1 -tracking-[2px]">
-            {product.unit_amount ? Number(product.unit_amount).toLocaleString("en-US", {
+            {product.unit_amount.toLocaleString("en-US", {
               currency: "USD"
-            }) : 'Contact us'}
+            })}
           </span>
-          {product.unit_amount && <span className="text-xl font-medium">$ </span>}
+          <span className="text-xl font-medium">$ </span>
           <span className="text-base font-normal text-body-color dark:text-dark-6">
             {" "}
             {product.periode}
@@ -59,13 +59,18 @@ const PricingBox = ({ product }: { product: Price }) => {
           </div>
         </div>
         <div className="w-full">
-          {product.productIds ? <PaddleCheckout  productIds={product.productIds} paddleToken={PADDLE_TOKEN}/> : <Link
-            href={"/contact"}
-            target="_blank"
-            className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90"
-          >
-            Contact Us
-          </Link>}
+          {
+            product.productIds
+              ?
+            <PaddleCheckout  productIds={product.productIds} paddleToken={PADDLE_TOKEN}/>
+              :
+            <Link
+              href={"/contact"}
+              target="_blank"
+              className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90">
+                Try Now
+            </Link>
+          }
         </div>
       </div>
     </div>

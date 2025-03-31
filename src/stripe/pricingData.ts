@@ -6,6 +6,22 @@ const PRO_PLUS_PRODUCT_IDS = process.env.NEXT_PUBLIC_PRO_PLUS_PRODUCT_IDS;
 
 export const pricingData: Price[] = [
   {
+    id: "FREE_TRIAL",
+    productIds: null,
+    original_amount: null,
+    unit_amount: 0,
+    nickname: "Free Trial",
+    periode: `${process.env.NEXT_PUBLIC_FREE_TRIAL_PERIOD} Days`,
+    offers: [
+      "Managing Git Worktrees",
+      "Terminal Integration",
+      "IDEs Integration",
+      "Workflow Automation",
+      "Git Tools",
+      "Code Generator",
+    ],
+  },
+  {
     id: "PRO",
     productIds: PRO_PRODUCT_IDS ? PRO_PRODUCT_IDS.split(",") : null,
     original_amount: Number(process.env.NEXT_PUBLIC_PRO_ORIGINAL_PRICE) || null,
@@ -13,7 +29,6 @@ export const pricingData: Price[] = [
     nickname: "Pro",
     periode: "One time Payment",
     remark: "3 activations / user / lifetime usage",
-    paymentLink: process.env.NEXT_PUBLIC_PRO_PAYMENT_URL || '',
     offers: [
       "Managing Git Worktrees",
       "Terminal Integration",
@@ -31,25 +46,6 @@ export const pricingData: Price[] = [
     nickname: "Pro Plus",
     periode: "One time Payment",
     remark: "3 activations / user / lifetime usage",
-    paymentLink: process.env.NEXT_PUBLIC_PRO_PLUS_PAYMENT_URL || '',
-    offers: [
-      "Managing Git Worktrees",
-      "Terminal Integration",
-      "IDEs Integration",
-      "Workflow Automation",
-      "Git Tools",
-      "Code Generator"
-    ],
-  },
-  {
-    id: "ENTERPRISE",
-    productIds: null,
-    original_amount: null,
-    unit_amount: process.env.NEXT_PUBLIC_ENTERPRISE_PRICE,
-    nickname: "On Premise",
-    periode: "",
-    remark: "N activations / user / lifetime usage",
-    paymentLink: process.env.NEXT_PUBLIC_ENTERPRISE_PAYMENT_URL || '',
     offers: [
       "Managing Git Worktrees",
       "Terminal Integration",
