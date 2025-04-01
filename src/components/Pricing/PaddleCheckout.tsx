@@ -25,7 +25,7 @@ const PaddleCheckout = ({ productIds, paddleToken }: { productIds: string[], pad
     };
 
     loadPaddle();
-  }, []);
+  }, [paddleToken]);
 
   const openCheckout = () => {
     let itemsList = productIds.map(value => {

@@ -51,7 +51,7 @@ const Pricing = ({WORKTREES_BOOK_LANDING_PAGE_URL}: any) => {
           title="See How Much Time You Could Save with WorktreeWise!"
           paragraph={
             <div>
-              Here&apos;s how much time you can save by switching to worktrees instead of using git stash. It's not just
+              Here&apos;s how much time you can save by switching to worktrees instead of using git stash. It&apos;s not just
               about saving time—it&apos;s about boosting your productivity.
             </div>
           }

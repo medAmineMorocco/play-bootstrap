@@ -2,16 +2,17 @@ import React from "react";
 import OfferList from "./OfferList";
 import { Price } from "@/types/price";
 import PaddleCheckout from "@/components/Pricing/PaddleCheckout";
-import Link from "next/link";
+import Modal from "@/components/Pricing/Modal";
 
 const PADDLE_TOKEN = process.env.NEXT_PUBLIC_PADDLE_TOKEN;
+const SUBSCRIPTIONS_URL = process.env.NEXT_PUBLIC_SUBSCRIPTIONS_URL || '';
 
 const PricingBox = ({ product }: { product: Price }) => {
 
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3">
       <div
-        className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
+        className="relative mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
         data-wow-delay=".1s"
       >
         {product.id === "PRO_PLUS" && (
@@ -40,7 +41,7 @@ const PricingBox = ({ product }: { product: Price }) => {
           {product.remark ? <span
             className="bg-body-color m-0 inline-block rounded border border-transparent py-1 px-2.5 text-sm font-medium text-white">
              {product.remark}
-          </span> : <div><span></span><br /></div>}
+          </span> : <><div><br/></div><div></div></>}
         </h2>
 
         <div className="mb-[50px]">
@@ -62,14 +63,9 @@ const PricingBox = ({ product }: { product: Price }) => {
           {
             product.productIds
               ?
-            <PaddleCheckout  productIds={product.productIds} paddleToken={PADDLE_TOKEN}/>
+              <PaddleCheckout productIds={product.productIds} paddleToken={PADDLE_TOKEN} />
               :
-            <Link
-              href={"/contact"}
-              target="_blank"
-              className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90">
-                Try Now
-            </Link>
+              <Modal SUBSCRIPTION_URL={SUBSCRIPTIONS_URL}/>
           }
         </div>
       </div>
