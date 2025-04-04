@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { AppleOutlined, LinuxOutlined, WindowsOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import Download from "@/components/Hero/Download";
 
 const Hero = () => {
   return (
@@ -22,39 +25,12 @@ const Hero = () => {
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
                   Boost productivity by working on multiple Git branches simultaneously with Git worktrees
                 </p>
-                <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
+                <ul className="flex flex-wrap items-center justify-center gap-5">
                   <li>
-                    <Link
-                      href="#pricing"
-                      className="inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2"
-                    >
-                      Download Now
-                    </Link>
+                    <Download />
                   </li>
                 </ul>
 
-                <div>
-                  <p className="mb-4 text-center text-base font-medium text-white">
-                    WorktreeWise supports multiple operating systems
-                  </p>
-                  <div
-                    className="wow fadeInUp flex items-center justify-center gap-4 text-center"
-                    data-wow-delay=".3s"
-                  >
-                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
-                      <WindowsOutlined  style={{ fontSize: '36px'}}/>
-                    </span>
-
-                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
-                      <LinuxOutlined style={{ fontSize: '36px'}} />
-                    </span>
-
-                    <span className="text-white/60 duration-300 ease-in-out hover:text-white">
-                      <AppleOutlined style={{ fontSize: '36px'}} />
-                    </span>
-
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -63,7 +39,7 @@ const Hero = () => {
                 className="wow fadeInUp relative z-10 mx-auto max-w-[845px]"
                 data-wow-delay=".25s"
               >
-                <div className="mt-16">
+                <div className="mt-12">
                   <Image
                     src="/images/home/dashboard.avif"
                     alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
