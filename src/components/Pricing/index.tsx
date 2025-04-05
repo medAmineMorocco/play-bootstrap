@@ -23,9 +23,8 @@ const Pricing = ({WORKTREES_BOOK_LANDING_PAGE_URL}: any) => {
             title="Our Pricing Plan"
             paragraph={
               <div>
-                Try Any Plan Free for <strong
-                className="dark:text-white">{process.env.NEXT_PUBLIC_FREE_TRIAL_PERIOD} Days</strong> and Explore All
-                Features.
+                <div>Pay once. Get updates for a year.</div>
+                <div>Keep your last supported version — forever.</div>
               </div>
             }
             center

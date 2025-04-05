@@ -29,7 +29,7 @@ export const pricingData: Price[] = [
     unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE || 0),
     nickname: "Pro",
     periode: "One time Payment",
-    remark: "3 activations / user / lifetime usage",
+    remark: "12 months of free updates",
     offers: [
       "Managing Git Worktrees",
       "Terminal Integration",
@@ -46,7 +46,7 @@ export const pricingData: Price[] = [
     unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PLUS_PRICE || 0),
     nickname: "Pro Plus",
     periode: "One time Payment",
-    remark: "3 activations / user / lifetime usage",
+    remark: "12 months of free updates",
     offers: [
       "Managing Git Worktrees",
       "Terminal Integration",
