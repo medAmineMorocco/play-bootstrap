@@ -66,7 +66,6 @@ const Download = () => {
                     <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> (.dmg)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_DMG_URL || ""} />
                     <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.deb)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL || ""} />
                     <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.rpm)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (Snap)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_SNAP_URL || ""} />
                     {process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL && <DropdownItem newTab={true} label="Older versions" href={process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL} />}
                   </div>
                 </div>
