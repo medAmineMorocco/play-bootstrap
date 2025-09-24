@@ -1,10 +1,13 @@
 'use client';
 
 import { toast, Toaster } from "react-hot-toast";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const formRef = useRef(null);
+  const recaptchaRef = useRef<ReCAPTCHA|null>(null);
+  const [isVerified, setIsVerified] = useState(false);
 
 
   const handleSubmit = async (event: any) => {
@@ -28,6 +31,32 @@ const Contact = () => {
       toast.error('Failed to send message.');
     }
   };
+
+  async function handleCaptchaSubmission(token: string | null) {
+    try {
+      if (token) {
+        await fetch("/api", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+        setIsVerified(true);
+      }
+    } catch (e) {
+      setIsVerified(false);
+    }
+  }
+
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
+
+  function handleExpired() {
+    setIsVerified(false);
+  }
 
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
@@ -156,10 +185,20 @@ const Contact = () => {
                     className="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
                   ></textarea>
                 </div>
+
+                <ReCAPTCHA
+                  className="mb-[30px]"
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  ref={recaptchaRef}
+                  onChange={handleChange}
+                  onExpired={handleExpired}
+                />
+
                 <div className="mb-0">
                   <button
                     type="submit"
                     className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
+                    disabled={!isVerified}
                   >
                     Send
                   </button>

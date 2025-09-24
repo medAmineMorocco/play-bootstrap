@@ -17,14 +17,14 @@ export async function POST(request: NextRequest) {
             port: 587,
             secure: false,
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: process.env.NEXT_PUBLIC_EMAIL_USER,
+                pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
             },
         });
 
         const mailOptions = {
             from: email,
-            to: process.env.RECIPIENT_EMAIL,
+            to: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL,
             subject: `WorktreeWise from ${fullName}`,
             text: `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
         } as Mail.Options;
