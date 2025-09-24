@@ -1,8 +1,11 @@
-"use client";
+  "use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import { SafetyCertificateOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
 const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
@@ -14,6 +17,9 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
 
   const trigger = useRef<any>(null);
   const modal = useRef<any>(null);
+
+  const recaptchaRef = useRef<ReCAPTCHA|null>(null);
+  const [isVerified, setIsVerified] = useState(false);
 
   // close on click outside
   useEffect(() => {
@@ -88,6 +94,32 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
       });
   }
 
+  async function handleCaptchaSubmission(token: string | null) {
+    try {
+      if (token) {
+        await fetch("/api", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+        setIsVerified(true);
+      }
+    } catch (e) {
+      setIsVerified(false);
+    }
+  }
+
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
+
+  function handleExpired() {
+    setIsVerified(false);
+  }
+
   return (
     <>
         <button
@@ -119,17 +151,17 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
               Get Your License Key
             </h3>
             <div className="-mx-3 flex flex-wrap">
-              <div className='w-full px-4'>
-                <div className='flex w-full mb-4'>
-                  <div className='w-full relative'>
+              <div className="w-full px-4">
+                <div className="flex w-full mb-4">
+                  <div className="w-full relative">
                     <input
                       value={email}
                       onChange={onEmailChange}
-                      type='email'
-                      placeholder='Email'
-                      className='w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-gray-2'
+                      type="email"
+                      placeholder="Email"
+                      className="w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-gray-2"
                     />
-                    <span className='absolute top-1/2 left-4 -translate-y-1/2'>
+                    <span className="absolute top-1/2 left-4 -translate-y-1/2">
                       <svg
                         width={20}
                         height={20}
@@ -148,6 +180,16 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
                   </div>
                 </div>
               </div>
+
+              <ReCAPTCHA
+                className="w-full px-4"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                ref={recaptchaRef}
+                onChange={handleChange}
+                onExpired={handleExpired}
+              />
+              <div className="g-recaptcha w-full px-4 pb-4" data-sitekey="6LcvCQgrAAAAAILFB8r0Kg9qUIj4VY60BgywfNWD"></div>
+
               <div className="w-1/2 px-3">
                 <button
                   onClick={() => !loading && setModalOpen(false)}
@@ -159,8 +201,9 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
               <div className="w-1/2 px-3">
                 <button
                   onClick={onConfirm}
+                  disabled={!isVerified || !emailPattern.test(email)}
                   onKeyDown={(e) => {
-                    if (e.key === ' ') e.preventDefault(); // Block spacebar clicks
+                    if (e.key === " ") e.preventDefault(); // Block spacebar clicks
                   }}
                   className="inline-flex w-full h-12 items-center justify-center gap-2.5 rounded-lg bg-primary px-6 py-3 text-base font-medium text-white">
                   {loading && <span>
