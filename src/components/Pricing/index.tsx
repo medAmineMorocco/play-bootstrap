@@ -30,7 +30,7 @@ const Pricing = ({WORKTREES_BOOK_LANDING_PAGE_URL}: any) => {
             center
           />
         </div>
-        <div
+        {WORKTREES_BOOK_LANDING_PAGE_URL && <div
           className="mb-4 flex items-center space-x-2 p-3 rounded-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
           <span className="text-blue-600 dark:text-blue-400 text-xl">🎁</span>
           <span className="font-semibold">Free eBook:</span>
@@ -38,7 +38,7 @@ const Pricing = ({WORKTREES_BOOK_LANDING_PAGE_URL}: any) => {
             href={WORKTREES_BOOK_LANDING_PAGE_URL}
             target="_blank"
           >Git Worktrees for Maximum Productivity</a></i></strong> book with every paid package!</span>
-        </div>
+        </div>}
 
         <div className="-mx-4 flex flex-wrap justify-center mb-[100px]">
           {pricingData.map((product, i) => (

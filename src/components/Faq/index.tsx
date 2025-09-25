@@ -60,13 +60,13 @@ After that period, you can continue using the latest version released during you
 If you want access to future updates and support, you can renew your subscription at any time."
             />
 
-            <SingleFaq
+            {WORKTREES_BOOK_LANDING_PAGE_URL && <SingleFaq
               question="Can I buy Git Worktrees for Maximum Productivity book without purchasing WorktreeWise?"
               answer={`Yes! You can get it on its own <a
                   href="${WORKTREES_BOOK_LANDING_PAGE_URL}"
                   target="_blank"
                 ><u>right here</u></a>. However, if you're planning to use WorktreeWise, the book is included for free with every paid package.`}
-            />
+            />}
           </div>
         </div>
       </div>
