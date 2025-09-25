@@ -12,8 +12,7 @@ export async function POST(request: NextRequest) {
         const message = formData.get('message');
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            host: 'smtp.gmail.com',
+            host: 'smtp.zoho.com',
             port: 587,
             secure: false,
             auth: {
@@ -23,7 +22,7 @@ export async function POST(request: NextRequest) {
         });
 
         const mailOptions = {
-            from: email,
+            from: process.env.NEXT_PUBLIC_FROM_EMAIL,
             to: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL,
             subject: `WorktreeWise from ${fullName}`,
             text: `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
