@@ -61,7 +61,7 @@ const detailedFeatures1: Feature[] = [
     title: "Workflow Automation",
     image: "workflow",
     description: "Define and execute a series of commands across multiple Git worktrees, automating complex tasks to boost productivity.",
-    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Execution and Log of the Workflow"],
+    features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Workflow Execution and Logs"],
     alt: "WorktreeWise executing workflows across multiple Git worktrees",
   }
 ];
