@@ -6,6 +6,7 @@ const TWITTER_PAGE_URL = process.env.NEXT_PUBLIC_TWITTER_PAGE_URL;
 const LINKEDIN_PAGE_URL = process.env.NEXT_PUBLIC_LINKEDIN_PAGE_URL;
 const YOUTUBE_PAGE_URL = process.env.NEXT_PUBLIC_YOUTUBE_PAGE_URL;
 
+const REFUND_POLICY_URL = process.env.NEXT_PUBLIC_REFUND_POLICY_URL;
 const TERMS_OF_SERVICE_URL = process.env.NEXT_PUBLIC_TERMS_OF_SERVICE_URL;
 const LEGAL_NOTICE_URL = process.env.NEXT_PUBLIC_LEGAL_NOTICE_URL;
 const PRIVACY_POLICY_URL = process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL;
@@ -83,6 +84,13 @@ const Footer = () => {
                   className="px-3 text-base text-gray-7 hover:text-white hover:underline"
                 >
                   Terms of service
+                </a>
+                <a
+                  href={REFUND_POLICY_URL}
+                  target="_blank"
+                  className="px-3 text-base text-gray-7 hover:text-white hover:underline"
+                >
+                  Refund policy
                 </a>
               </div>
             </div>
