@@ -1,0 +1,17 @@
+/** @type {import('next-sitemap').IConfig} */
+const blogPosts = [
+  { slug: 'git-stash-to-git-worktree' },
+  { slug: 'optimize-branch-switching-with-git-worktree' },
+  { slug: 'git-worktree-parallel-development' },
+];
+
+module.exports = {
+  siteUrl: 'https://worktreewise.com', // Replace with your domain
+  generateRobotsTxt: true,           // Generate robots.txt along with sitemap
+  changefreq: 'daily',
+  priority: 0.7,
+  sitemapSize: 5000,                 // Optional, if you have many pages
+  additionalPaths: async (config) => {
+    return blogPosts.map((post) => `/blog/${post.slug}`);
+  },
+};
