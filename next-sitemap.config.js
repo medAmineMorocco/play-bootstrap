@@ -8,6 +8,7 @@ const blogPosts = [
 module.exports = {
   siteUrl: 'https://worktreewise.com', // Replace with your domain
   generateRobotsTxt: true,           // Generate robots.txt along with sitemap
+  outDir: './public',
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,                 // Optional, if you have many pages
