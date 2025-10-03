@@ -14,7 +14,7 @@ export default function Head() {
             content="Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process." />
       <meta name="keywords"
             content="git worktree, git diff, git worktree add, git-worktree, git worktree remove, git worktree example, git worktree tutorial, how to use git worktree, what is git worktree" />
-      <link rel="icon" href="/images/logo/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <link rel="preconnect" href="https://static.hotjar.com" />
       <link rel="preconnect" href="https://script.hotjar.com" />
       <link rel="dns-prefetch" href="https://static.hotjar.com" />
