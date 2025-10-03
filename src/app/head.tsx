@@ -20,6 +20,7 @@ export default function Head() {
       <link rel="dns-prefetch" href="https://static.hotjar.com" />
       <link rel="dns-prefetch" href="https://script.hotjar.com" />
       <Script src="/js/accordion.js" strategy="afterInteractive" />
+      <base target="_blank"></base>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
