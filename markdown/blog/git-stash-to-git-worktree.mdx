@@ -22,13 +22,13 @@ This article walks you through why stashing feels frustrating, how Git worktrees
 
 Here’s what many developers do by default:
 
-While on `feature/awesome-ui`, you realize you need to fix a bug or check something in `main`.
+While on `feature-login`, you realize you need to fix a bug or check something in `main`.
 
 ```bash
 git stash    # your unfinished changes
 git checkout main
 # make the fix, test, commit
-git checkout feature/awesome-ui
+git checkout feature-login
 git stash pop  # bring your changes back
 ```
 
@@ -48,18 +48,19 @@ Typical workflow with native Git worktrees:
 
 ```bash
 # Work in feature branch
-git worktree add ../feature-awesome-ui feature/awesome-ui
+git worktree add ../feature-login feature-login
 
 # If you need to drop into main
 git worktree add ../main main
 
-# Now you can work in main directory without affecting your feature worktree
+# Now you can work in main directory
+# without affecting your feature worktree
 cd ../main
 # make bug fix
 git commit -m "Fix bug"
 
 # Switch back to your feature
-cd ../feature-awesome-ui
+cd ../feature-login
 # Continue working, nothing lost
 ```
 
@@ -76,25 +77,31 @@ cd ../feature-awesome-ui
 
 ### Starting feature work
 
-- **Native:** `git worktree add ../feature-awesome-ui feature/awesome-ui`
-- **WorktreeWise:** Click **New Worktree**, pick branch `feature/awesome-ui` → worktree is created instantly.
+- **Native:** `git worktree add ../feature-login feature-login`
+- **WorktreeWise:** Click **New Worktree**, pick branch `feature-login` → worktree is created instantly.
+
+![Create new Git Worktree](/images/blog/stash/new-worktree.png)
 
 ### Switching to a different branch to fix something
 
 - **Native/Stash route:** stash → checkout main → fix → switch back → stash pop
 - **WorktreeWise route:** Use UI to open a worktree for `main`. Make fix there. No stash needed.
 
+![Open Git Worktree](/images/blog/stash/open-worktree.png)
+
 ### Working in parallel
 
 - **Native:** managing directories, remembering paths
 - **WorktreeWise:** Visual dashboard shows all worktrees; you can open feature and main worktrees in separate IDE windows easily.
-*(Insert screenshot: Worktree list or IDE integration)*
+
+![List Git Worktrees](/images/blog/stash/list-worktrees.png)
 
 ### Cleaning up / closing worktrees
 
 - **Native:** manually `git worktree remove` or prune
 - **WorktreeWise:** Delete or prune via UI; safe indicators for inactive worktrees.
-*(Insert screenshot: delete/prune options in UI)*
+
+![Delete Git Worktree](/images/blog/stash/delete-worktree.png)
 
 These UI-based workflows speed things up: you avoid typing commands, avoid stash conflicts, reduce cognitive load, and make your context switches smoother.
 
@@ -103,14 +110,13 @@ These UI-based workflows speed things up: you avoid typing commands, avoid stash
 
 Here’s a sample improved workflow using WorktreeWise:
 
-1. Begin working on `feature/awesome-ui`. Create a worktree via WorktreeWise.
+1. Begin working on `feature-login`. Create a worktree via WorktreeWise.
 2. A high-priority bug emerges in `main`. In WorktreeWise, open the main worktree through the UI.
 3. Fix the bug in that worktree. Commit.
 4. Switch back to your feature worktree without stashing or popping anything.
 5. Once feature is done, merge or rebase as needed. Cleanup old worktrees via UI prune/remove.
 
-*(Insert screenshots for: new worktree modal; worktree list showing both feature + main; delete/prune UI options.)*
-
+![Working with 2 Git Worktrees in Parallel](/images/blog/stash/parallel-dev.png)
 
 # Conclusion
 

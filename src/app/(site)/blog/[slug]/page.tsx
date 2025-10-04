@@ -99,7 +99,6 @@ export default async function Post({ params }: Props) {
                   <div className="flex flex-wrap items-center p-4 pb-4 sm:p-8">
                     <div className="mb-4 mr-5 flex items-center md:mr-10">
                       <p className="text-base font-medium text-white">
-                        By{" "}
                         <Link href="/#" className="text-white hover:opacity-70">
                           {post.author}
                         </Link>
