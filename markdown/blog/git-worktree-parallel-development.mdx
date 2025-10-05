@@ -75,20 +75,31 @@ Here are direct comparisons between native Git vs WorktreeWise:
 - **Native:** `git worktree add ../featureA feature/A` and similarly for other branches.
 - **WorktreeWise:** Click **New Worktree**, select branch `feature/A` (and `feature/B`, `main`, etc.) → worktrees are created instantly.
 
+![Create new Git Worktree](/images/blog/parallel/new-worktree.png)
+
+
 ### Listing and navigating worktrees
 
 - **Native:** `git worktree list` and manually switching directories.
 - **WorktreeWise:** View all worktrees in a dashboard, see branch names, status, paths, open them in IDEs directly.
+
+![List Git Worktrees](/images/blog/parallel/list-worktrees.png)
 
 ### Working on different tasks simultaneously
 
 - **Native:** you open separate terminals or editors pointed to each directory.
 - **WorktreeWise:** you can launch editors or terminals from UI, each tied to a worktree, preserving context.
 
+![Working with 2 Git Worktrees in Parallel](/images/blog/parallel/parallel-dev.png)
+
+
 ### Cleaning up worktrees once tasks finish
 
 - **Native:** manually run `git worktree remove` plus maybe `git worktree prune`.
 - **WorktreeWise:** Delete or prune via UI, with visual cues about which worktrees are active/inactive.
+
+![Delete Git Worktree](/images/blog/parallel/delete-worktree.png)
+
 
 Because of these UI abstractions, **WorktreeWise** lets you spend less time typing commands and more time focusing on coding and review. The speed gains are real, especially as you scale to more parallel tasks.
 
@@ -102,8 +113,6 @@ Here’s how a team or developer could use **WorktreeWise** to run parallel deve
 3. Meanwhile, start another enhancement `feature/B` in a separate worktree.
 4. Compare behavior or test features side-by-side by switching between IDE windows or terminals linked to each worktree.
 5. Once feature tasks are done, merge or rebase as needed. Then prune or delete old worktrees via UI to keep workspace clean.
-
-*(Suggested screenshots: dashboard showing multiple worktrees; feature worktrees open; delete/prune options; IDE integration.)*
 
 
 # Conclusion
