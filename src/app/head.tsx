@@ -21,6 +21,14 @@ export default function Head() {
       <link rel="dns-prefetch" href="https://script.hotjar.com" />
       <Script src="/js/accordion.js" strategy="afterInteractive" />
       <base target="_blank"></base>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QW2VLL0LDE');
+          `}
+      </Script>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
