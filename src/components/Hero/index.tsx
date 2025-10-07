@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { AppleOutlined, LinuxOutlined, WindowsOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Download from "@/components/Hero/Download";
 
@@ -46,7 +44,7 @@ const Hero = () => {
                     className="mx-auto max-w-full dark:[display:none]"
                     width={845}
                     height={316}
-                    unoptimized
+                    priority
                   />
                   <Image
                     src="/images/home/dashboard-dark.avif"
@@ -54,7 +52,7 @@ const Hero = () => {
                     className="mx-auto max-w-full [display:none] dark:block"
                     width={845}
                     height={316}
-                    unoptimized
+                    priority
                   />
                 </div>
                 <div className="absolute -right-6 -top-6 z-[-1]">
