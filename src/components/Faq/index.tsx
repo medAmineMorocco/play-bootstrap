@@ -60,6 +60,13 @@ After that period, you can continue using the latest version released during you
 If you want access to future updates and support, you can renew your subscription at any time."
             />
 
+            <SingleFaq
+              question="Can I request a refund after purchasing WorktreeWise ?"
+              answer="WorktreeWise purchases are non-refundable, as we provide a
+              free trial to let you explore the product before buying. Each license also
+              includes lifetime access at a one-time affordable price, ensuring lasting value."
+            />
+
             {WORKTREES_BOOK_LANDING_PAGE_URL && <SingleFaq
               question="Can I buy Git Worktrees for Maximum Productivity book without purchasing WorktreeWise?"
               answer={`Yes! You can get it on its own <a
