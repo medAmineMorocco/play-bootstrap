@@ -3,6 +3,9 @@
 import Image from "next/image";
 import Download from "@/components/Hero/Download";
 
+const SHOW_PRODUCTHUNT_WIDGET = process.env.NEXT_PUBLIC_SHOW_PRODUCTHUNT_WIDGET;
+
+
 const Hero = () => {
   return (
     <>
@@ -24,6 +27,14 @@ const Hero = () => {
                   Boost productivity by working on multiple Git branches simultaneously with Git worktrees
                 </p>
                 <ul className="flex flex-wrap items-center justify-center gap-5">
+                  {SHOW_PRODUCTHUNT_WIDGET && <li>
+                    <a
+                      href="https://www.producthunt.com/products/worktreewise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-worktreewise"
+                      target="_blank"><img
+                      src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1024516&theme=light&t=1759957216525"
+                      alt="WorktreeWise - Efficient&#0032;git&#0032;worktree&#0032;solution | Product Hunt"
+                      className="w-[250px] h-[54px]" width="250" height="54" /></a>
+                  </li>}
                   <li>
                     <Download />
                   </li>
