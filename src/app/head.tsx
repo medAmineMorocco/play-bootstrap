@@ -15,6 +15,7 @@ export default function Head() {
       <meta name="keywords"
             content="git worktree, git diff, git worktree add, git-worktree, git worktree remove, git worktree example, git worktree tutorial, how to use git worktree, what is git worktree" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="canonical" href="https://worktreewise.com" />
       <link rel="preconnect" href="https://static.hotjar.com" />
       <link rel="preconnect" href="https://script.hotjar.com" />
       <link rel="dns-prefetch" href="https://static.hotjar.com" />
