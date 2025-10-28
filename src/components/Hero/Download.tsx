@@ -62,8 +62,9 @@ const Download = () => {
                         : "top-[110%] invisible opacity-0"
                     }`}
                   >
-                    <DropdownItem newTab={false} label={<span><WindowsOutlined  style={{ fontSize: '24px'}}/> (.exe)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> (.dmg)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_DMG_URL || ""} />
+                    <DropdownItem newTab={false} label={<span><WindowsOutlined  style={{ fontSize: '24px'}}/> Windows</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL || ""} />
+                    <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> Mac (Intel)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL || ""} />
+                    <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> Mac (Apple Silicon)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL || ""} />
                     <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.deb)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL || ""} />
                     <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.rpm)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL || ""} />
                     {process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL && <DropdownItem newTab={true} label="Older versions" href={process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL} />}
