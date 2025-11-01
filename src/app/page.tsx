@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "WorktreeWise | Efficient Git Worktree Solution",
     description:
       "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
-    url: "https://worktreewise.com",
+    url: "https://www.worktreewise.com/",
     siteName: "WorktreeWise",
     images: [
       {

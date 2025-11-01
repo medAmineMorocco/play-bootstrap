@@ -15,7 +15,7 @@ export default function Head() {
       <meta name="keywords"
             content="worktreewise, git worktree, git diff, git worktree add, git-worktree, git worktree remove, git worktree example, git worktree tutorial, how to use git worktree, what is git worktree" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-      <link rel="canonical" href="https://worktreewise.com" />
+      <link rel="canonical" href="https://www.worktreewise.com/" />
       <link rel="preconnect" href="https://static.hotjar.com" />
       <link rel="preconnect" href="https://script.hotjar.com" />
       <link rel="dns-prefetch" href="https://static.hotjar.com" />
@@ -37,8 +37,8 @@ export default function Head() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "WorktreeWise",
-            url: "https://worktreewise.com",
-            logo: "https://worktreewise.com/images/logo/favicon.ico",
+            url: "https://www.worktreewise.com/",
+            logo: "https://www.worktreewise.com/images/logo/favicon.ico",
             description: "WorktreeWise helps you easily manage Git worktrees.",
             email: "contact@worktreewise.com",
           }),

@@ -4,8 +4,8 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.worktreewise.com' }],
-        destination: 'https://worktreewise.com/:path*',
+        has: [{ type: 'host', value: 'https://www.worktreewise.com/' }],
+        destination: 'https://www.worktreewise.com/:path*',
         permanent: true,
       },
     ]

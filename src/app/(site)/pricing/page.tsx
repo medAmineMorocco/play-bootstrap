@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "WorktreeWise Pricing Plans | Choose the Right Plan for You",
     description:
       "Discover the pricing options for WorktreeWise and find the perfect plan for your needs. Explore our flexible subscription tiers, features included in each plan, and choose the best fit for managing your Git worktrees efficiently. Get started with WorktreeWise today and enhance your development workflow.",
-    url: "https://worktreewise.com/pricing",
+    url: "https://www.worktreewise.com/pricing",
     siteName: "WorktreeWise",
     images: [
       {

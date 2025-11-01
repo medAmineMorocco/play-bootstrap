@@ -6,7 +6,7 @@ const blogPosts = [
 ];
 
 module.exports = {
-  siteUrl: 'https://worktreewise.com', // Replace with your domain
+  siteUrl: 'https://www.worktreewise.com/', // Replace with your domain
   generateRobotsTxt: true,           // Generate robots.txt along with sitemap
   outDir: './public',
   changefreq: 'daily',

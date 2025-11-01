@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://worktreewise.com
+Host: https://www.worktreewise.com/
 
 # Sitemaps
-Sitemap: https://worktreewise.com/sitemap.xml
+Sitemap: https://www.worktreewise.com/sitemap.xml
