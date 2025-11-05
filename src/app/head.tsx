@@ -35,15 +35,66 @@ export default function Head() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "WorktreeWise",
-            url: "https://www.worktreewise.com/",
-            logo: "https://www.worktreewise.com/images/logo/favicon.ico",
-            description: "WorktreeWise helps you easily manage Git worktrees.",
-            email: "contact@worktreewise.com",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "WorktreeWise",
+                alternateName: [
+                  "Worktree Wise",
+                  "Work Tree Wise",
+                  "WorktreeWise App",
+                  "WorktreeWise Tool",
+                  "WTW",
+                  "WTWise",
+                  "worktreewise",
+                  "worktree wise",
+                  "WorktreWise",
+                  "WorktTreeWise"
+                ],
+                url: "https://www.worktreewise.com/",
+                logo: "https://www.worktreewise.com/images/logo/favicon.ico",
+                description: "WorktreeWise helps you easily manage Git worktrees.",
+                email: "contact@worktreewise.com",
+                foundingDate: "2025-11-01",
+                founder: {
+                  "@type": "Person",
+                  name: "Mohamed Amine Ammach"
+                },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  contactType: "customer support",
+                  email: "contact@worktreewise.com",
+                  url: "https://www.worktreewise.com/contact"
+                },
+                sameAs: [
+                  "https://x.com/worktreewise",
+                  "https://www.linkedin.com/company/worktreewise",
+                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA"
+                ]
+              },
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://www.worktreewise.com/#software",
+                name: "WorktreeWise",
+                applicationCategory: "DeveloperTools",
+                operatingSystem: "Windows, macOS, Linux",
+                url: "https://www.worktreewise.com/",
+                description: "WorktreeWise helps you easily manage Git worktrees.",
+                sameAs: [
+                  "https://x.com/worktreewise",
+                  "https://www.linkedin.com/company/worktreewise",
+                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA"
+                ],
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": "https://www.worktreewise.com/"
+                }
+              }
+            ]
           }),
         }}
       />
+
       <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
       <script
         async
