@@ -44,6 +44,7 @@ export default function Head() {
                   "Work Tree Wise",
                   "WorktreeWise App",
                   "WorktreeWise Tool",
+                  "WorktreeWise Saas",
                   "WTW",
                   "WTWise",
                   "worktreewise",
@@ -69,7 +70,8 @@ export default function Head() {
                 sameAs: [
                   "https://x.com/worktreewise",
                   "https://www.linkedin.com/company/worktreewise",
-                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA"
+                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA",
+                  "https://docs.worktreewise.com/"
                 ]
               },
               {
@@ -83,7 +85,8 @@ export default function Head() {
                 sameAs: [
                   "https://x.com/worktreewise",
                   "https://www.linkedin.com/company/worktreewise",
-                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA"
+                  "https://www.youtube.com/channel/UCGerIbGUUoxoTraUVkXs7DA",
+                  "https://docs.worktreewise.com/"
                 ],
                 mainEntityOfPage: {
                   "@type": "WebPage",
