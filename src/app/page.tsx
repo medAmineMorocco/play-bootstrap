@@ -16,6 +16,9 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 export const metadata: Metadata = {
   title: "WorktreeWise | Efficient Git Worktree Solution",
   description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+  alternates: {
+    canonical: "https://www.worktreewise.com/",
+  },
   openGraph: {
     title: "WorktreeWise | Efficient Git Worktree Solution",
     description:

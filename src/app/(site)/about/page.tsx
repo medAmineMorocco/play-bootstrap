@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title:
     "WorktreeWise About | Discover the Story Behind the Creator and the Product",
   description: "Discover the story behind WorktreeWise, a Git worktree management tool built by a solo developer. Learn why WorktreeWise was created, meet the creator, and explore the mission to simplify development workflows.",
+  alternates: {
+    canonical: "https://www.worktreewise.com/about",
+  },
   openGraph: {
     title: "WorktreeWise About | Discover the Story Behind the Creator and the Product",
     description:

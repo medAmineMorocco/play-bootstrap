@@ -4,6 +4,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "404 | WorktreeWise",
+  alternates: {
+    canonical: "https://www.worktreewise.com/error",
+  },
 };
 
 const ErrorPage = () => {
