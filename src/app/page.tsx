@@ -14,15 +14,15 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 
 
 export const metadata: Metadata = {
-  title: "WorktreeWise | Efficient Git Worktree Solution",
-  description: "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+  title: "WorktreeWise | Powerful Git Worktrees Manager & GUI",
+  description: "Manage Git worktrees like a pro — work on multiple branches, run workflows across worktrees, and open them in your favorite IDE. Boost productivity with WorktreeWise.",
   alternates: {
     canonical: "https://www.worktreewise.com/",
   },
   openGraph: {
-    title: "WorktreeWise | Efficient Git Worktree Solution",
+    title: "WorktreeWise | Powerful Git Worktrees Manager & GUI",
     description:
-      "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+      "Work smarter and code faster with WorktreeWise — a Git worktree manager that lets you work on multiple branches simultaneously, run workflows, and open worktrees in your IDE.",
     url: "https://www.worktreewise.com/",
     siteName: "WorktreeWise",
     images: [
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise | Efficient Git Worktree Solution",
+    title: "WorktreeWise | Git Worktrees Manager & Productivity Tool",
     description:
-      "Effortlessly manage your Git worktrees with WorktreeWise. Including features to add and remove git worktrees, open them in your favorite editor, change their locations, and more. All these capabilities work together to enhance your productivity and streamline your development process.",
+      "Manage multiple git worktrees, run workflows, and open worktrees in your favorite IDE — all with WorktreeWise.",
     images: ["/images/home/dashboard.avif"],
   },
 };

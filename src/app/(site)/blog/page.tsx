@@ -5,15 +5,15 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
-  description: "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+    "WorktreeWise Blog | Tips & Tutorials for Git Worktrees and Productivity",
+  description: "Explore articles, guides, and productivity tips to master Git worktrees and workflows with WorktreeWise. Stay updated on new features and releases.",
   alternates: {
     canonical: "https://www.worktreewise.com/blog",
   },
   openGraph: {
-    title: "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
+    title: "WorktreeWise Blog | Tips & Tutorials for Git Worktrees",
     description:
-      "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+      "Read the latest articles, guides, and productivity insights about managing Git worktrees with WorktreeWise.",
     url: "https://www.worktreewise.com/blog",
     siteName: "WorktreeWise",
     images: [
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Blog | Tips, Updates, and Best Practices for Worktree Management",
+    title: "WorktreeWise Blog | Git Worktree Tips & Tutorials",
     description:
-      "Explore the WorktreeWise blog for the latest insights, tips, and tutorials on managing Git worktrees. Stay updated with expert advice, best practices, and feature updates designed to help you streamline your development workflow and boost productivity.",
+      "Boost your Git workflow with WorktreeWise — explore articles, tutorials, and updates.",
     images: ["/images/home/dashboard.avif"],
   },
 };

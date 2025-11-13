@@ -4,12 +4,12 @@ import Tutorials from "@/components/Tutorials";
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Documentation | Learn How to Manage Worktrees Efficiently",
-  description: "Explore the WorktreeWise documentation page featuring a curated list of onboarding videos. Learn how to efficiently manage Git worktrees with step-by-step guides and tutorials designed to help new users get started quickly and make the most of WorktreeWise’s features.",
+    "WorktreeWise Documentation | Learn How to Manage Git Worktrees Efficiently",
+  description: "Get started with WorktreeWise — detailed docs on creating, managing, and automating Git worktrees, workflows, and IDE integrations.",
   openGraph: {
-    title: "WorktreeWise Documentation | Learn How to Manage Worktrees Efficiently",
+    title: "WorktreeWise Documentation | Manage Git Worktrees Efficiently",
     description:
-      "Explore the WorktreeWise documentation page featuring a curated list of onboarding videos. Learn how to efficiently manage Git worktrees with step-by-step guides and tutorials designed to help new users get started quickly and make the most of WorktreeWise’s features.",
+      "Comprehensive documentation for WorktreeWise — learn how to manage and automate Git worktrees with ease.",
     url: "https://www.worktreewise.com/documentation",
     siteName: "WorktreeWise",
     images: [
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Documentation | Learn How to Manage Worktrees Efficiently",
+    title: "WorktreeWise Docs | Git Worktree Management Guide",
     description:
-      "Explore the WorktreeWise documentation page featuring a curated list of onboarding videos. Learn how to efficiently manage Git worktrees with step-by-step guides and tutorials designed to help new users get started quickly and make the most of WorktreeWise’s features.",
+      "Learn everything about WorktreeWise — your Git worktree manager for productivity and automation.",
     images: ["/images/home/dashboard.avif"],
   },
 };

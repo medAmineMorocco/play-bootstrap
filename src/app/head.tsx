@@ -7,7 +7,7 @@ export default function Head() {
   return (
     <>
       <title>
-        WorktreeWise | Efficient Git Worktree Solution
+        WorktreeWise | Powerful Git Worktrees Manager & GUI
       </title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description"
@@ -39,6 +39,7 @@ export default function Head() {
                 "@type": "Organization",
                 name: "WorktreeWise",
                 alternateName: [
+                  "Git Worktree Manager",
                   "Worktree Wise",
                   "Work Tree Wise",
                   "WorktreeWise App",
@@ -53,7 +54,7 @@ export default function Head() {
                 ],
                 url: "https://www.worktreewise.com/",
                 logo: "https://www.worktreewise.com/images/logo/favicon.ico",
-                description: "WorktreeWise helps you easily manage Git worktrees.",
+                description: "WorktreeWise is a Git worktrees manager and GUI that lets developers work on multiple branches at the same time, run workflows across worktrees, and open them in their favorite IDE to boost productivity.",
                 email: "contact@worktreewise.com",
                 foundingDate: "2025-11-01",
                 founder: {

@@ -4,15 +4,15 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Contact | Get in Touch with Our Team",
-  description: "Get in touch with the WorktreeWise team through our contact page. Whether you have questions, need support, or want to provide feedback, we’re here to help. Reach out to us for any inquiries or assistance to enhance your experience with WorktreeWise.",
+    "Contact WorktreeWise | Get Support or Share Your Feedback",
+  description: "Need help or have feedback? Contact the WorktreeWise team — we’re here to help you manage Git worktrees efficiently and improve your workflow.",
   alternates: {
     canonical: "https://www.worktreewise.com/contact",
   },
   openGraph: {
-    title: "WorktreeWise Contact | Get in Touch with Our Team",
+    title: "Contact WorktreeWise | Get Support or Share Feedback",
     description:
-      "Get in touch with the WorktreeWise team through our contact page. Whether you have questions, need support, or want to provide feedback, we’re here to help. Reach out to us for any inquiries or assistance to enhance your experience with WorktreeWise.",
+      "Reach out to the WorktreeWise team for help, support, or feedback about managing Git worktrees efficiently.",
     url: "https://www.worktreewise.com/contact",
     siteName: "WorktreeWise",
     images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Contact | Get in Touch with Our Team",
+    title: "Contact WorktreeWise | Git Worktree Support",
     description:
-      "Get in touch with the WorktreeWise team through our contact page. Whether you have questions, need support, or want to provide feedback, we’re here to help. Reach out to us for any inquiries or assistance to enhance your experience with WorktreeWise.",
+      "Have questions or feedback? Contact WorktreeWise — your Git worktree productivity partner.",
     images: ["/images/home/dashboard.avif"],
   },
 };

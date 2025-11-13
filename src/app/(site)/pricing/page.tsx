@@ -8,15 +8,15 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Pricing Plans | Choose the Right Plan for You",
-  description: "Discover the pricing options for WorktreeWise and find the perfect plan for your needs. Explore our flexible subscription tiers, features included in each plan, and choose the best fit for managing your Git worktrees efficiently. Get started with WorktreeWise today and enhance your development workflow.",
+    "WorktreeWise Pricing | Choose Your Plan and Boost Productivity",
+  description: "Discover WorktreeWise pricing for developers. Choose the plan that fits your workflow and start managing Git worktrees faster and smarter.",
   alternates: {
     canonical: "https://www.worktreewise.com/pricing",
   },
   openGraph: {
-    title: "WorktreeWise Pricing Plans | Choose the Right Plan for You",
+    title: "WorktreeWise Pricing | Plans for Developers",
     description:
-      "Discover the pricing options for WorktreeWise and find the perfect plan for your needs. Explore our flexible subscription tiers, features included in each plan, and choose the best fit for managing your Git worktrees efficiently. Get started with WorktreeWise today and enhance your development workflow.",
+      "Explore WorktreeWise pricing made for developers. Manage Git worktrees efficiently, run workflows, and open them in your favorite IDE.",
     url: "https://www.worktreewise.com/pricing",
     siteName: "WorktreeWise",
     images: [
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Pricing Plans | Choose the Right Plan for You",
+    title: "WorktreeWise Pricing | Developer Plans",
     description:
-      "Discover the pricing options for WorktreeWise and find the perfect plan for your needs. Explore our flexible subscription tiers, features included in each plan, and choose the best fit for managing your Git worktrees efficiently. Get started with WorktreeWise today and enhance your development workflow.",
+      "Check WorktreeWise pricing for developers — manage Git worktrees smarter and boost your productivity.",
     images: ["/images/home/dashboard.avif"],
   },
 };
