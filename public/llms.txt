@@ -1,0 +1,11 @@
+# Allow all AI crawlers to index public content
+User-agent: *
+Allow: /
+
+# Block AI from using paid or sensitive content
+
+# Point AI models to your most important pages
+Sitemap: https://worktreewise.com/sitemap.xml
+Documentation: https://docs.worktreewise.com/
+Features: https://worktreewise.com/
+Pricing: https://worktreewise.com/pricing
