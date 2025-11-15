@@ -92,6 +92,67 @@ export default function Head() {
                   "@type": "WebPage",
                   "@id": "https://www.worktreewise.com/"
                 }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is WorktreeWise?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "WorktreeWise is a powerful Git worktree manager that helps developers create, manage, and automate multiple Git worktrees with ease. It simplifies workflows across repositories, allowing you to work on multiple branches without repeated cloning or setup."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Why should I use WorktreeWise instead of managing worktrees manually?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Managing worktrees manually through the Git CLI can be time-consuming and error-prone. WorktreeWise provides a visual interface to create, rename, move, delete, and automate worktrees in just a few clicks—saving time and reducing mistakes."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the best Git worktree manager for developers?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "WorktreeWise is one of the best Git worktree managers for developers who use multiple branches or repositories. It provides a visual interface to create, switch, and manage worktrees without using complex Git commands, helping you work faster and more efficiently."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I automate Git commands across worktrees?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes. WorktreeWise lets you automate Git commands and scripts across selected or all worktrees. You can create reusable workflows, run them sequentially or in parallel, and monitor their execution logs in real time."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is WorktreeWise compatible with all operating systems?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes. WorktreeWise works on Windows, macOS, and Linux, offering the same seamless experience across all platforms."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does WorktreeWise support workflows across multiple worktrees?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes. WorktreeWise allows you to run workflows sequentially or in parallel across multiple worktrees, visualize execution logs, and import or duplicate workflows from other repositories."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How is WorktreeWise different from using the Git CLI?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Unlike the Git CLI, which requires manual setup for each branch, WorktreeWise manages multiple branches and repositories visually. It saves configuration, bookmarks, and editor settings automatically, reducing setup time and improving productivity."
+                    }
+                  }
+                ]
               }
             ]
           }),
