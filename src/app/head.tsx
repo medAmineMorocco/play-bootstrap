@@ -82,6 +82,18 @@ export default function Head() {
                 operatingSystem: "Windows, macOS, Linux",
                 url: "https://www.worktreewise.com/",
                 description: "WorktreeWise helps you easily manage Git worktrees.",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "5",
+                  "ratingCount": "1200"
+                },
+
+                "offers": {
+                  "@type": "Offer",
+                  "price": "46",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                },
                 sameAs: [
                   "https://x.com/worktreewise",
                   "https://www.linkedin.com/company/worktreewise",

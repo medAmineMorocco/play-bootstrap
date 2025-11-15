@@ -50,7 +50,7 @@ const detailedFeatures1: Feature[] = [
     title: "Managing Git Worktrees",
     image: "worktrees-management",
     description: "",
-    features: ["List Git Worktrees", "Create Git Worktree", "Edit Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"],
+    features: ["List Git Worktrees", "Create Git Worktree", "Rename Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"],
     alt: "Menu options displayed after selecting a Git worktree, including actions to add, remove, rename, and manage Git worktrees",
   },
   {
