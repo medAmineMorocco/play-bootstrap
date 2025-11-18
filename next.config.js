@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'worktreewise.com' }],
-        destination: 'https://www.worktreewise.com/:path*',
-        permanent: true,
-      },
-    ]
-  },
-}
+  // No redirects here
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

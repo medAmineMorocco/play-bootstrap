@@ -2,10 +2,13 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "worktreewise.com" }
-      ],
       "destination": "https://www.worktreewise.com/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "worktreewise.com"
+        }
+      ],
       "permanent": true
     }
   ]
