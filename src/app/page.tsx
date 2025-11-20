@@ -73,7 +73,7 @@ const detailedFeatures2 : Feature[] = [
   {
     title: "Integration with your favourite IDE",
     image: "editors",
-    description: "Open Git worktrees directly within your preferred integrated development environment (IDE), enhancing collaboration and efficiency.",
+    description: "Every time you open a worktree in WorktreeWise, your favourite IDE launches with all your main worktree settings automatically preserved : bookmarks, configs, scripts, everything. No setup, no repetition your perfect environment is instantly ready.",
     features: [],
     alt: "WorktreeWise displaying supported editors after clicking 'Open In' on a Git worktree, including options like WebStorm, VS Code, and more",
   },
