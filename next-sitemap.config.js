@@ -3,6 +3,7 @@ const blogPosts = [
   { slug: 'git-stash-to-git-worktree' },
   { slug: 'optimize-branch-switching-with-git-worktree' },
   { slug: 'git-worktree-parallel-development' },
+  { slug: 'how-to-rename-git-worktree' },
 ];
 
 module.exports = {

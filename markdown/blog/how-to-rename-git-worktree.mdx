@@ -1,0 +1,183 @@
+---
+title: "How to Rename a Git Worktree ?"
+date: 2025-11-28
+coverImage: /images/blog/rename-worktree.jpg
+author: AMMACH MOHAMED AMINE
+---
+
+# Introduction
+
+Git worktrees are a powerful Git feature that let you work on multiple branches at the same time. But many developers still search for:
+
+
+  - rename git worktree
+
+  - how to rename git worktree
+
+  - git worktree folder name change
+
+
+# Why Developers Need to Rename Git Worktrees ?
+
+Common reasons include:
+
+  - the branch name changed
+
+  - Jira / ticket number updated
+
+  - repo structure evolved
+
+  - need for cleaner naming conventions
+
+  - managing many parallel worktrees
+
+  - readability and project organization
+
+Good naming improves productivity and makes your Git worktree environment easier to manage.
+
+# Git Does NOT Support Renaming a Worktree
+
+There is no official command like:
+
+```bash
+git worktree rename
+```
+
+And if you try to rename the worktree directory manually, Git will break because the worktree path is indexed in the repo’s internal metadata:
+
+```bash
+.git/worktrees/<worktree-name>
+```
+
+Renaming the folder directly leads to errors such as:
+
+```
+fatal: '<path>' is not a working tree
+```
+
+This is why developers search for alternatives to rename Git worktrees safely.
+
+
+# The Correct Way to Rename a Git Worktree (Safe Method)
+
+To “rename” a Git worktree without breaking your repository, you must:
+
+1. Remove the old worktree path (without deleting the branch)
+
+```bash
+git worktree remove <old-worktree-path>
+```
+
+This safely removes the worktree metadata.
+
+2. Add the worktree again using the new directory name
+
+```bash
+git worktree add <new-path> <branch-name>
+```
+
+This is the recommended method for renaming a Git worktree.
+
+# Example: Renaming a Git Worktree Folder
+
+Suppose your current worktree directory is:
+
+```bash
+worktrees/feature-login
+```
+
+You want to rename it to:
+
+```bash
+worktrees/login-ui
+```
+
+Run:
+
+```bash
+git worktree remove worktrees/feature-login
+git worktree add worktrees/login-ui feature/login
+```
+
+This process preserves:
+
+- your branch
+
+- all your Git history
+
+- your changes
+
+And gives you a clean, correctly named worktree directory.
+
+# Rename Git Worktrees Instantly Using WorktreeWise
+
+Doing the remove+add workaround every time is slow and error-prone.
+WorktreeWise makes renaming a Git worktree instant and safe.
+
+![Rename Git Worktree Action](/images/blog/rename-worktree/rename-worktree-action.png)
+<br/>
+![Rename Git Worktree](/images/blog/rename-worktree/rename-worktree-new-name.png)
+
+<br/>
+With WorktreeWise, the Rename Worktree feature:
+
+- renames the worktree directory
+
+- updates Git’s internal metadata
+
+- renames the associated branch
+
+- keeps all your IDE/editor settings (bookmarks, configs, recent files)
+
+This gives you a complete Git worktree rename operation with one click.
+
+If you're searching for "rename git worktree safely", this is the fastest solution.
+
+# Introducing Worktree Naming Pattern (WorktreeWise Feature)
+
+Another problem developers face is inconsistent worktree folder names.
+This is why WorktreeWise provides a powerful feature called: **Worktree Naming Pattern**
+
+This lets you define rules like:
+
+- {repo}-{branch}
+
+- {ticket}-{branch-without-prefix}
+
+- {type}-{branch}
+
+- or any custom naming scheme
+
+![Change Naming Pattern of Git Worktree](/images/blog/rename-worktree/change-naming-pattern.png)
+<br/>
+![Examples of Naming Patterns for Git Worktree](/images/blog/rename-worktree/change-naming-pattern-examples.png)
+<br/>
+
+Every time you create a worktree, WorktreeWise automatically applies this naming pattern.
+
+Benefits:
+
+- consistent git worktree directory names
+
+- predictable folder structures
+
+- no conflicts or duplicate names
+
+- easier navigation in large multi-worktree projects
+
+This dramatically reduces the need to rename Git worktrees later — the naming is clean from the start.
+
+# Conclusion
+
+Git does not support renaming worktrees directly.
+But you can rename a Git worktree safely using the remove + add method.
+
+If you want a faster and automated solution:
+
+- WorktreeWise Rename Worktree
+
+- Worktree Naming Pattern
+
+- Advanced worktree management tools
+
+

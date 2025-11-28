@@ -57,11 +57,11 @@ body {
 }
 
 .blog-details ul {
-  @apply mb-8 list-inside list-disc space-y-3;
+  @apply mb-8 list-disc space-y-3;
 }
 
 .blog-details ol {
-  @apply mb-8 list-inside list-decimal space-y-3;
+  @apply mb-8 list-decimal space-y-3;
 }
 
 .blog-details h1 {
@@ -80,4 +80,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+pre {
+  background-color: rgba(0,0,0,.05);
+  padding: .5em;
+  margin: 1.2em 0;
 }
