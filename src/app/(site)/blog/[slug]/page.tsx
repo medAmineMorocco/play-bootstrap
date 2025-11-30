@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props) {
     "metadata",
   ]);
 
-  const siteName = process.env.SITE_NAME || "Your Site Name";
-  const authorName = process.env.AUTHOR_NAME || "Your Author Name";
+  const siteName = process.env.SITE_NAME || "WorktreeWise";
+  const authorName = process.env.AUTHOR_NAME || "Ammach Mohamed Amine";
 
   if (post) {
     const metadata = {
@@ -78,7 +78,7 @@ export default async function Post({ params }: Props) {
 
   return (
     <>
-      <Breadcrumb pageName="Blog Details" />
+      <Breadcrumb pageName={post.title} />
 
       <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
         <div className="container">
