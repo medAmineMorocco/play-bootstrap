@@ -57,15 +57,19 @@ body {
 }
 
 .blog-details ul {
-  @apply mb-8 list-disc space-y-3;
+  @apply mb-8 list-disc space-y-3 ps-10;
 }
 
 .blog-details ol {
-  @apply mb-8 list-decimal space-y-3;
+  @apply mb-8 list-decimal space-y-3 ps-10;
+}
+
+.blog-details ol li::marker {
+  font-weight: bold;
 }
 
 .blog-details h1 {
-  @apply text-dark text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.28];
+  @apply mb-4 text-dark text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.28];
 }
 
 .blog-details h2 {
