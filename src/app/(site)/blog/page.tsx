@@ -5,13 +5,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Blog | Tips & Tutorials for Git Worktrees and Productivity",
+    "WorktreeWise Blog | Git Worktree Tutorials",
   description: "Explore articles, guides, and productivity tips to master Git worktrees and workflows with WorktreeWise. Stay updated on new features and releases.",
   alternates: {
     canonical: "https://www.worktreewise.com/blog",
   },
   openGraph: {
-    title: "WorktreeWise Blog | Tips & Tutorials for Git Worktrees",
+    title: "WorktreeWise Blog | Git Worktree Tutorials",
     description:
       "Read the latest articles, guides, and productivity insights about managing Git worktrees with WorktreeWise.",
     url: "https://www.worktreewise.com/blog",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Blog | Git Worktree Tips & Tutorials",
+    title: "WorktreeWise Blog | Git Worktree Tutorials",
     description:
       "Boost your Git workflow with WorktreeWise — explore articles, tutorials, and updates.",
     images: ["/images/home/dashboard.avif"],
@@ -41,7 +41,7 @@ const Blog = () => {
 
   return (
     <>
-      <Breadcrumb pageName="Blog" />
+      <Breadcrumb pageName="Git Worktree Tutorials" />
 
       <section className="pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
         <div className="container">

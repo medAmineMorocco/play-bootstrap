@@ -4,13 +4,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Contact WorktreeWise | Get Support or Share Your Feedback",
+    "Contact WorktreeWise | Support & Feedback",
   description: "Need help or have feedback? Contact the WorktreeWise team — we’re here to help you manage Git worktrees efficiently and improve your workflow.",
   alternates: {
     canonical: "https://www.worktreewise.com/contact",
   },
   openGraph: {
-    title: "Contact WorktreeWise | Get Support or Share Feedback",
+    title: "Contact WorktreeWise | Support & Feedback",
     description:
       "Reach out to the WorktreeWise team for help, support, or feedback about managing Git worktrees efficiently.",
     url: "https://www.worktreewise.com/contact",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact WorktreeWise | Git Worktree Support",
+    title: "Contact WorktreeWise | Support & Feedback",
     description:
       "Have questions or feedback? Contact WorktreeWise — your Git worktree productivity partner.",
     images: ["/images/home/dashboard.avif"],

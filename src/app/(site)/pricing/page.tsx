@@ -8,13 +8,13 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Pricing | Choose Your Plan and Boost Productivity",
+    "WorktreeWise Pricing | Choose Your Plan",
   description: "Discover WorktreeWise pricing for developers. Choose the plan that fits your workflow and start managing Git worktrees faster and smarter.",
   alternates: {
     canonical: "https://www.worktreewise.com/pricing",
   },
   openGraph: {
-    title: "WorktreeWise Pricing | Plans for Developers",
+    title: "WorktreeWise Pricing | Choose Your Plan",
     description:
       "Explore WorktreeWise pricing made for developers. Manage Git worktrees efficiently, run workflows, and open them in your favorite IDE.",
     url: "https://www.worktreewise.com/pricing",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Pricing | Developer Plans",
+    title: "WorktreeWise Pricing | Choose Your Plan",
     description:
       "Check WorktreeWise pricing for developers — manage Git worktrees smarter and boost your productivity.",
     images: ["/images/home/dashboard.avif"],
