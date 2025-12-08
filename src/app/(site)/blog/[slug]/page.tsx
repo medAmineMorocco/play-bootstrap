@@ -12,7 +12,6 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props) {
-  const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
   const post = getPostBySlug(params.slug, [
     "title",
     "author",
@@ -25,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
 
   if (post) {
     const metadata = {
-      title: `${post.title || "Single Post Page"} | ${siteName}`,
+      title: `${post.title || "Single Post Page"}`,
       author: authorName,
       robots: {
         index: true,
