@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 // Handler hook for when Outside click dropdown close
 let useClickOutside = (handler: any) => {

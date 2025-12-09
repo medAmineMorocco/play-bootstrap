@@ -1,6 +1,5 @@
 import { Blog } from "@/types/blog";
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
@@ -10,7 +9,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
       <div className="mb-8 overflow-hidden rounded">
         <Link href={`/blog/${slug}`} aria-label="blog cover" className="block">
-          <Image
+          <img
             src={coverImage!}
             alt="image"
             className="w-full transition group-hover:rotate-6 group-hover:scale-125"

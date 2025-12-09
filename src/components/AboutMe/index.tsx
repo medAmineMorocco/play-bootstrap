@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const AboutMe = () => {
   return (
@@ -62,32 +61,29 @@ const AboutMe = () => {
                   <div
                       className={`relative mb-4 sm:mb-8 sm:h-[400px] md:h-[540px] lg:h-[400px] xl:h-[500px] `}
                   >
-                    <Image
+                    <img
                         src="/images/about/about1.avif"
                         alt="about image"
-                        fill
-                        className="h-full w-full object-cover object-center"
+                        className="absolute inset-0 h-full w-full object-cover object-center"
                     />
                   </div>
                 </div>
 
                 <div className="w-full px-2 sm:w-1/2 sm:px-4 lg:px-2 xl:px-4">
                   <div className="relative mb-4 sm:mb-8 sm:h-[220px] md:h-[346px] lg:mb-4 lg:h-[225px] xl:mb-8 xl:h-[310px]">
-                    <Image
+                    <img
                       src="/images/about/about2.avif"
                       alt="about image"
-                      fill
-                      className="h-full w-full object-cover object-center"
+                      className="absolute inset-0 h-full w-full object-cover object-center"
                     />
                   </div>
 
                   <div className="relative z-10 mb-4 flex items-center justify-center overflow-hidden bg-primary px-6 py-12 sm:mb-8 sm:h-[160px] sm:p-5 lg:mb-4 xl:mb-8">
                     <div>
-                      <Image
+                      <img
                           src="/images/about/about3.avif"
                           alt="about image"
-                          fill
-                          className="h-full w-full object-cover object-center"
+                          className="absolute inset-0 h-full w-full object-cover object-center"
                       />
                     </div>
                   </div>

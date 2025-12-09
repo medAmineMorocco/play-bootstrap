@@ -1,6 +1,5 @@
 "use client";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -66,14 +65,14 @@ const Header = () => {
                 >
                   {pathUrl !== "/" ? (
                     <>
-                      <Image
+                      <img
                         src={`/images/logo/logo.svg`}
                         alt="logo"
                         width={240}
                         height={30}
                         className="header-logo w-full dark:hidden"
                       />
-                      <Image
+                      <img
                         src={`/images/logo/logo-white.svg`}
                         alt="logo"
                         width={240}
@@ -83,7 +82,7 @@ const Header = () => {
                     </>
                   ) : (
                     <>
-                      <Image
+                      <img
                         src={`${
                           sticky
                             ? "/images/logo/logo.svg"
@@ -94,7 +93,7 @@ const Header = () => {
                         height={30}
                         className="header-logo w-full dark:hidden"
                       />
-                      <Image
+                      <img
                         src={"/images/logo/logo-white.svg"}
                         alt="logo"
                         width={140}

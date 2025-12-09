@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const PopularArticle = (props: {
@@ -15,13 +14,12 @@ const PopularArticle = (props: {
         data-wow-delay=".1s"
       >
         <div className={`mr-5 overflow-hidden rounded`}>
-          <Image
+          <img
             src={image}
             alt="image"
             width={80}
             height={80}
-            objectFit="cover"
-            objectPosition="center"
+            className="object-cover object-center"
           />
         </div>
         <div className="w-full">

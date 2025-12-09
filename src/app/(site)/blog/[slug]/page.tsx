@@ -4,7 +4,6 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { getAllPosts, getPostBySlug } from "@/utils/markdown";
 import markdownToHtml from "@/utils/markdownToHtml";
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -87,7 +86,7 @@ export default async function Post({ params }: Props) {
                 className="wow fadeInUp relative z-20 mb-[60px] h-[300px] overflow-hidden rounded md:h-[400px] lg:h-[500px]"
                 data-wow-delay=".1s"
               >
-                <Image
+                <img
                   src={post.coverImage}
                   alt="image"
                   width={1288}

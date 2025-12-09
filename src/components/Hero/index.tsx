@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Download from "@/components/Hero/Download";
 
 const SHOW_PRODUCTHUNT_WIDGET = process.env.NEXT_PUBLIC_SHOW_PRODUCTHUNT_WIDGET;
@@ -49,21 +48,21 @@ const Hero = () => {
                 data-wow-delay=".25s"
               >
                 <div className="mt-12">
-                  <Image
+                  <img
                     src="/images/home/dashboard.avif"
                     alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
                     className="mx-auto max-w-full dark:[display:none]"
                     width={845}
                     height={316}
-                    priority
+                    loading="eager"
                   />
-                  <Image
+                  <img
                     src="/images/home/dashboard-dark.avif"
                     alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
                     className="mx-auto max-w-full [display:none] dark:block"
                     width={845}
                     height={316}
-                    priority
+                    loading="eager"
                   />
                 </div>
                 <div className="absolute -right-6 -top-6 z-[-1]">

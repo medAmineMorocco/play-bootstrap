@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { SafetyCertificateOutlined } from "@ant-design/icons";
-import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -139,7 +138,7 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
             className="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center dark:bg-dark-2 md:px-[70px] md:py-[60px]"
           >
             <div className="flex justify-center">
-              <Image
+              <img
                 src={`/images/logo/logo-dark.svg`}
                 alt="logo"
                 width={80}

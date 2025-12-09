@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const CallToAction = () => {
   return (
@@ -17,13 +16,12 @@ const CallToAction = () => {
                 </p>
               </div>
             </div>
-            <Image
+            <img
               src="/images/home/dashboard-dark.avif"
               alt="hero"
               className="mx-auto max-w-full rounded"
               width={845}
               height={316}
-              unoptimized
               loading="lazy"
             />
           </div>

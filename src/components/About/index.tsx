@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 export type Feature = {
   title: string;
@@ -70,23 +69,21 @@ const About = ({ features }: {features: Feature[]}) => {
                       <div
                         className={`relative mb-4 sm:mb-8`}
                       >
-                        <Image
+                        <img
                           src={`/images/home/${feature.image}.avif`}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded object-cover object-center dark:[display:none]"
                           loading="lazy"
-                          unoptimized
                           width={628}
                           height={353}
                         />
-                        <Image
+                        <img
                           src={`/images/home/${feature.image}-dark.avif`}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded object-cover object-center [display:none] dark:block"
                           loading="lazy"
-                          unoptimized
                           width={628}
                           height={353}
                         />

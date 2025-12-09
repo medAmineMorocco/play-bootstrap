@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { LinkedinOutlined, XOutlined, YoutubeOutlined } from "@ant-design/icons";
 
@@ -22,7 +21,7 @@ const Footer = () => {
           <div className="w-full text-center">
             <div className="mb-10 w-full">
               <Link href="/" className="mb-6 inline-block max-w-[160px]">
-                <Image
+                <img
                   src="/images/logo/logo-white.svg"
                   alt="logo"
                   width={140}

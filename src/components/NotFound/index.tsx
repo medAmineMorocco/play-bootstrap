@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const NotFound = () => {
@@ -9,17 +8,15 @@ const NotFound = () => {
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 md:w-5/12 lg:w-6/12">
             <div className="relative mx-auto aspect-[129/138] max-w-[357px] text-center">
-              <Image
+              <img
                 src="/images/404.svg"
                 alt="image"
-                fill
-                className="mx-auto max-w-full dark:hidden"
+                className="absolute inset-0 mx-auto max-w-full dark:hidden"
               />
-              <Image
+              <img
                 src="/images/404-dark.svg"
                 alt="image"
-                fill
-                className="mx-auto hidden max-w-full dark:block"
+                className="absolute inset-0 mx-auto hidden max-w-full dark:block"
               />
             </div>
           </div>
