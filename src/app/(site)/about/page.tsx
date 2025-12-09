@@ -4,13 +4,13 @@ import AboutMe from "@/components/AboutMe";
 
 export const metadata: Metadata = {
   title:
-    "About WorktreeWise | The Git Worktree Manager Built for Developers",
+    "About WorktreeWise | Git Worktree Manager Built for Developers",
   description: "Learn the story behind WorktreeWise — a Git worktree manager built to help developers work faster, smarter, and more efficiently across multiple branches.",
   alternates: {
     canonical: "https://www.worktreewise.com/about",
   },
   openGraph: {
-    title: "About WorktreeWise | The Git Worktree Manager Built for Developers",
+    title: "About WorktreeWise | Git Worktree Manager Built for Developers",
     description:
       "Learn how WorktreeWise helps developers manage Git worktrees and boost productivity across multiple branches.",
     url: "https://www.worktreewise.com/about",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About WorktreeWise | The Git Worktree Manager Built for Developers",
+    title: "About WorktreeWise | Git Worktree Manager Built for Developers",
     description:
       "Learn how WorktreeWise helps developers manage Git worktrees and boost productivity across multiple branches.",
     images: ["/images/home/dashboard.avif"],
