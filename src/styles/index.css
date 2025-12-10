@@ -64,6 +64,10 @@ body {
   @apply mb-8 list-decimal space-y-3 ps-10;
 }
 
+.blog-details img {
+  margin-bottom: 16px;
+}
+
 .blog-details ol li::marker {
   font-weight: bold;
 }
