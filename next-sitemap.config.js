@@ -12,7 +12,7 @@ module.exports = {
   outDir: './public',
   changefreq: 'daily',
   priority: 0.7,
-  exclude: ['/documentation'],
+  exclude: ['/documentation', '/error'],
   sitemapSize: 5000,                 // Optional, if you have many pages
   additionalPaths: async (config) => {
     return blogPosts.map((post) => `/blog/${post.slug}`);
