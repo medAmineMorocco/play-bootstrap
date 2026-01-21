@@ -78,6 +78,13 @@ const detailedFeatures2 : Feature[] = [
     alt: "WorktreeWise displaying supported editors after clicking 'Open In' on a Git worktree, including options like WebStorm, VS Code, and more",
   },
   {
+    title: "WorktreeWise for JetBrains Plugin",
+    image: "worktreewise-for-jetbrains-plugin",
+    description: "Switch Git worktrees and open projects in WorktreeWise directly from your IDE. Preserve bookmarks, run configurations, and IDE context while staying fast and productive. Free for PRO / PRO PLUS users.",
+    features: [],
+    alt: "WorktreeWise for JetBrains plugin interface showing actions to manage Git worktrees while preserving bookmarks and run configurations.",
+  },
+  {
     title: "Git Tools",
     image: "diff",
     description: "Access Git logs and perform detailed comparisons between Git worktrees, branches, tags, and commits for robust version control.",
