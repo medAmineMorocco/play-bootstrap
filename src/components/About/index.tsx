@@ -57,8 +57,10 @@ const About = ({ features }: {features: Feature[]}) => {
                     <ul className="space-y-3">
                       {feature.features.map(feat =>
                         <ListItem key={feat} text={feat} />
-                    )}
+                      )}
                     </ul>
+
+                    {feature.title === 'WorktreeWise for JetBrains Plugin' && <iframe width="245px" height="48px" src="https://plugins.jetbrains.com/embeddable/install/29869"></iframe>}
 
                   </div>
                 </div>
