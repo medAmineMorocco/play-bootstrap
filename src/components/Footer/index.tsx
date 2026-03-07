@@ -33,30 +33,30 @@ const Footer = () => {
                 We streamline git worktree management for software engineers and companies with WorktreeWise.
               </p>
               <div className="-mx-3 flex justify-center">
-                <a
+                {TWITTER_PAGE_URL && <a
                   aria-label="social link"
                   href={TWITTER_PAGE_URL}
                   target="_blank"
                   className="px-3 text-gray-7 hover:text-white"
                 >
                   <XOutlined />
-                </a>
-                <a
+                </a>}
+                {LINKEDIN_PAGE_URL && <a
                   aria-label="social link"
                   href={LINKEDIN_PAGE_URL}
                   target="_blank"
                   className="px-3 text-gray-7 hover:text-white"
                 >
                   <LinkedinOutlined />
-                </a>
-                <a
+                </a>}
+                {YOUTUBE_PAGE_URL && <a
                   aria-label="social link"
                   href={YOUTUBE_PAGE_URL}
                   target="_blank"
                   className="px-3 text-gray-7 hover:text-white hover:underline"
                 >
                   <YoutubeOutlined />
-                </a>
+                </a>}
               </div>
             </div>
           </div>
