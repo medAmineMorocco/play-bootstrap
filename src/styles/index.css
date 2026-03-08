@@ -95,3 +95,7 @@ pre {
   padding: .5em;
   margin: 1.2em 0;
 }
+
+.link-in-post {
+  text-decoration: underline;
+}

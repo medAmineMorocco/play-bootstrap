@@ -1,0 +1,266 @@
+---
+title: Using WorktreeWise with Claude - 3 Powerful Workflows for Modern Development
+date: 2026-03-06
+coverImage: /images/blog/claude-git-worktrees.avif
+author: AMMACH MOHAMED AMINE
+---
+
+AI coding tools are transforming how developers interact with their codebases. Tools like <a href="https://claude.ai/" class="link-in-post" >Claude AI</a> can analyze entire repositories, generate features, refactor code, and automate development tasks.
+
+At the same time, more developers are discovering the power of <strong>Git worktrees</strong>, a feature that allows multiple branches to be checked out simultaneously in separate directories.
+
+When you combine Git worktrees with <a href="https://www.worktreewise.com/" class="link-in-post" >WorktreeWise</a>, you unlock a powerful workflow for managing parallel development, AI experiments, and automated tasks.
+
+Today, developers typically use Claude in <strong>three different ways</strong>, and WorktreeWise can enhance each of them.
+
+# 1. Developer Workflow: Using Claude as a Coding Assistant
+
+The most common way developers use Claude is as a <strong>coding assistant</strong>.
+
+In this workflow, the developer remains in control while Claude helps with tasks such as:
+
+- generating functions.
+
+- refactoring existing code.
+
+- fixing bugs.
+
+- writing tests.
+
+- explaining complex code.
+
+Developers usually interact with Claude while working inside an IDE like <a href="https://www.jetbrains.com/webstorm/" class="link-in-post" >WebStorm</a> or <a href="https://www.jetbrains.com/idea/" class="link-in-post" >IntelliJ IDEA</a>.
+
+However, modern development rarely happens on a single branch. Developers often need to work on <strong>multiple features simultaneously</strong>.
+
+This is where <strong>Git worktrees</strong> and WorktreeWise become extremely useful.
+
+## How WorktreeWise Helps in This Workflow ?
+
+### Work on Multiple Features in Parallel
+
+Instead of constantly switching branches, you can create separate working directories using Git worktrees.
+
+Example:
+
+```
+main/
+auth-feature/
+ui-redesign/
+ui-refactor/
+```
+
+![Create new Git Worktree](/images/blog/claude/create-worktree.png)
+
+
+Each directory corresponds to a branch.
+
+With WorktreeWise, you can <strong>create and manage these worktrees visually</strong>, avoiding complex Git commands.
+
+### Open Worktrees Instantly in Your IDE
+
+WorktreeWise allows you to open any worktree directly in your editor.
+
+This means you can:
+
+- run the application.
+
+- test changes.
+
+- ask Claude to modify code inside that specific worktree.
+
+Each feature stays <strong>isolated and safe from other changes</strong>.
+
+![Open Git Worktree in IDE](/images/blog/claude/open-worktree-ide.png)
+
+### Run Commands Across All Worktrees
+
+When working on multiple features, you often need to run the same commands repeatedly.
+
+Example:
+
+```
+npm install
+npm run lint
+npm run test
+```
+
+WorktreeWise workflows allow you to <strong>execute commands across multiple worktrees simultaneously</strong>, saving significant time.
+
+![Run Workflow across Git Worktrees](/images/blog/claude/run-workflow.png)
+
+# 2. Agentic Workflow: Using Claude as an Autonomous Coding Agent
+
+A growing number of developers are using Claude in a more <strong>autonomous way</strong>, often called <strong>agentic development</strong>.
+
+Instead of small prompts, developers assign <strong>larger tasks</strong> such as:
+
+- implementing a new feature.
+
+- refactoring modules.
+
+- adding tests.
+
+- fixing multiple bugs.
+
+Tools built around Claude may create <strong>separate Git worktrees for each task</strong> so that changes remain isolated.
+
+## The Challenge with Agentic Workflows
+
+When AI tools create many worktrees automatically, repositories can quickly become difficult to manage.
+
+Example:
+
+```
+main/
+auth-experiment/
+api-pagination/
+ui-redesign/
+bugfix-payment/
+```
+
+Without proper tooling, developers must manually navigate folders, run commands in each directory, and clean up unused worktrees.
+
+## How WorktreeWise Helps in Agentic Workflows ?
+
+### Visualize All AI Worktrees
+
+WorktreeWise shows all worktrees in one place.
+
+Instead of running commands like:
+
+```
+git worktree list
+```
+
+you get a <strong>clear visual overview</strong> of all tasks created by AI agents.
+
+![List Git Worktrees](/images/blog/claude/list-worktrees.png)
+
+### Inspect AI-Generated Code
+
+Developers can open any AI-generated worktree directly in their IDE to review and test the changes.
+
+This makes <strong>reviewing AI-generated code much faster</strong>.
+
+![Dit Diff](/images/blog/claude/git-diff.png)
+
+### Run Tests Across All AI Tasks
+
+If an AI tool created multiple worktrees, you may want to run tests across all of them.
+
+Example:
+
+```
+npm install
+npm run build
+npm run test
+```
+
+WorktreeWise workflows allow you to <strong>execute these commands across all worktrees simultaneously</strong>.
+
+![Parallel Workflow](/images/blog/claude/parallel-workflow.png)
+
+### Clean Up Temporary Worktrees
+
+AI-generated experiments often leave behind temporary worktrees.
+
+WorktreeWise helps detect and remove unused worktrees, keeping your repository clean.
+
+![Delete Git Worktree](/images/blog/claude/delete-worktree.png)
+
+# 3. Experiment Workflow: Testing Multiple AI Solutions in Parallel
+
+A third workflow is becoming increasingly popular with AI coding tools.
+
+When developers ask Claude for help with a feature, the AI often suggests <strong>multiple possible implementations</strong>.
+
+Example prompt:
+
+```
+"Implement caching for this API in several ways."
+```
+
+Claude might suggest:
+
+- Redis caching.
+
+- in-memory caching.
+
+- database caching.
+
+Instead of testing these approaches sequentially, developers can create <strong>separate worktrees for each implementation</strong>.
+
+Example structure:
+
+```
+main/
+cache-redis/
+cache-memory/
+cache-db/
+```
+
+Each worktree contains a <strong>different implementation</strong>.
+
+## How WorktreeWise Helps with AI Experiments ?
+
+### Quickly Create Worktrees for Each Implementation
+
+WorktreeWise makes it easy to create multiple worktrees so you can test several solutions suggested by Claude.
+
+### Run and Compare Each Version
+
+Developers can:
+
+- run each version of the application.
+
+- test performance.
+
+- compare architecture choices.
+
+- evaluate which approach works best.
+
+### Safely Experiment Without Risk
+
+Because each experiment runs in its own worktree, you can test ideas freely without affecting the main branch.
+
+This makes it ideal for <strong>AI-assisted experimentation</strong>.
+
+
+# Why WorktreeWise and Claude Work So Well Together ?
+
+Modern development is becoming <strong>parallel, experimental, and AI-assisted</strong>.
+
+Developers increasingly need to manage:
+
+- multiple feature branches.
+
+- AI-generated tasks.
+
+- experimental implementations.
+
+- parallel development environments.
+
+By combining:
+
+- Claude AI for intelligent code generation.
+
+- Git worktrees for task isolation.
+
+- WorktreeWise for managing those worktrees.
+
+developers gain a workflow that is <strong>faster, safer, and easier to scale</strong>.
+
+# Conclusion
+
+AI tools are accelerating software development, but they also introduce new complexity when multiple tasks and experiments run simultaneously.
+
+Git worktrees provide the technical foundation for parallel development. <strong>WorktreeWise makes them easy to manage</strong>, whether you are:
+
+- using Claude as a coding assistant
+
+- running AI-driven development tasks
+
+- experimenting with multiple AI-generated solutions
+
+If you want to work more efficiently with Git worktrees and AI-powered development, WorktreeWise can help you <strong>stay organized and move faster</strong>.
