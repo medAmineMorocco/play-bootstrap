@@ -1,6 +1,7 @@
 "use client";
 
-import { hotjar } from 'react-hotjar'
+import { hotjar } from 'react-hotjar';
+import Clarity from '@microsoft/clarity';
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -22,6 +23,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    Clarity.init('vvb5odkvib');
     hotjar.initialize({id: HOTJAR_ID, sv: HOTJAR_SV})
     setTimeout(() => setLoading(false), 500);
   }, []);
