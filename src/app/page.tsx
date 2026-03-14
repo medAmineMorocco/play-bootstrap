@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "WorktreeWise",
     images: [
       {
-          url: "https://www.worktreewise.com/images/home/dashboard-preview.png",
+          url: "https://www.worktreewise.com/images/home/dashboard.avif",
         width: 1200,
         height: 630,
         alt: "WorktreeWise Git worktree dashboard",
