@@ -1,8 +1,10 @@
 "use client";
 
 import Download from "@/components/Hero/Download";
+import VideoModal from "@/components/Hero/VideoModal";
 
 const SHOW_PRODUCTHUNT_WIDGET = process.env.NEXT_PUBLIC_SHOW_PRODUCTHUNT_WIDGET;
+const HERO_VIDEO_ID = process.env.NEXT_PUBLIC_HERO_VIDEO_ID;
 
 
 const Hero = () => {
@@ -23,22 +25,30 @@ const Hero = () => {
                   Easy Git Worktree Management with WorktreeWise
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
-                  Boost productivity by working on multiple Git branches simultaneously with Git worktrees
+                  Boost productivity by working on multiple Git branches
+                  simultaneously with Git worktrees
                 </p>
                 <ul className="flex flex-wrap items-center justify-center gap-5">
-                  {SHOW_PRODUCTHUNT_WIDGET && <li>
-                    <a
-                      href="https://www.producthunt.com/products/worktreewise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-worktreewise"
-                      target="_blank"><img
-                      src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1024516&theme=light&t=1759957216525"
-                      alt="WorktreeWise - Efficient&#0032;git&#0032;worktree&#0032;solution | Product Hunt"
-                      className="w-[250px] h-[54px]" width="250" height="54" /></a>
-                  </li>}
+                  {SHOW_PRODUCTHUNT_WIDGET && (
+                    <li>
+                      <a
+                        href="https://www.producthunt.com/products/worktreewise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-worktreewise"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1024516&theme=light&t=1759957216525"
+                          alt="WorktreeWise - Efficient&#0032;git&#0032;worktree&#0032;solution | Product Hunt"
+                          className="h-[54px] w-[250px]"
+                          width="250"
+                          height="54"
+                        />
+                      </a>
+                    </li>
+                  )}
                   <li>
                     <Download />
                   </li>
                 </ul>
-
               </div>
             </div>
 
@@ -47,24 +57,34 @@ const Hero = () => {
                 className="wow fadeInUp relative z-10 mx-auto max-w-[845px]"
                 data-wow-delay=".25s"
               >
-                <div className="mt-12">
-                  <img
-                    src="/images/home/dashboard.avif"
-                    alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
-                    className="mx-auto max-w-full dark:[display:none]"
-                    width={845}
-                    height={316}
-                    loading="eager"
-                  />
-                  <img
-                    src="/images/home/dashboard-dark.avif"
-                    alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
-                    className="mx-auto max-w-full [display:none] dark:block"
-                    width={845}
-                    height={316}
-                    loading="eager"
-                  />
-                </div>
+                {HERO_VIDEO_ID ? (
+                  <div className="mt-12">
+                    <VideoModal
+                      thumbnailLight="/images/home/dashboard.avif"
+                      thumbnailDark="/images/home/dashboard-dark.avif"
+                      videoId={HERO_VIDEO_ID}
+                    />
+                  </div>
+                ) : (
+                  <div className="mt-12">
+                    <img
+                      src="/images/home/dashboard.avif"
+                      alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
+                      className="mx-auto max-w-full dark:[display:none]"
+                      width={845}
+                      height={316}
+                      loading="eager"
+                    />
+                    <img
+                      src="/images/home/dashboard-dark.avif"
+                      alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
+                      className="mx-auto max-w-full [display:none] dark:block"
+                      width={845}
+                      height={316}
+                      loading="eager"
+                    />
+                  </div>
+                )}
                 <div className="absolute -right-6 -top-6 z-[-1]">
                   <svg
                     width="134"
