@@ -16,10 +16,17 @@ export async function generateMetadata({ params }: Props) {
     "author",
     "content",
     "metadata",
+    "coverImage",
+    "excerpt",
+    "slug",
   ]);
 
   const siteName = process.env.SITE_NAME || "WorktreeWise";
   const authorName = process.env.AUTHOR_NAME || "Ammach Mohamed Amine";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.worktreewise.com";
+  const url = `${baseUrl}/blog/${post.slug}`;
+  const imageUrl = `${baseUrl.replace(/\/$/, "")}/${post.coverImage.replace(/^\//, "")}`;
 
   if (post) {
     const metadata = {
@@ -36,6 +43,27 @@ export async function generateMetadata({ params }: Props) {
           "max-image-preview": "large",
           "max-snippet": -1,
         },
+      },
+      openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        url,
+        siteName,
+        images: [
+          {
+            url: imageUrl, // ⚠️ MUST be absolute URL
+            width: 1200,
+            height: 630,
+          },
+        ],
+        type: "article",
+      },
+
+      twitter: {
+        card: "summary_large_image", // 🔥 important
+        title: post.title,
+        description: post.excerpt,
+        images: [imageUrl], // ⚠️ MUST be absolute URL
       },
     };
 
