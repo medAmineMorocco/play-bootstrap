@@ -1,11 +1,22 @@
-# Allow all AI crawlers to index public content
-User-agent: *
-Allow: /
+# WorktreeWise - AI Agent Index
 
-# Block AI from using paid or sensitive content
+## Overview
+WorktreeWise helps developers manage Git worktrees, automate workflows, and work on multiple branches efficiently.
 
-# Point AI models to your most important pages
-Sitemap: https://www.worktreewise.com/sitemap.xml
-Documentation: https://docs.worktreewise.com/
-Features: https://www.worktreewise.com/
-Pricing: https://www.worktreewise.com/pricing
+## Key Pages
+
+- [Homepage](https://www.worktreewise.com/) - Overview of the product and features
+- [Documentation](https://docs.worktreewise.com/) - Guides and usage instructions
+- [Features](https://www.worktreewise.com/) - Detailed feature breakdown
+
+## Capabilities
+
+- Manage Git worktrees (create, delete, move, lock)
+- Run workflows across multiple worktrees
+- Execute pre and post hooks
+- Open worktrees in IDEs
+
+## Target Users
+
+- Developers working on multiple branches
+- Teams managing parallel development
