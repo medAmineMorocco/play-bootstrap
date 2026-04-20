@@ -1,0 +1,354 @@
+---
+title: Git Worktree Add: The Complete Guide to Working on Multiple Branches Simultaneously
+date: 2026-04-02
+coverImage: /images/blog/git-worktree-add.png
+author: AMMACH MOHAMED AMINE
+excerpt: Learn how to use git worktree add to work on multiple branches in parallel without cloning your repository. Includes commands, examples, best practices, and workflows.
+---
+
+# Git Worktree Add: A Better Approach for Parallel Development
+
+Most developers still switch branches constantly or clone the same repository multiple times to work in parallel.
+
+Both approaches slow you down.
+
+- Branch switching breaks your flow
+- Multiple clones waste disk space and duplicate .git data
+
+There’s a better way built directly into Git: `git worktree add`.
+
+With a single command, you can attach multiple working directories to one repository and work on different branches at the same time.
+
+This guide shows exactly how `git worktree add` works, when to use it, and how to integrate it into real development workflows.
+
+## What is git worktree add?
+
+`git worktree add` allows you to create a new working directory linked to the same Git repository.
+
+Each worktree:
+
+- Has its own files and working directory
+- Is attached to a specific branch
+- Shares the same .git history and objects
+
+This means:
+
+- No duplication of repository data
+- No need to stash or commit just to switch context
+- True parallel development
+
+### Basic Syntax
+
+`git worktree add <path> <branch>`
+
+### Example
+
+`git worktree add ../feature-login feature/login`
+
+This will:
+
+- Create a new directory `../feature-login`
+- Checkout the branch `feature/login` inside it
+- Link it to your main repository
+
+# Creating a Worktree with a New Branch
+
+If the branch doesn’t exist yet, Git can create it for you:
+
+```
+git worktree add -b feature/payment ../feature-payment
+```
+
+This does two things:
+
+- Creates a new branch `feature/payment`
+- Creates a worktree at `../feature-payment`
+
+<Callout> This is one of the most powerful workflows: creating a feature branch and immediately working on it in isolation. </Callout>
+
+## Real Workflow Example
+
+Imagine you are working on a bug fix but need to start a new feature.
+
+Instead of switching branches:
+
+```
+git checkout main
+git pull
+git checkout -b feature/dashboard
+```
+
+You can do:
+
+```
+git worktree add -b feature/dashboard ../dashboard
+```
+
+Now you have:
+
+- Original folder → bug fix
+- New folder → feature development
+
+Both active at the same time.
+
+## Listing Worktrees
+
+To see all active worktrees:
+
+```
+git worktree list
+```
+
+Example output:
+
+```
+/project                abc123 [main]
+/project-feature-login  def456 [feature/login]
+```
+
+## Removing a Worktree
+
+Once you're done:
+
+```
+git worktree remove ../feature-login
+```
+
+If needed (force removal):
+
+```
+git worktree remove --force ../feature-login
+```
+
+<Note> This removes only the worktree, not the branch unless you delete it manually. </Note>
+
+# When Should You Use git worktree add?
+
+## 1. Working on Multiple Features
+
+Instead of switching:
+
+- `feature/auth`
+- `feature/dashboard`
+
+You keep both active in separate folders.
+
+## 2. Hotfix While Coding a Feature
+
+- Worktree 1 → feature development
+- Worktree 2 → urgent fix on main
+
+No stash. No context loss.
+
+## 3. Code Reviews & Testing
+
+Check out another branch in a clean environment:
+
+```bash
+git worktree add ../review feature/checkout
+```
+
+## 4. Running Multiple Services Locally
+
+Some projects require:
+
+- Backend on one branch
+- Frontend on another
+
+Worktrees make this trivial.
+
+# Common Mistakes
+
+❌ **1. Using the Same Branch in Multiple Worktrees**
+
+Git prevents this by default:
+
+```
+fatal: 'feature/login' is already checked out
+```
+
+Each branch can only be checked out once across all worktrees.
+
+❌ **2. Forgetting to Remove Worktrees**
+
+Old worktrees pile up and create confusion.
+
+Always clean them:
+
+```bash
+git worktree prune
+```
+
+❌ **3. Confusing Worktrees with Clones**
+
+Worktrees are NOT separate repositories.
+
+- They share the same .git
+- They are lightweight
+- They depend on the main repository
+
+❌ **4. Deleting Worktree Folders Manually**
+
+Never do:
+
+```bash
+rm -rf ../feature-login
+```
+
+Instead:
+
+```bash
+git worktree remove ../feature-login
+```
+
+# Best Practices
+
+- ✅ **Use Clear Naming Conventions**
+  ```
+  git worktree add ../wt-feature-auth feature/auth
+  git worktree add ../wt-bugfix-login bugfix/login
+  ```
+  This avoids confusion across projects.
+
+- ✅ **Keep Worktrees Organized**
+
+  Store them in a dedicated folder:
+
+  ```
+  /my-project
+  /my-project-worktrees
+  ```
+
+- ✅ **Prune Regularly**
+  ```
+  git worktree prune
+  ```
+  Removes invalid or stale worktrees.
+
+- ✅ **Use Short-Lived Worktrees**
+
+  Treat them like temporary environments:
+
+  ```
+  Create → Work → Remove
+  ```
+
+- ✅ **Combine with Git Aliases**
+  ```
+  git config --global alias.wta "worktree add"
+  ```
+  Then:
+  ```
+  git wta ../feature-x feature/x
+  ```
+
+## Advanced Usage
+
+- **Checkout Existing Branch in New Worktree**
+  ```
+  git worktree add ../fix bugfix/payment
+  ```
+
+- **Detached HEAD Worktree**
+  ```
+  git worktree add --detach ../experiment HEAD~2
+  ```
+  Useful for testing previous commits.
+
+- **Lock a Worktree**
+  ```
+  git worktree lock ../feature-login
+  ```
+  Prevents accidental removal.
+
+# How WorktreeWise Makes This Easier
+
+Managing worktrees manually is powerful—but quickly becomes messy.
+
+That’s where WorktreeWise comes in.
+
+Instead of remembering commands, paths, and cleanup steps, WorktreeWise provides a structured workflow around `git worktree add`.
+
+## 1. Create Worktrees Visually
+
+No need to type:
+
+```bash
+git worktree add -b feature/x ../feature-x
+```
+
+You:
+
+- Choose branch name
+- Pick location
+- Configure hooks
+
+Everything is handled automatically.
+
+## 2. Built-in Naming Conventions
+
+WorktreeWise enforces clean naming:
+
+- Avoids duplicates
+- Keeps directories organized
+- Reduces confusion across projects
+
+## 3. Run Workflows Across Worktrees
+
+Instead of manually opening terminals:
+
+- Run scripts across multiple worktrees
+- Execute commands in sequence or parallel
+- Visualize logs and results
+
+## 4. Open in IDE Instantly
+
+Each worktree can be opened directly in your editor:
+
+- JetBrains / WebStorm support
+- Keeps your existing configuration
+- No re-setup required
+
+## 5. Automatic Cleanup
+
+No more forgotten directories:
+
+- Detect invalid worktrees
+- Prune safely
+- Keep your workspace clean
+
+## 6. Integrated Git Tools
+
+- Compare branches and worktrees
+- View Git logs
+- Run diffs without leaving the app
+
+> WorktreeWise turns `git worktree add` from a command into a complete workflow system.
+
+# Conclusion
+
+`git worktree add` is one of the most underrated Git features.
+
+It eliminates:
+
+- Constant branch switching
+- Duplicate repositories
+- Context loss
+
+And enables:
+
+- Parallel development
+- Cleaner workflows
+- Faster iteration
+
+Once you start using it, going back to traditional workflows feels inefficient.
+
+If you want to take it further, tools like WorktreeWise help you scale this approach across real projects—without the manual overhead.
+
+Start simple:
+
+```
+git worktree add -b feature/my-feature ../my-feature
+```
+
+And build your workflow from there.
