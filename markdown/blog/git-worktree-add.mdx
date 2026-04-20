@@ -64,7 +64,7 @@ This does two things:
 - Creates a new branch `feature/payment`
 - Creates a worktree at `../feature-payment`
 
-<Callout> This is one of the most powerful workflows: creating a feature branch and immediately working on it in isolation. </Callout>
+> This is one of the most powerful workflows: creating a feature branch and immediately working on it in isolation.
 
 ## Real Workflow Example
 
@@ -120,7 +120,7 @@ If needed (force removal):
 git worktree remove --force ../feature-login
 ```
 
-<Note> This removes only the worktree, not the branch unless you delete it manually. </Note>
+> This removes only the worktree, not the branch unless you delete it manually.
 
 # When Should You Use git worktree add?
 
@@ -159,7 +159,7 @@ Worktrees make this trivial.
 
 # Common Mistakes
 
-❌ **1. Using the Same Branch in Multiple Worktrees**
+  **1. Using the Same Branch in Multiple Worktrees**
 
 Git prevents this by default:
 
@@ -169,7 +169,7 @@ fatal: 'feature/login' is already checked out
 
 Each branch can only be checked out once across all worktrees.
 
-❌ **2. Forgetting to Remove Worktrees**
+  **2. Forgetting to Remove Worktrees**
 
 Old worktrees pile up and create confusion.
 
@@ -179,7 +179,7 @@ Always clean them:
 git worktree prune
 ```
 
-❌ **3. Confusing Worktrees with Clones**
+  **3. Confusing Worktrees with Clones**
 
 Worktrees are NOT separate repositories.
 
@@ -187,7 +187,7 @@ Worktrees are NOT separate repositories.
 - They are lightweight
 - They depend on the main repository
 
-❌ **4. Deleting Worktree Folders Manually**
+  **4. Deleting Worktree Folders Manually**
 
 Never do:
 
@@ -203,14 +203,14 @@ git worktree remove ../feature-login
 
 # Best Practices
 
-- ✅ **Use Clear Naming Conventions**
+-   **Use Clear Naming Conventions**
   ```
   git worktree add ../wt-feature-auth feature/auth
   git worktree add ../wt-bugfix-login bugfix/login
   ```
   This avoids confusion across projects.
 
-- ✅ **Keep Worktrees Organized**
+-   **Keep Worktrees Organized**
 
   Store them in a dedicated folder:
 
@@ -219,13 +219,13 @@ git worktree remove ../feature-login
   /my-project-worktrees
   ```
 
-- ✅ **Prune Regularly**
+-   **Prune Regularly**
   ```
   git worktree prune
   ```
   Removes invalid or stale worktrees.
 
-- ✅ **Use Short-Lived Worktrees**
+-   **Use Short-Lived Worktrees**
 
   Treat them like temporary environments:
 
@@ -233,7 +233,7 @@ git worktree remove ../feature-login
   Create → Work → Remove
   ```
 
-- ✅ **Combine with Git Aliases**
+-   **Combine with Git Aliases**
   ```
   git config --global alias.wta "worktree add"
   ```
@@ -285,6 +285,11 @@ You:
 
 Everything is handled automatically.
 
+<a href="https://docs.worktreewise.com/git-worktrees/create" class="link-in-post" >https://docs.worktreewise.com/git-worktrees/create</a>
+
+![Create Git Worktree](/images/blog/worktree-add/create-worktree-with-hooks.png)
+
+
 ## 2. Built-in Naming Conventions
 
 WorktreeWise enforces clean naming:
@@ -292,6 +297,10 @@ WorktreeWise enforces clean naming:
 - Avoids duplicates
 - Keeps directories organized
 - Reduces confusion across projects
+
+<a href="https://docs.worktreewise.com/git-worktrees/naming-pattern" class="link-in-post" >https://docs.worktreewise.com/git-worktrees/naming-pattern</a>
+
+![Git Worktree Naming Pattern](/images/blog/worktree-add/add-custom-naming-pattern.png)
 
 ## 3. Run Workflows Across Worktrees
 
@@ -301,6 +310,9 @@ Instead of manually opening terminals:
 - Execute commands in sequence or parallel
 - Visualize logs and results
 
+<a href="https://docs.worktreewise.com/workflows/play" class="link-in-post" >https://docs.worktreewise.com/workflows/play</a>
+
+
 ## 4. Open in IDE Instantly
 
 Each worktree can be opened directly in your editor:
@@ -308,6 +320,11 @@ Each worktree can be opened directly in your editor:
 - JetBrains / WebStorm support
 - Keeps your existing configuration
 - No re-setup required
+
+<a href="https://docs.worktreewise.com/integrations/ide" class="link-in-post" >https://docs.worktreewise.com/integrations/ide</a>
+
+![Open Git Worktree in IDE](/images/blog/worktree-add/open-worktree-in-editor.png)
+
 
 ## 5. Automatic Cleanup
 
@@ -317,6 +334,10 @@ No more forgotten directories:
 - Prune safely
 - Keep your workspace clean
 
+<a href="https://docs.worktreewise.com/git-worktrees/prune" class="link-in-post" >https://docs.worktreewise.com/git-worktrees/prune</a>
+
+![Prune Git Worktrees](/images/blog/worktree-add/prune-worktrees.png)
+
 ## 6. Integrated Git Tools
 
 - Compare branches and worktrees
@@ -324,6 +345,10 @@ No more forgotten directories:
 - Run diffs without leaving the app
 
 > WorktreeWise turns `git worktree add` from a command into a complete workflow system.
+
+<a href="https://docs.worktreewise.com/git-operations/log" class="link-in-post" >https://docs.worktreewise.com/git-operations/log</a>
+
+![Git Log](/images/blog/worktree-add/git-log.png)
 
 # Conclusion
 
