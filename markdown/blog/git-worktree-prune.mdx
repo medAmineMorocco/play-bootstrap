@@ -6,11 +6,11 @@ author: AMMACH MOHAMED AMINE
 excerpt: Learn how to use git worktree prune to remove stale worktree references, fix broken states, and maintain a clean and efficient Git workflow.
 ---
 
-If you’re using Git worktrees seriously, you’ve probably hit this situation: you delete a folder manually, or something crashes mid-operation—and suddenly your repository thinks a worktree still exists when it doesn’t.
+If you’re using Git worktrees seriously, you’ve probably hit this situation: you delete a folder manually, or something crashes mid-operation and suddenly your repository thinks a worktree still exists when it doesn’t.
 
 That’s where `git worktree prune` comes in.
 
-It’s one of those commands you don’t use every day—but when you need it, it saves you from confusing errors, broken states, and wasted time debugging your repo.
+It’s one of those commands you don’t use every day but when you need it, it saves you from confusing errors, broken states, and wasted time debugging your repo.
 
 In this guide, you’ll learn exactly what `git worktree prune` does, when to use it, and how to integrate it into a clean, scalable Git workflow.
 
@@ -80,7 +80,9 @@ This shows what will be removed without making changes.
 
 Each worktree has a metadata directory:
 
+```bash
 `.git/worktrees/<worktree-name>/`
+```
 
 This includes:
 
@@ -90,8 +92,9 @@ This includes:
 - Branch association
 
 When the actual worktree directory disappears, these metadata folders remain.
-
+```
 `git worktree prune`:
+```bash
 
 - Scans `.git/worktrees/`
 - Verifies each worktree path
@@ -219,12 +222,18 @@ Clean output:
 
    Best Practices
 Always Remove Worktrees Properly
+
+```bash
 git worktree remove <path>
+```
 
 This avoids needing prune at all.
 
 Regularly Check Worktree State
+
+```bash
 git worktree list
+```
 
 Look for:
 
@@ -235,23 +244,27 @@ Use Prune in CI/CD or Scripts
 
 Example cleanup script:
 
+```bash
 git worktree prune --expire=now
+```
 
 Keeps repositories clean in automated workflows.
 
 Combine with Branch Cleanup
+```bash
 git branch -d feature-a
 git worktree prune
+```
 
-Ensures both branch and worktree are removed cleanly.
+- Ensures both branch and worktree are removed cleanly.
 
-Avoid Manual File System Deletion
+- Avoid Manual File System Deletion
 
-Always prefer Git commands over OS-level deletion.
+- Always prefer Git commands over OS-level deletion.
 
-How WorktreeWise Makes This Easier
+## How WorktreeWise Makes This Easier
 
-Managing worktrees manually is powerful—but also error-prone.
+Managing worktrees manually is powerful but also error-prone.
 
 This is exactly where WorktreeWise simplifies your workflow.
 
@@ -259,42 +272,49 @@ Automatic Detection of Invalid Worktrees
 
 Instead of manually checking:
 
+```bash
 git worktree list
+```
 
-WorktreeWise visually highlights:
+### WorktreeWise visually highlights:
 
-Broken worktrees
-Missing directories
-Invalid states
-Built-in Pruning
+- Broken worktrees
+- Missing directories
+- Invalid states
+- Built-in Pruning
 
 No need to remember commands.
 
-WorktreeWise allows you to:
+![Prune Git Worktrees](/images/blog/git-worktree-prune/prune-worktrees.png)
 
-Prune invalid worktrees with one click
-Automatically clean stale entries
-Keep your repository always consistent
-Safe Deletion Flow
+### WorktreeWise allows you to:
+
+- Prune invalid worktrees with one click
+- Automatically clean stale entries
+- Keep your repository always consistent
+- Safe Deletion Flow
+
+![Stale Git Worktrees](/images/blog/git-worktree-prune/stale-worktrees.png)
 
 Instead of risky manual deletion:
 
-Remove worktrees safely via UI
-Option to delete:
-Worktree only
-Worktree + branch
-Workflow Automation
+- Remove worktrees safely via UI
+- Option to delete:
+    * Worktree only
+    * Worktree + branch
+    * Workflow Automation
 
 When running workflows across worktrees:
 
-Invalid worktrees are skipped
-Logs clearly show issues
-Cleanup can be integrated into workflows
-Developer-Focused UX
-No need to inspect .git/worktrees
-No need to remember flags like --expire
-Everything is visual and controlled
-> If you’re working with multiple worktrees daily, automating cleanup is not optional—it’s essential for maintaining a reliable development environment.
+- Invalid worktrees are skipped
+- Logs clearly show issues
+- Cleanup can be integrated into workflows
+- Developer-Focused UX
+- No need to inspect .git/worktrees
+- No need to remember flags like --expire
+- Everything is visual and controlled
+
+> If you’re working with multiple worktrees daily, automating cleanup is not optional it’s essential for maintaining a reliable development environment.
 
 # Conclusion
 
@@ -314,6 +334,6 @@ The best approach is simple:
 2. Monitor your worktrees regularly
 3. Run `git worktree prune` when needed
 
-Or better yet—automate the entire process with tools designed for modern development workflows.
+Or better yet automate the entire process with tools designed for modern development workflows.
 
-A clean repository isn’t just nice to have—it’s a productivity multiplier.
+A clean repository isn’t just nice to have it’s a productivity multiplier.
