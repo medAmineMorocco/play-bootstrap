@@ -6,9 +6,9 @@ author: AMMACH MOHAMED AMINE
 excerpt: Understand the real difference between git worktree and branch, when to use each, and how to optimize your workflow for parallel development.
 ---
 
-Most developers think they understand Git branches—until they try to work on multiple features at the same time.
+Most developers think they understand Git branches until they try to work on multiple features at the same time.
 
-You start one feature, switch branches for a quick fix, then switch again for a review… and suddenly your working directory is a mess. Stashing changes, resolving conflicts, rebuilding environments—it adds friction fast.
+You start one feature, switch branches for a quick fix, then switch again for a review… and suddenly your working directory is a mess. Stashing changes, resolving conflicts, rebuilding environments it adds friction fast.
 
 That’s where the comparison of git worktree vs branch becomes important.
 
@@ -89,11 +89,14 @@ All sharing the same .git data.
 ## Git Worktree vs Branch: Core Differences
 
 1. **Concept**
-   | Feature  | Branch                          | Worktree                      |
-   |----------|---------------------------------|-------------------------------|
-   | Purpose  | Logical separation of code      | Physical working directory     |
-   | Scope    | Pointer to commit               | Full working directory         |
-   | Dependency| Requires checkout              | Independent workspace          |
+
+```
+   | Feature   | Branch                          | Worktree                      |
+   |---------- |---------------------------------|-------------------------------|
+   | Purpose   | Logical separation of code      | Physical working directory    |
+   | Scope     | Pointer to commit               | Full working directory        |
+   | Dependency| Requires checkout               | Independent workspace         |
+```
 
 2. **Workflow**
 
@@ -124,17 +127,21 @@ All sharing the same .git data.
    No switching. No interruptions.
 
 3. **Performance**
+
+```
    | Scenario                | Branch     | Worktree |
-   |------------------------|------------|----------|
-   | Switching context      | Slow       | Instant  |
+   |------------------------ |------------|----------|
+   | Switching context       | Slow       | Instant  |
    | Rebuilding dependencies | Frequent   | Rare     |
-   | Parallel work          | Limited    | Native   |
+   | Parallel work           | Limited    | Native   |
+```
 
 4. **Disk Usage**
+
    - Branches: minimal  
    - Worktrees: slightly more (multiple directories), but:  
-   * No duplicated .git  
-   * Much lighter than cloning
+     * No duplicated .git
+     * Much lighter than cloning
 
 # When to Use Branches
 
@@ -215,20 +222,26 @@ Now you can:
    Worktrees use branches. They don’t replace them.
 
 2. Forgetting to prune worktrees  
-   Removed branches can leave stale worktrees.  
-   `git worktree prune`
+   Removed branches can leave stale worktrees.
+```
+   git worktree prune
+```
 
 3. Using worktrees without structure  
    Creating random directories leads to chaos.  
 
-   Bad:  
-   - `../test1`  
-   - `../tmp123`  
-   - `../new`  
+   Bad:
+```
+   - ../test1
+   - ../tmp123
+   - ../new
+```
 
-   Good:  
-   - `../worktrees/feature-login`  
-   - `../worktrees/bugfix-api`  
+   Good:
+```
+   - ../worktrees/feature-login
+   - ../worktrees/bugfix-api
+```
 
 4. Editing the same branch in multiple worktrees  
    Git prevents this for a reason.  
@@ -244,14 +257,22 @@ Now you can:
 # Best Practices
 
 1. Use naming conventions  
-   `../worktrees/{branch-name}`
 
-   Example:  
-   `git worktree add ../worktrees/feature-auth feature/auth`
+```
+../worktrees/{branch-name}
+```
 
-2. Group worktrees per project  
-   `my-project/`  
-   `my-project-worktrees/`  
+   Example:
+```
+   git worktree add ../worktrees/feature-auth feature/auth
+```
+
+2. Group worktrees per project
+
+```
+   my-project/
+   my-project-worktrees/
+```
 
    Keeps everything clean.
 
@@ -262,30 +283,39 @@ Now you can:
    - Setup environment  
    - Open IDE
 
-4. Clean regularly  
-   `git worktree prune`
+4. Clean regularly
+
+```
+git worktree prune
+```
 
 5. Use worktrees for reviews  
 
    Instead of switching:  
-   `git worktree add ../review-123 feature/pr-123`
+```
+git worktree add ../review-123 feature/pr-123
+```
 
 ## How WorktreeWise Makes This Easier
 
-Managing worktrees manually is powerful—but can become complex.  
+Managing worktrees manually is powerful but can become complex.
 
 That’s where WorktreeWise comes in.
 
 1. Visual worktree management  
 
-   Instead of CLI commands:  
-   `git worktree add ...`  
-   `git worktree remove ...`  
+   Instead of CLI commands:
+```
+   git worktree add ...
+   git worktree remove ...
+```
 
    You get:  
    - Create / rename / move / delete worktrees  
    - Lock and unlock worktrees  
    - Automatic pruning of invalid ones
+
+![Git Worktree Actions](/images/blog/git-worktree-vs-branch/list-worktrees-actions.png)
 
 2. Built-in workflows across worktrees  
 
@@ -293,6 +323,8 @@ That’s where WorktreeWise comes in.
    - Build all features  
    - Run tests in parallel  
    - Execute scripts across environments
+
+<a href="https://docs.worktreewise.com/workflows/play" class="link-in-post" >https://docs.worktreewise.com/workflows/play</a>
 
 3. IDE integration  
 
@@ -305,11 +337,17 @@ That’s where WorktreeWise comes in.
    - Run configs  
    - History
 
+![Open Git Worktree in IDE](/images/blog/git-worktree-vs-branch/open-worktree-in-editor.png)
+
+
 4. Terminal per worktree  
 
    Each worktree has its own terminal context.  
 
    No more navigation overhead.
+
+![Open Git Worktree in Terminal](/images/blog/git-worktree-vs-branch/worktree-in-terminal.png)
+
 
 5. Git diff and logs across worktrees  
 
@@ -320,21 +358,7 @@ That’s where WorktreeWise comes in.
 
    Without manual commands.
 
-6. Code generators  
-
-   Automate repetitive setup:  
-   - Create files  
-   - Configure structure  
-   - Standardize patterns  
-
-   All inside selected worktrees.
-
-7. Structured workflows  
-
-   Instead of ad-hoc usage, WorktreeWise enforces:  
-   - Naming conventions  
-   - Organization  
-   - Clean lifecycle management  
+<a href="https://docs.worktreewise.com/git-operations/diff" class="link-in-post" >https://docs.worktreewise.com/git-operations/diff</a>
 
 > WorktreeWise transforms git worktrees from a power-user feature into a standard workflow.
 
@@ -354,7 +378,7 @@ Start small:
 - Try parallel workflows
 - Eliminate unnecessary context switching
 
-Then scale it with structure—and eventually tools like WorktreeWise.
+Then scale it with structure and eventually tools like WorktreeWise.
 
 Because modern development isn’t linear.
 

@@ -8,7 +8,7 @@ excerpt: Still relying on Git stash? Switch to Git worktrees and handle multiple
 
 # Introduction
 
-If you’ve ever switched tasks mid-feature, paused your work, or needed to fix a bug in another branch, chances are you’ve used **git stash**. It helps—but frequently, stashing becomes a stopgap you rely on too heavily. It adds friction:
+If you’ve ever switched tasks mid-feature, paused your work, or needed to fix a bug in another branch, chances are you’ve used **git stash**. It helps but frequently, stashing becomes a stopgap you rely on too heavily. It adds friction:
 
 You stash your changes → switch branches → later you apply stash → sometimes conflicts arise.
 
@@ -37,7 +37,7 @@ While this works, it creates repeated problems:
 
 - **Context loss:** You often forget exactly what changes you stashed.
 - **Merge conflicts:** Applying stash can yield conflicts you must resolve.
-- **Interrupted flow:** Stash-pop, rebase, check, etc.—extra steps slow you down.
+- **Interrupted flow:** Stash-pop, rebase, check, etc.extra steps slow you down.
 - **Overlapping work:** If you stash often, you might have multiple unfinished tasks mixed in one branch.
 
 
@@ -121,7 +121,7 @@ Here’s a sample improved workflow using WorktreeWise:
 
 # Conclusion
 
-Relying on **git stash** can seem natural at first, but over time it slows you down, creates possible conflicts, and adds friction to your workflow. Git worktrees already offer a strong tool to sidestep many of those issues—but performing everything via the terminal can still feel manual.
+Relying on **git stash** can seem natural at first, but over time it slows you down, creates possible conflicts, and adds friction to your workflow. Git worktrees already offer a strong tool to sidestep many of those issues but performing everything via the terminal can still feel manual.
 
 **WorktreeWise** gives you the best of both worlds: the power of Git worktrees, plus an intuitive UI that helps you work faster, with less error and less mental overhead.
 
