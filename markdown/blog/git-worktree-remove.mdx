@@ -1,0 +1,368 @@
+---
+title: Git Worktree Remove - Clean Up Worktrees Without Breaking Your Repo
+date: 2026-04-24
+coverImage: /images/blog/git-worktree-remove.png
+author: AMMACH MOHAMED AMINE
+excerpt: Learn how to use git worktree remove safely and effectively. Practical examples, common mistakes, and best practices for managing multiple worktrees.
+---
+
+Working with multiple branches at the same time used to mean cloning the same repository over and over again.
+
+Then came Git worktrees.
+
+They let you attach multiple working directories to a single repository, making parallel development fast and efficient.
+
+But there’s a catch.
+
+If you don’t clean them up properly, your environment becomes messy, confusing, and sometimes even broken.
+
+That’s where `git worktree remove` comes in.
+
+In this guide, you’ll learn exactly how to use it, when to use it, and how to avoid the mistakes that can corrupt your workflow.
+
+## What is git worktree remove?
+
+`git worktree remove` is the command used to delete a working tree that was previously created with `git worktree add`.
+
+It removes:
+
+- The working directory
+- The reference from Git’s internal worktree list
+
+But it does not delete your repository or history.
+
+## Basic syntax
+
+```bash
+git worktree remove <path>
+```
+
+## Example:
+
+```bash
+git worktree remove ../feature-login
+```
+
+This removes the worktree located at `../feature-login`.
+
+## When should you use git worktree remove?
+
+You should remove a worktree when:
+
+1. You’ve finished working on a feature branch
+2. A temporary environment is no longer needed
+3. A worktree became stale or invalid
+4. You want to free up disk space
+
+## Example workflow
+
+```bash
+# Create a worktree
+git worktree add ../feature-auth feature/auth
+
+# Work on it...
+
+# Remove it when done
+git worktree remove ../feature-auth
+```
+
+## What happens under the hood?
+
+When you run:
+
+```bash
+git worktree remove ../feature-auth
+```
+
+Git:
+
+- Deletes the working directory (if clean)
+- Removes metadata from `.git/worktrees/`
+- Keeps your branch intact (unless manually deleted)
+
+<Note> Removing a worktree does NOT delete the branch automatically. </Note>
+
+# Handling uncommitted changes
+
+By default, Git will refuse to remove a worktree if it has uncommitted changes.
+
+## Example error
+
+> fatal: 'feature-auth' contains modified or untracked files, use --force to delete it
+
+## Solution: force removal
+
+```bash
+git worktree remove --force ../feature-auth
+```
+<Callout> Use `--force` carefully. You will lose uncommitted changes permanently. </Callout>
+
+## Removing locked worktrees
+
+Sometimes a worktree is locked to prevent accidental deletion.
+
+### Check worktrees
+
+```bash
+git worktree list
+```
+
+### Unlock then remove
+
+```bash
+git worktree unlock ../feature-auth
+git worktree remove ../feature-auth
+```
+
+## Cleaning up stale worktrees
+
+If you manually delete a worktree directory, Git might still think it exists.
+
+This creates a "dangling" worktree entry.
+
+### Fix with prune
+
+```bash
+git worktree prune
+```
+<Tip> Run `git worktree prune` regularly to keep your repository clean. </Tip>
+
+# Common Mistakes
+
+1. **Deleting the folder manually**
+```
+rm -rf ../feature-auth
+```
+This removes the directory but not Git’s internal reference.
+
+**Result:**
+- Broken worktree list
+- Confusing errors
+
+**Fix:**
+```
+git worktree prune
+```
+
+2. **Forgetting to remove the branch**
+After removing a worktree, the branch still exists:
+```
+git branch
+```
+You may accumulate unused branches over time.
+
+Clean up manually:
+```
+git branch -d feature/auth
+```
+
+3. **Forcing removal without checking changes**
+```
+git worktree remove --force ../feature-auth
+```
+If you had uncommitted work, it’s gone forever.
+
+**Safer approach:**
+```
+git status
+git stash
+git worktree remove ../feature-auth
+   ```
+
+4. **Removing the wrong worktree**
+When working with many worktrees, paths can look similar:
+```
+- ../feature-auth
+- ../feature-auth-v2
+- ../feature-auth-test
+```
+
+One wrong command can delete the wrong environment.
+
+Always verify:
+```
+git worktree list
+```
+
+# Best Practices
+
+- Always check worktrees before removing
+```
+git worktree list
+```
+This gives you a clear view of:
+- Paths
+- Associated branches
+- Status
+
+- Keep worktrees clean
+Before removing:
+```
+git status
+```
+Ensure:
+- No uncommitted changes
+- No untracked critical files
+
+- Use naming conventions
+Instead of random names:
+```
+- ../wt-auth
+- ../test
+- ../new
+```
+
+Use structured naming:
+```
+- ../project-feature-auth
+- ../project-bugfix-login
+```
+
+This reduces mistakes when removing worktrees.
+
+- Combine removal with branch cleanup
+```
+git worktree remove ../feature-auth
+git branch -d feature/auth
+  ```
+
+Or force if needed:
+```
+  git branch -D feature/auth
+```
+
+- Automate cleanup
+If you frequently create temporary worktrees:
+- Schedule regular pruning
+- Use scripts or tools to manage lifecycle
+
+# Advanced Usage
+
+## Removing multiple worktrees
+
+Git doesn’t support bulk removal directly, but you can script it:
+
+```
+git worktree list | awk '{print $1}' | tail -n +2 | xargs -I {} git worktree remove {}
+```
+<Note> Be careful with automation. Always review paths before executing destructive commands. </Note>
+
+## Removing worktrees in CI/CD
+
+In automation pipelines, always use force:
+
+```
+git worktree remove --force ../temp-build
+```
+This ensures cleanup even if builds leave files behind.
+
+## How WorktreeWise Makes This Easier
+
+Managing worktrees manually works… until it doesn’t.
+
+When you have:
+
+- 5+ active worktrees
+- Multiple branches per feature
+- Frequent creation and deletion
+
+Things get messy fast.
+
+WorktreeWise simplifies everything.
+
+### Visual worktree management
+
+Instead of running:
+
+```
+git worktree list
+git worktree remove ../feature-auth
+```
+You get a UI where you can:
+
+- See all worktrees instantly
+- Remove them with one click
+- Avoid path mistakes
+
+![Remove Git Worktree](/images/blog/git-worktree-remove/delete-worktree.png)
+
+
+### Safe deletion workflows
+
+WorktreeWise helps prevent:
+
+- Accidental deletion
+- Removing the wrong worktree
+- Losing uncommitted changes
+
+It gives you visibility before executing actions.
+
+![Lock Git Worktree](/images/blog/git-worktree-remove/lock-worktree.png)
+
+### Integrated cleanup
+
+No need to remember:
+
+```
+git worktree prune
+```
+WorktreeWise:
+
+- Detects invalid worktrees
+- Cleans them automatically
+- Keeps your repo consistent
+
+![Prune Git Worktrees](/images/blog/git-worktree-remove/prune-worktrees.png)
+
+
+### Branch + worktree lifecycle
+
+Instead of manually doing:
+
+```
+git worktree remove ../feature-auth
+git branch -d feature/auth
+```
+You can:
+
+- Remove both in one action
+- Keep your repository clean
+- Avoid orphan branches
+
+### Designed for real workflows
+
+If you're using:
+
+- Parallel feature development
+- Multiple environments
+- Complex Git setups
+
+WorktreeWise removes the friction from managing worktrees entirely.
+
+# Conclusion
+
+git worktree remove is a simple command with powerful consequences.
+
+Used correctly, it keeps your development environment:
+
+Clean
+Organized
+Efficient
+
+Used carelessly, it can:
+
+Delete work unexpectedly
+Create inconsistencies
+Slow you down
+
+The key is discipline:
+
+Always check before removing
+Avoid manual deletions
+Clean branches alongside worktrees
+
+And if you’re working with multiple worktrees daily, consider using a tool like WorktreeWise to eliminate the manual overhead entirely.
+
+Because the real goal isn’t just managing worktrees.
+
+It’s working faster without friction.
