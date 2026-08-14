@@ -16,14 +16,18 @@ const CallToAction = () => {
                 </p>
               </div>
             </div>
-            <img
-              src="/images/home/dashboard-dark.avif"
-              alt="hero"
-              className="mx-auto max-w-full rounded"
-              width={845}
-              height={316}
-              loading="lazy"
-            />
+            <div
+              className="product-shot-frame product-shot-frame-dark mx-auto overflow-hidden rounded-2xl border p-4 sm:p-6"
+            >
+              <img
+                src="/images/home/dashboard-dark.avif"
+                alt="WorktreeWise dashboard in dark mode"
+                className="relative z-10 mx-auto max-w-full rounded-xl shadow-[0_28px_55px_-22px_rgba(0,0,0,0.95)]"
+                width={845}
+                height={316}
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

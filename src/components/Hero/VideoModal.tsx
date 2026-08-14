@@ -48,9 +48,19 @@ const VideoModal = ({ thumbnailLight, thumbnailDark, videoId }: Props) => {
         />
 
         {/* Play Button */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/80 backdrop-blur transition hover:scale-110">
-            ▶
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/5 transition hover:bg-black/10">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border-4 border-white bg-primary text-white shadow-[0_16px_45px_-10px_rgba(74,108,247,0.9)] transition duration-300 hover:scale-110 sm:h-24 sm:w-24">
+            <svg
+              width="34"
+              height="40"
+              viewBox="0 0 34 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className="ml-1 fill-current"
+            >
+              <path d="M32 16.5359C34.6667 18.0755 34.6667 21.9245 32 23.4641L6.5 38.1865C3.83333 39.7261 0.5 37.8016 0.5 34.7224V5.27757C0.5 2.19837 3.83333 0.273871 6.5 1.81347L32 16.5359Z" />
+            </svg>
           </div>
         </div>
       </div>

@@ -25,7 +25,11 @@ export default function RootLayout({
   useEffect(() => {
     Clarity.init('vvb5odkvib');
     hotjar.initialize({id: HOTJAR_ID, sv: HOTJAR_SV})
-    setTimeout(() => setLoading(false), 500);
+    const loadingTimer = window.setTimeout(() => setLoading(false), 500);
+
+    return () => {
+      window.clearTimeout(loadingTimer);
+    };
   }, []);
 
   return (

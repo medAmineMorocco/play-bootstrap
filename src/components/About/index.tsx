@@ -69,22 +69,26 @@ const About = ({ features }: {features: Feature[]}) => {
                   <div className="-mx-2 flex flex-wrap sm:-mx-4 lg:-mx-2 xl:-mx-4">
                     <div className="w-full px-2 sm:px-4 lg:px-2 xl:px-4">
                       <div
-                        className={`relative mb-4 sm:mb-8`}
+                        className="product-shot-frame relative mb-4 overflow-hidden rounded-2xl border p-4 sm:mb-8 sm:p-6"
                       >
                         <img
                           src={`/images/home/${feature.image}.avif`}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
-                          className="h-full w-full rounded object-cover object-center dark:[display:none]"
+                          className="h-full w-full rounded-xl border border-white/80 object-cover object-center dark:[display:none]"
                           loading="lazy"
                           width={628}
                           height={353}
                         />
                         <img
-                          src={`/images/home/${feature.image}-dark.avif`}
+                          src={`/images/home/${
+                            feature.image === "worktreewise-for-jetbrains-plugin"
+                              ? feature.image
+                              : `${feature.image}-dark`
+                          }.avif`}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
-                          className="h-full w-full rounded object-cover object-center [display:none] dark:block"
+                          className="relative z-10 h-full w-full rounded-xl object-cover object-center shadow-[0_28px_55px_-22px_rgba(0,0,0,0.95)] [display:none] dark:block"
                           loading="lazy"
                           width={628}
                           height={353}

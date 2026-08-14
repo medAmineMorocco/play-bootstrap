@@ -2,6 +2,7 @@
 
 import Download from "@/components/Hero/Download";
 import VideoModal from "@/components/Hero/VideoModal";
+import Image from "next/image";
 
 const SHOW_PRODUCTHUNT_WIDGET = process.env.NEXT_PUBLIC_SHOW_PRODUCTHUNT_WIDGET;
 const HERO_VIDEO_ID = process.env.NEXT_PUBLIC_HERO_VIDEO_ID;
@@ -54,34 +55,27 @@ const Hero = () => {
 
             <div className="w-full px-4">
               <div
-                className="wow fadeInUp relative z-10 mx-auto max-w-[845px]"
+                className="wow fadeInUp relative z-10 mx-auto max-w-[1180px]"
                 data-wow-delay=".25s"
               >
                 {HERO_VIDEO_ID ? (
                   <div className="mt-12">
                     <VideoModal
-                      thumbnailLight="/images/home/dashboard.avif"
-                      thumbnailDark="/images/home/dashboard-dark.avif"
+                      thumbnailLight="/images/home/hero-marketing-v2.png"
+                      thumbnailDark="/images/home/hero-marketing-v2.png"
                       videoId={HERO_VIDEO_ID}
                     />
                   </div>
                 ) : (
                   <div className="mt-12">
-                    <img
-                      src="/images/home/dashboard.avif"
-                      alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
-                      className="mx-auto max-w-full dark:[display:none]"
-                      width={845}
-                      height={316}
-                      loading="eager"
-                    />
-                    <img
-                      src="/images/home/dashboard-dark.avif"
-                      alt="Git worktree management, including how to add, remove, and use Git worktrees with examples and tutorials"
-                      className="mx-auto max-w-full [display:none] dark:block"
-                      width={845}
-                      height={316}
-                      loading="eager"
+                    <Image
+                      src="/images/home/hero-marketing-v2.png"
+                      alt="WorktreeWise managing parallel Git worktrees and a successful automated workflow"
+                      className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
+                      width={1536}
+                      height={992}
+                      sizes="(max-width: 1280px) 94vw, 1180px"
+                      priority
                     />
                   </div>
                 )}
