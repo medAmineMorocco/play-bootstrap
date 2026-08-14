@@ -240,6 +240,33 @@ This makes WorktreeWise a powerful tool for continuous QA testing.
 
 ![Run Workflow](/images/blog/qa-worktrees/run-workflow.png)
 
+# Reusable QA Worktree Recipe
+
+For each feature or pull request:
+
+1. Create a worktree from the exact branch or commit under test.
+2. Apply the required environment configuration without copying secrets into
+   source control.
+3. Install dependencies and load predictable test data.
+4. Start the application on a dedicated local port.
+5. Run smoke tests, the relevant E2E suite, and the regression checklist.
+6. Record the tested commit SHA in the QA result.
+7. Stop services and remove the worktree only after checking for useful logs or
+   artifacts.
+
+> Worktrees isolate checked-out files, but they do not automatically isolate
+> databases, ports, containers, or external services. Give each environment
+> explicit resources when tests can interfere with one another.
+
+## Turn the Recipe into One Click
+
+Create a WorktreeWise workflow containing your install, build, fixture, and test
+commands. QA can then run the same sequence against selected worktrees and use
+the execution logs as evidence of what ran.
+
+[Learn how WorktreeWise workflows run](https://docs.worktreewise.com/workflows/play)
+or [start a free trial for your QA workflow](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=qa-git-worktrees).
+
 # Conclusion
 
 QA teams need stable, isolated, and fast environments to test effectively. Git worktrees provide:

@@ -252,6 +252,32 @@ By combining:
 
 developers gain a workflow that is <strong>faster, safer, and easier to scale</strong>.
 
+# A Repeatable Claude + WorktreeWise Checklist
+
+Use this sequence for every AI-assisted task:
+
+1. Create a dedicated worktree and branch for the task.
+2. Open that worktree in the IDE or agent session Claude will use.
+3. Run the project setup workflow before asking Claude to edit code.
+4. Ask Claude to implement one clearly scoped outcome.
+5. Review the Git diff and run tests inside the same worktree.
+6. Commit or discard the experiment, then remove the temporary worktree.
+
+This keeps the AI's changes isolated and gives every experiment a clear
+lifecycle. It also prevents two agents from unintentionally editing the same
+working directory.
+
+> **Important:** A worktree isolates files and branches, but it does not make
+> AI-generated code trustworthy by itself. Review the diff, test the result,
+> and inspect security-sensitive changes before merging.
+
+Want to reproduce this workflow visually? [Create a worktree](https://docs.worktreewise.com/git-worktrees/create),
+[run a reusable workflow](https://docs.worktreewise.com/workflows/play), and
+[inspect the Git diff](https://docs.worktreewise.com/git-operations/diff) in
+WorktreeWise.
+
+[Start a free WorktreeWise trial—no credit card required](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=claude-git-worktrees).
+
 # Conclusion
 
 AI tools are accelerating software development, but they also introduce new complexity when multiple tasks and experiments run simultaneously.

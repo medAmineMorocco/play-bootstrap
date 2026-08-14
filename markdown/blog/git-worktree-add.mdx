@@ -350,6 +350,34 @@ No more forgotten directories:
 
 ![Git Log](/images/blog/worktree-add/git-log.png)
 
+# Quick `git worktree add` Checklist
+
+Before creating a worktree:
+
+- Run `git status` and confirm the repository is in the expected state.
+- Decide whether you are checking out an existing branch or creating a new one.
+- Use a predictable directory name outside or beside the main working tree.
+- Confirm the branch is not already checked out in another worktree.
+
+After creating it:
+
+- Run the project setup command inside the new directory.
+- Copy or create only the environment files that the project requires.
+- Open the new directory in a separate IDE window.
+- Verify it appears in `git worktree list`.
+
+When the task is complete, check for uncommitted work before running
+`git worktree remove <path>`.
+
+## Prefer the CLI or a GUI?
+
+The CLI is a good choice for occasional worktrees and scripts. WorktreeWise is
+more useful when you manage several worktrees, need consistent naming and
+hooks, or repeatedly run setup and test commands across branches.
+
+[Create your first visual worktree](https://docs.worktreewise.com/git-worktrees/create)
+or [start a free trial](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=git-worktree-add).
+
 # Conclusion
 
 `git worktree add` is one of the most underrated Git features.

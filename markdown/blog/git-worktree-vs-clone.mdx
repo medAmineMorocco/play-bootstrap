@@ -375,6 +375,33 @@ Learn more:
 
 <a href="https://docs.worktreewise.com/git-worktrees/prune" class="link-in-post" >https://docs.worktreewise.com/git-worktrees/prune</a>
 
+# Important Isolation Tradeoffs
+
+Worktrees share the repository's Git object database and references, but each
+worktree has its own checked-out files and index. Clones have separate Git
+databases and can use different remotes or Git configuration.
+
+Remember that neither approach automatically isolates everything outside Git:
+
+- Dependency directories may need to be installed separately.
+- Environment files must be managed deliberately.
+- Applications need different local ports when they run simultaneously.
+- Databases, caches, containers, and external services may still be shared.
+
+## Decision Checklist
+
+Choose a clone when you need an independent repository, remote configuration,
+credentials, or a disposable copy that can move separately. Choose a worktree
+when you want fast parallel work on branches of the same local repository.
+
+For occasional use, native `git worktree` commands may be all you need. For
+multiple active environments, WorktreeWise adds visual organization, naming,
+IDE launching, and repeatable workflows without changing Git's underlying
+model.
+
+[See how to create a visual worktree](https://docs.worktreewise.com/git-worktrees/create)
+or [start a free trial](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=git-worktree-vs-clone).
+
 # Conclusion
 
 The git worktree vs clone choice comes down to intent.

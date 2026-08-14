@@ -36,15 +36,18 @@ Common reasons include:
 
 Good naming improves productivity and makes your Git worktree environment easier to manage.
 
-# Git Does NOT Support Renaming a Worktree
+# Git Supports Moving a Worktree Directory
 
-There is no official command like:
+Git does not have a command named `git worktree rename`, but it provides
+`git worktree move` for changing the worktree directory path safely:
 
 ```bash
-git worktree rename
+git worktree move <old-worktree-path> <new-worktree-path>
 ```
 
-And if you try to rename the worktree directory manually, Git will break because the worktree path is indexed in the repo’s internal metadata:
+Do not rename the directory manually in your file manager. Git stores the
+worktree path in its internal metadata, so an ordinary folder rename can leave
+that metadata pointing to the old location:
 
 ```bash
 .git/worktrees/<worktree-name>
@@ -59,25 +62,20 @@ fatal: '<path>' is not a working tree
 This is why developers search for alternatives to rename Git worktrees safely.
 
 
-# The Correct Way to Rename a Git Worktree (Safe Method)
+# The Correct Way to Rename a Git Worktree
 
-To “rename” a Git worktree without breaking your repository, you must:
-
-1. Remove the old worktree path (without deleting the branch)
+Use `git worktree move`:
 
 ```bash
-git worktree remove <old-worktree-path>
+git worktree move <old-worktree-path> <new-worktree-path>
 ```
 
-This safely removes the worktree metadata.
+This changes the worktree directory and updates Git's metadata. It does not
+rename the associated branch. To rename the branch too, run
+`git branch -m <new-branch-name>` from that worktree.
 
-2. Add the worktree again using the new directory name
-
-```bash
-git worktree add <new-path> <branch-name>
-```
-
-This is the recommended method for renaming a Git worktree.
+> `git worktree move` cannot move the main worktree or a worktree containing
+> submodules. Check `git status` and `git worktree list` first.
 
 # Example: Renaming a Git Worktree Folder
 
@@ -96,8 +94,7 @@ worktrees/login-ui
 Run:
 
 ```bash
-git worktree remove worktrees/feature-login
-git worktree add worktrees/login-ui feature/login
+git worktree move worktrees/feature-login worktrees/login-ui
 ```
 
 This process preserves:
@@ -170,8 +167,8 @@ This dramatically reduces the need to rename Git worktrees later the naming is c
 
 # Conclusion
 
-Git does not support renaming worktrees directly.
-But you can rename a Git worktree safely using the remove + add method.
+Git does not provide a command literally named `git worktree rename`, but you
+can safely change a linked worktree's directory with `git worktree move`.
 
 If you want a faster and automated solution:
 

@@ -80,7 +80,7 @@ Git:
 - Removes metadata from `.git/worktrees/`
 - Keeps your branch intact (unless manually deleted)
 
-<Note> Removing a worktree does NOT delete the branch automatically. </Note>
+> **Note:** Removing a worktree does not delete its branch automatically.
 
 # Handling uncommitted changes
 
@@ -95,7 +95,8 @@ By default, Git will refuse to remove a worktree if it has uncommitted changes.
 ```bash
 git worktree remove --force ../feature-auth
 ```
-<Callout> Use `--force` carefully. You will lose uncommitted changes permanently. </Callout>
+> **Warning:** Use `--force` carefully. Uncommitted and untracked work in the
+> target worktree can be lost permanently.
 
 ## Removing locked worktrees
 
@@ -125,7 +126,8 @@ This creates a "dangling" worktree entry.
 ```bash
 git worktree prune
 ```
-<Tip> Run `git worktree prune` regularly to keep your repository clean. </Tip>
+> **Tip:** Run `git worktree prune --dry-run` first, then prune stale metadata
+> after reviewing the output.
 
 # Common Mistakes
 
@@ -245,7 +247,8 @@ Git doesn’t support bulk removal directly, but you can script it:
 ```
 git worktree list | awk '{print $1}' | tail -n +2 | xargs -I {} git worktree remove {}
 ```
-<Note> Be careful with automation. Always review paths before executing destructive commands. </Note>
+> **Warning:** Preview and validate every target path before automating worktree
+> removal. Never pipe an unreviewed list directly into a destructive command.
 
 ## Removing worktrees in CI/CD
 

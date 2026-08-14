@@ -74,7 +74,8 @@ git worktree prune --dry-run
 
 This shows what will be removed without making changes.
 
-<Tip> Always use `--dry-run` in automation scripts to verify behavior before executing destructive operations. </Tip>
+> **Safety tip:** Use `--dry-run` to inspect what Git would prune before you
+> execute cleanup in an automated environment.
 
 ## How git worktree prune Works Internally
 

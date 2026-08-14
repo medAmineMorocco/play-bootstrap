@@ -119,6 +119,30 @@ Here’s a sample improved workflow using WorktreeWise:
 
 ![Working with 2 Git Worktrees in Parallel](/images/blog/stash/parallel-dev.png)
 
+# When Git Stash Is Still the Right Tool
+
+Worktrees reduce the need for stashing, but they do not replace it in every
+situation. Use `git stash` for a tiny, temporary interruption when you expect
+to return immediately. Prefer a worktree when the second task needs its own
+editor, dependencies, test process, or more than a few minutes of attention.
+
+A useful rule of thumb:
+
+- **Use stash:** a quick pull, rebase, or one-command check.
+- **Use a worktree:** a hotfix, review, experiment, or parallel feature.
+- **Commit first:** work that must be preserved or shared with someone else.
+
+## Before-and-After Workflow
+
+The stash route requires you to hide changes, switch branches, restore changes,
+and resolve any stash conflicts. The worktree route creates the second working
+directory once, then lets both tasks remain open and visible.
+
+WorktreeWise makes that second route easier to repeat: [create the worktree](https://docs.worktreewise.com/git-worktrees/create),
+open it in your IDE, and remove it safely when the interruption is finished.
+
+[Try the visual workflow free—no credit card required](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=git-stash-to-git-worktree).
+
 # Conclusion
 
 Relying on **git stash** can seem natural at first, but over time it slows you down, creates possible conflicts, and adds friction to your workflow. Git worktrees already offer a strong tool to sidestep many of those issues but performing everything via the terminal can still feel manual.
@@ -126,4 +150,4 @@ Relying on **git stash** can seem natural at first, but over time it slows you d
 **WorktreeWise** gives you the best of both worlds: the power of Git worktrees, plus an intuitive UI that helps you work faster, with less error and less mental overhead.
 
 
-👉 **[Start using WorktreeWise today](https://www.worktreewise.com/)**
+**[Start your free WorktreeWise trial](/pricing?utm_source=blog&utm_medium=end_cta&utm_campaign=git-stash-to-git-worktree)**

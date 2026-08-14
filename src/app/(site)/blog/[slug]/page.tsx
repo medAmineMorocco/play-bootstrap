@@ -1,10 +1,12 @@
 import PopularArticle from "@/components/Blog/PopularArticle";
 import SingleBlog from "@/components/Blog/SingleBlog";
+import BlogConversionCard from "@/components/Blog/BlogConversionCard";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { getAllPosts, getPostBySlug } from "@/utils/markdown";
 import markdownToHtml from "@/utils/markdownToHtml";
 import { format } from "date-fns";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   params: { slug: string };
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props) {
         nocache: true,
         googleBot: {
           index: true,
-          follow: false,
+          follow: true,
           "max-video-preview": -1,
           "max-image-preview": "large",
           "max-snippet": -1,
@@ -90,7 +92,14 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Post({ params }: Props) {
-  const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
+  const posts = getAllPosts([
+    "title",
+    "date",
+    "excerpt",
+    "coverImage",
+    "slug",
+    "author",
+  ]);
   const post = getPostBySlug(params.slug, [
     "title",
     "author",
@@ -101,6 +110,25 @@ export default async function Post({ params }: Props) {
   ]);
 
   const content = await markdownToHtml(post.content || "");
+  const words = (post.content || "").trim().split(/\s+/).filter(Boolean).length;
+  const readingTime = Math.max(1, Math.ceil(words / 220));
+  const currentWords = new Set(
+    post.title
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((word: string) => word.length > 3),
+  );
+  const relatedPosts = posts
+    .filter((candidate) => candidate.slug !== params.slug)
+    .map((candidate) => ({
+      ...candidate,
+      relevance: candidate.title
+        .toLowerCase()
+        .split(/[^a-z0-9]+/)
+        .filter((word: string) => currentWords.has(word)).length,
+    }))
+    .sort((a, b) => b.relevance - a.relevance)
+    .slice(0, 3);
 
   return (
     <>
@@ -114,11 +142,12 @@ export default async function Post({ params }: Props) {
                 className="wow fadeInUp relative z-20 mb-[60px] h-[300px] overflow-hidden rounded md:h-[400px] lg:h-[500px]"
                 data-wow-delay=".1s"
               >
-                <img
+                <Image
                   src={post.coverImage}
-                  alt="image"
-                  width={1288}
-                  height={500}
+                  alt={`${post.title} cover`}
+                  fill
+                  priority
+                  sizes="(max-width: 1280px) 100vw, 1288px"
                   className="h-full w-full object-cover object-center"
                 />
                 <div className="absolute left-0 top-0 z-10 flex h-full w-full items-end bg-gradient-to-t from-dark-700 to-transparent">
@@ -146,6 +175,9 @@ export default async function Post({ params }: Props) {
                         </span>
                         {format(new Date(post.date), "dd MMM yyyy")}
                       </p>
+                      <p className="text-sm font-medium text-white">
+                        {readingTime} min read
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -153,11 +185,21 @@ export default async function Post({ params }: Props) {
               <div className="-mx-4 flex flex-wrap">
                 <div className="w-full px-4 lg:w-8/12">
                   <div className="blog-details xl:pr-10">
+                    <h1 className="mb-8 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-4xl">
+                      {post.title}
+                    </h1>
                     <div dangerouslySetInnerHTML={{ __html: content }}></div>
+                    <div className="mt-12">
+                      <BlogConversionCard source={params.slug} />
+                    </div>
                   </div>
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                   <div>
+
+                    <div className="mb-10">
+                      <BlogConversionCard compact source={params.slug} />
+                    </div>
 
                     <div className="-mx-4 mb-8 flex flex-wrap">
                       <div className="w-full px-4">
@@ -169,7 +211,7 @@ export default async function Post({ params }: Props) {
                         </h2>
                         <span className="mb-10 inline-block h-[2px] w-20 bg-primary"></span>
                       </div>
-                      {posts.slice(0, 3).map((blog, i) => (
+                      {relatedPosts.map((blog, i) => (
                         <PopularArticle
                           key={i}
                           image={blog?.coverImage}
@@ -197,7 +239,7 @@ export default async function Post({ params }: Props) {
               <span className="mb-10 inline-block h-[2px] w-20 bg-primary"></span>
             </div>
 
-            {posts.slice(0, 3).map((blog, key) => (
+            {relatedPosts.map((blog, key) => (
               <div
                 key={key}
                 className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
