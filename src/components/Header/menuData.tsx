@@ -2,7 +2,6 @@ import { Menu } from "@/types/menu";
 
 const DOCUMENTATION_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL;
 
-
 const menuData: Menu[] = [
   {
     id: 1,
@@ -36,6 +35,18 @@ const menuData: Menu[] = [
   },
   {
     id: 6,
+    title: "Cheat Sheet",
+    path: "/git-worktree-cheat-sheet",
+    newTab: false,
+  },
+  {
+    id: 7,
+    title: "Generator",
+    path: "/git-worktree-command-generator",
+    newTab: false,
+  },
+  {
+    id: 8,
     title: "Contact",
     path: "/contact",
     newTab: false,

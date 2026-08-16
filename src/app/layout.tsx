@@ -1,7 +1,7 @@
 "use client";
 
-import { hotjar } from 'react-hotjar';
-import Clarity from '@microsoft/clarity';
+import { hotjar } from "react-hotjar";
+import Clarity from "@microsoft/clarity";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -23,8 +23,8 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    Clarity.init('vvb5odkvib');
-    hotjar.initialize({id: HOTJAR_ID, sv: HOTJAR_SV})
+    Clarity.init("vvb5odkvib");
+    hotjar.initialize({ id: HOTJAR_ID, sv: HOTJAR_SV });
     const loadingTimer = window.setTimeout(() => setLoading(false), 500);
 
     return () => {
@@ -34,23 +34,25 @@ export default function RootLayout({
 
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
-      <Head />
+      <head>
+        <Head />
+      </head>
 
       <body>
         {loading ? (
           <PreLoader />
         ) : (
-            <ThemeProvider
-              attribute="class"
-              enableSystem={false}
-              defaultTheme="light"
-            >
-              <ToasterContext />
-              <Header />
-              {children}
-              <Footer />
-              <ScrollToTop />
-            </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            enableSystem={false}
+            defaultTheme="light"
+          >
+            <ToasterContext />
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </ThemeProvider>
         )}
       </body>
     </html>

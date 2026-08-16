@@ -7,6 +7,7 @@ import markdownToHtml from "@/utils/markdownToHtml";
 import { format } from "date-fns";
 import Link from "next/link";
 import Image from "next/image";
+import CheatSheetLink from "@/components/Blog/CheatSheetLink";
 
 type Props = {
   params: { slug: string };
@@ -190,13 +191,15 @@ export default async function Post({ params }: Props) {
                     </h1>
                     <div dangerouslySetInnerHTML={{ __html: content }}></div>
                     <div className="mt-12">
+                      <div className="mb-6">
+                        <CheatSheetLink />
+                      </div>
                       <BlogConversionCard source={params.slug} />
                     </div>
                   </div>
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                   <div>
-
                     <div className="mb-10">
                       <BlogConversionCard compact source={params.slug} />
                     </div>
@@ -221,7 +224,6 @@ export default async function Post({ params }: Props) {
                         />
                       ))}
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -240,10 +242,7 @@ export default async function Post({ params }: Props) {
             </div>
 
             {relatedPosts.map((blog, key) => (
-              <div
-                key={key}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
-              >
+              <div key={key} className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3">
                 <SingleBlog blog={blog} />
               </div>
             ))}
