@@ -90,13 +90,6 @@ const detailedFeatures2 : Feature[] = [
     description: "Access Git logs and perform detailed comparisons between Git worktrees, branches, tags, and commits for robust version control.",
     features: ["View Git Log", "Git Diff Between Git Worktrees, Branches, Tags, and Commits"],
     alt: "WorktreeWise showing a Git diff comparison between two Git worktrees, highlighting differences in files and changes",
-  },
-  {
-    title: "Generate Code Across Git Worktrees",
-    image: "generator",
-    description: "",
-    features: ["Generate new code snippets, templates, or entire modules across Git worktrees to kickstart your development projects.", "Import existing code generators from various repositories and integrate them into your current project’s Git worktrees for streamlined development.", "Execute your predefined code generator on a specific Git worktree to automate code generation and streamline your development process."],
-    alt: "WorktreeWise showing how to run a code generator on a Git worktree",
   }
 ];
 
