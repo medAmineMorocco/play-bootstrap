@@ -74,6 +74,13 @@ export const quickReference = [
     worktreeWise: "Prune",
     href: "#prune-worktrees",
   },
+  {
+    task: "Repair moved worktrees",
+    command: "git worktree repair [<path>...]",
+    options: ["One or more worktree paths"],
+    worktreeWise: "Repair",
+    href: "#repair-worktrees",
+  },
 ] as const;
 
 export const commandGroups: CommandGroup[] = [
@@ -94,7 +101,7 @@ export const commandGroups: CommandGroup[] = [
         worktreeWise: "Create worktree",
         article: {
           label: "Detailed git worktree add guide",
-          href: "/blog/git-worktree-add",
+          href: "/git-worktree/add",
         },
       },
       {
@@ -108,6 +115,10 @@ export const commandGroups: CommandGroup[] = [
           "Use -B instead of -b to reset an existing branch to the start point.",
         ],
         worktreeWise: "Create worktree + new branch",
+        article: {
+          label: "git worktree add command tutorial",
+          href: "/git-worktree/add",
+        },
       },
       {
         id: "specific-commit",
@@ -139,6 +150,10 @@ export const commandGroups: CommandGroup[] = [
           "--porcelain emits stable, script-friendly output.",
         ],
         worktreeWise: "View all worktrees",
+        article: {
+          label: "git worktree list tutorial",
+          href: "/git-worktree/list",
+        },
       },
       {
         id: "move-worktree",
@@ -150,8 +165,8 @@ export const commandGroups: CommandGroup[] = [
         note: "Use this command instead of moving the directory manually.",
         worktreeWise: "Move",
         article: {
-          label: "Learn about moving and renaming worktrees",
-          href: "/blog/how-to-rename-git-worktree",
+          label: "Learn about moving worktrees safely",
+          href: "/git-worktree/move",
         },
       },
       {
@@ -162,6 +177,10 @@ export const commandGroups: CommandGroup[] = [
         explanation:
           "Prevents automatic pruning of a worktree that may be temporarily unavailable.",
         worktreeWise: "Lock",
+        article: {
+          label: "git worktree lock tutorial",
+          href: "/git-worktree/lock",
+        },
       },
       {
         id: "unlock-worktree",
@@ -171,6 +190,10 @@ export const commandGroups: CommandGroup[] = [
         explanation:
           "Removes the administrative lock so the worktree can be pruned normally.",
         worktreeWise: "Unlock",
+        article: {
+          label: "git worktree unlock tutorial",
+          href: "/git-worktree/unlock",
+        },
       },
     ],
   },
@@ -191,7 +214,7 @@ export const commandGroups: CommandGroup[] = [
         worktreeWise: "Delete",
         article: {
           label: "Safe worktree removal guide",
-          href: "/blog/git-worktree-remove",
+          href: "/git-worktree/remove",
         },
       },
       {
@@ -205,7 +228,21 @@ export const commandGroups: CommandGroup[] = [
         worktreeWise: "Prune",
         article: {
           label: "Understand git worktree prune",
-          href: "/blog/git-worktree-prune",
+          href: "/git-worktree/prune",
+        },
+      },
+      {
+        id: "repair-worktrees",
+        title: "Repair broken worktree links",
+        command: "git worktree repair ../moved-worktree",
+        syntax: "git worktree repair [<path>...]",
+        explanation:
+          "Repairs Git's administrative links after a worktree directory or the main repository was moved outside Git.",
+        note: "Repair an existing moved directory; prune only when the worktree is permanently gone.",
+        worktreeWise: "Repair",
+        article: {
+          label: "Learn how to repair a damaged worktree",
+          href: "/git-worktree/repair",
         },
       },
     ],

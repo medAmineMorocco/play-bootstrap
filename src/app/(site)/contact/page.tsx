@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "WorktreeWise",
     images: [
       {
-        url: "https://www.worktreewise.com/images/home/dashboard-preview.png",
+        url: "https://www.worktreewise.com/images/v1.1.0/01-git-log.png",
         width: 1200,
         height: 630,
         alt: "Contact WorktreeWise - Git worktree management solution",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Contact WorktreeWise | Support & Feedback",
     description:
       "Have questions or feedback? Contact WorktreeWise — your Git worktree productivity partner.",
-    images: ["https://www.worktreewise.com/images/home/dashboard-preview.png"],
+    images: ["https://www.worktreewise.com/images/v1.1.0/01-git-log.png"],
   },
 };
 

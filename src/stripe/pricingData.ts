@@ -20,6 +20,11 @@ export const pricingData: Price[] = [
       "WorktreeWise for JetBrains Plugin",
       "Run workflows across multiple worktrees",
       "View Git log & diffs",
+      "Worktree health & disk usage overview",
+      "Sparse checkout & environment isolation",
+      "Multiple terminal panes",
+      "Multiple AI agents in parallel",
+      "Custom worktree naming patterns",
     ],
   },
   {
@@ -38,6 +43,11 @@ export const pricingData: Price[] = [
       "WorktreeWise for JetBrains Plugin",
       "Run workflows across multiple worktrees",
       "View Git log & diffs",
+      "Worktree health & disk usage overview",
+      "Sparse checkout & environment isolation",
+      "Multiple terminal panes",
+      "Multiple AI agents in parallel",
+      "Custom worktree naming patterns",
     ],
   },
 ];

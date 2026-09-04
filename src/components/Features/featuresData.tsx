@@ -71,7 +71,7 @@ const featuresData: Feature[] = [
       </svg>
     ),
     title: "Workflow Automation",
-    paragraph: "Efficiently define, execute, and visualize workflows across multiple Git worktrees, with a built-in code generator for seamless task automation.",
+    paragraph: "Efficiently define, execute, and visualize workflows across multiple Git worktrees in sequence or parallel.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -124,8 +124,8 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "User Experience",
-    paragraph: "Enhance your interaction with WorktreeWise using intuitive light and dark mode options, ensuring a comfortable and personalized experience.",
+    title: "Parallel AI Agents",
+    paragraph: "Run multiple AI coding agents side by side, each isolated in the right worktree with optional smart repository context.",
     btn: "Learn More",
     btnLink: "/#",
   },

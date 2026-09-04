@@ -38,15 +38,33 @@ const Header = () => {
     };
   }, []);
 
-  // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index: any) => {
+  // submenu handler for mobile
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openNestedIndex, setOpenNestedIndex] = useState<number | null>(null);
+
+  const handleSubmenu = (index: number) => {
     if (openIndex === index) {
-      setOpenIndex(-1);
+      setOpenIndex(null);
+      setOpenNestedIndex(null);
     } else {
       setOpenIndex(index);
+      setOpenNestedIndex(null);
     }
   };
+
+  const handleNestedSubmenu = (subIndex: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (openNestedIndex === subIndex) {
+      setOpenNestedIndex(null);
+    } else {
+      setOpenNestedIndex(subIndex);
+    }
+  };
+
+  const isTutorialsActive =
+    pathUrl === "/git-worktree" ||
+    pathUrl?.startsWith("/git-worktree/") ||
+    pathUrl?.startsWith("/ai-agents/");
 
   const { theme, setTheme } = useTheme();
 
@@ -119,6 +137,7 @@ const Header = () => {
                     onClick={navbarToggleHandler}
                     id="navbarToggler"
                     aria-label="Mobile Menu"
+                    aria-expanded={navbarOpen}
                     className="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
                   >
                     <span
@@ -151,13 +170,13 @@ const Header = () => {
                   </button>
                   <nav
                     id="navbarCollapse"
-                    className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark-2 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 lg:dark:bg-transparent ${
+                    className={`navbar absolute right-0 z-30 max-h-[85vh] overflow-y-auto w-[290px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 shadow-xl duration-300 dark:border-body-color/20 dark:bg-dark-2 lg:visible lg:static lg:max-h-none lg:overflow-visible lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent ${
                       navbarOpen
                         ? "visibility top-full opacity-100"
                         : "invisible top-[120%] opacity-0"
                     }`}
                   >
-                    <ul className="block lg:ml-8 lg:flex lg:gap-x-8 xl:ml-14 xl:gap-x-12">
+                    <ul className="block lg:ml-8 lg:flex lg:items-center lg:gap-x-6 xl:ml-12 xl:gap-x-8">
                       {menuData
                         .filter((menuItem) => {
                           if (EVALUATE_SHOW_ABOUT_PAGE === "true") {
@@ -165,8 +184,12 @@ const Header = () => {
                           }
                           return true;
                         })
-                        .map((menuItem, index) =>
-                          menuItem.path ? (
+                        .map((menuItem, index) => {
+                          const isItemActive =
+                            menuItem.path === pathUrl ||
+                            (menuItem.title === "Tutorials" && isTutorialsActive);
+
+                          return menuItem.path ? (
                             <li key={index} className="group relative">
                               {pathUrl !== "/" ? (
                                 <Link
@@ -174,7 +197,7 @@ const Header = () => {
                                   scroll={false}
                                   href={menuItem.path}
                                   className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${
-                                    pathUrl === menuItem?.path && "text-primary"
+                                    isItemActive ? "text-primary !font-semibold" : ""
                                   }`}
                                   target={menuItem.newTab ? "_blank" : "_self"}
                                 >
@@ -189,9 +212,7 @@ const Header = () => {
                                       ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
                                       : "text-body-color dark:text-white lg:text-white"
                                   } ${
-                                    pathUrl === menuItem?.path &&
-                                    sticky &&
-                                    "!text-primary"
+                                    isItemActive && sticky ? "!text-primary" : ""
                                   }`}
                                   target={menuItem.newTab ? "_blank" : "_self"}
                                 >
@@ -204,84 +225,163 @@ const Header = () => {
                               className="submenu-item group relative"
                               key={index}
                             >
-                              {pathUrl !== "/" ? (
-                                <button
-                                  onClick={() => handleSubmenu(index)}
-                                  className={`ud-menu-scroll flex items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6`}
-                                >
-                                  {menuItem.title}
-
-                                  <span className="pl-1">
-                                    <svg
-                                      className={`duration-300 lg:group-hover:rotate-180`}
-                                      width="16"
-                                      height="17"
-                                      viewBox="0 0 16 17"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M8.00039 11.9C7.85039 11.9 7.72539 11.85 7.60039 11.75L1.85039 6.10005C1.62539 5.87505 1.62539 5.52505 1.85039 5.30005C2.07539 5.07505 2.42539 5.07505 2.65039 5.30005L8.00039 10.525L13.3504 5.25005C13.5754 5.02505 13.9254 5.02505 14.1504 5.25005C14.3754 5.47505 14.3754 5.82505 14.1504 6.05005L8.40039 11.7C8.27539 11.825 8.15039 11.9 8.00039 11.9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
-                                </button>
-                              ) : (
-                                <button
-                                  onClick={() => handleSubmenu(index)}
-                                  className={`ud-menu-scroll flex items-center justify-between py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${
-                                    sticky
-                                      ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
-                                      : "text-white"
-                                  }`}
-                                >
-                                  {menuItem.title}
-
-                                  <span className="pl-1">
-                                    <svg
-                                      className={`duration-300 lg:group-hover:rotate-180`}
-                                      width="16"
-                                      height="17"
-                                      viewBox="0 0 16 17"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M8.00039 11.9C7.85039 11.9 7.72539 11.85 7.60039 11.75L1.85039 6.10005C1.62539 5.87505 1.62539 5.52505 1.85039 5.30005C2.07539 5.07505 2.42539 5.07505 2.65039 5.30005L8.00039 10.525L13.3504 5.25005C13.5754 5.02505 13.9254 5.02505 14.1504 5.25005C14.3754 5.47505 14.3754 5.82505 14.1504 6.05005L8.40039 11.7C8.27539 11.825 8.15039 11.9 8.00039 11.9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
-                                </button>
-                              )}
-
-                              <div
-                                className={`submenu relative left-0 top-full w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                                  openIndex === index
-                                    ? "!-left-[25px]"
-                                    : "hidden"
+                              <button
+                                onClick={() => handleSubmenu(index)}
+                                aria-haspopup="true"
+                                aria-expanded={openIndex === index}
+                                className={`ud-menu-scroll flex w-full items-center justify-between py-2 text-base lg:inline-flex lg:w-auto lg:px-0 lg:py-6 ${
+                                  pathUrl !== "/"
+                                    ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
+                                    : sticky
+                                    ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
+                                    : "text-body-color dark:text-white lg:text-white"
+                                } ${
+                                  isItemActive
+                                    ? "!text-primary font-semibold"
+                                    : ""
                                 }`}
                               >
-                                {menuItem?.submenu?.map(
-                                  (submenuItem: any, i) => (
+                                <span>{menuItem.title}</span>
+                                <span className="pl-1">
+                                  <svg
+                                    className={`duration-300 lg:group-hover:rotate-180 ${
+                                      openIndex === index ? "rotate-180" : ""
+                                    }`}
+                                    width="16"
+                                    height="17"
+                                    viewBox="0 0 16 17"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8.00039 11.9C7.85039 11.9 7.72539 11.85 7.60039 11.75L1.85039 6.10005C1.62539 5.87505 1.62539 5.52505 1.85039 5.30005C2.07539 5.07505 2.42539 5.07505 2.65039 5.30005L8.00039 10.525L13.3504 5.25005C13.5754 5.02505 13.9254 5.02505 14.1504 5.25005C14.3754 5.47505 14.3754 5.82505 14.1504 6.05005L8.40039 11.7C8.27539 11.825 8.15039 11.9 8.00039 11.9Z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                              </button>
+
+                              {/* Desktop & Mobile Dropdown */}
+                              <div
+                                className={`submenu relative left-0 top-full w-full rounded-md bg-white p-2.5 shadow-lg dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:w-[260px] lg:opacity-0 lg:transition-[top,opacity] lg:duration-300 lg:group-hover:visible lg:group-hover:top-full lg:group-hover:opacity-100 ${
+                                  openIndex === index ? "block" : "hidden lg:block"
+                                }`}
+                              >
+                                {menuItem?.submenu?.map((subItem, subIdx) => {
+                                  if (subItem.submenu) {
+                                    // Nested Submenu (e.g. Commands -> Add, List, etc.)
+                                    return (
+                                      <div
+                                        key={subIdx}
+                                        className="group/nested relative rounded-md"
+                                      >
+                                        <button
+                                          type="button"
+                                          onClick={(e) =>
+                                            handleNestedSubmenu(subIdx, e)
+                                          }
+                                          className="flex w-full items-center justify-between rounded px-3 py-2 text-sm font-medium text-dark hover:bg-primary/10 hover:text-primary dark:text-white dark:hover:bg-white/5 dark:hover:text-primary"
+                                        >
+                                          <span>{subItem.title}</span>
+                                          <svg
+                                            className={`h-4 w-4 transition-transform duration-200 lg:-rotate-90 lg:group-hover/nested:rotate-0 ${
+                                              openNestedIndex === subIdx
+                                                ? "rotate-180"
+                                                : ""
+                                            }`}
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                          >
+                                            <path
+                                              fillRule="evenodd"
+                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                              clipRule="evenodd"
+                                            />
+                                          </svg>
+                                        </button>
+
+                                        {/* Nested Dropdown menu */}
+                                        <div
+                                          className={`relative left-0 top-0 mt-1 w-full rounded-md border border-stroke/50 bg-gray-1/80 p-1.5 dark:border-dark-3/30 dark:bg-dark/40 lg:invisible lg:absolute lg:-top-2 lg:left-full lg:mt-0 lg:w-[240px] lg:border-stroke/80 lg:bg-white lg:p-2 lg:shadow-xl lg:opacity-0 lg:backdrop-blur-sm lg:dark:border-dark-3 lg:dark:bg-dark-2 lg:group-hover/nested:visible lg:group-hover/nested:opacity-100 ${
+                                            openNestedIndex === subIdx
+                                              ? "block"
+                                              : "hidden lg:block"
+                                          }`}
+                                        >
+                                          <div className="px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-body-color/70 dark:text-dark-6">
+                                            Git Worktree Commands
+                                          </div>
+                                          {subItem.submenu.map(
+                                            (nestedItem, nestedIdx) => (
+                                              <Link
+                                                key={nestedIdx}
+                                                href={nestedItem.path || "#"}
+                                                onClick={() => {
+                                                  setNavbarOpen(false);
+                                                  setOpenIndex(null);
+                                                  setOpenNestedIndex(null);
+                                                }}
+                                                className={`flex items-center justify-between rounded px-2.5 py-1.5 text-xs font-medium transition-colors ${
+                                                  pathUrl === nestedItem.path
+                                                    ? "bg-primary text-white"
+                                                    : "text-body-color hover:bg-primary/10 hover:text-primary dark:text-dark-6 dark:hover:bg-white/5 dark:hover:text-primary"
+                                                }`}
+                                              >
+                                                <span>{nestedItem.title}</span>
+                                                {nestedItem.title ===
+                                                  "Overview" && (
+                                                  <span className="text-[10px] opacity-75">
+                                                    Hub
+                                                  </span>
+                                                )}
+                                              </Link>
+                                            ),
+                                          )}
+                                        </div>
+                                      </div>
+                                    );
+                                  }
+
+                                  if (subItem.isSoon) {
+                                    // Soon badge item (disabled / non-clickable)
+                                    return (
+                                      <div
+                                        key={subIdx}
+                                        aria-disabled="true"
+                                        className="flex items-center justify-between rounded px-3 py-2 text-sm text-body-color/60 cursor-not-allowed select-none dark:text-dark-6/60"
+                                      >
+                                        <span className="font-medium">
+                                          {subItem.title}
+                                        </span>
+                                        <span className="inline-flex items-center rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-600 border border-amber-500/20 dark:bg-amber-400/10 dark:text-amber-400">
+                                          Soon
+                                        </span>
+                                      </div>
+                                    );
+                                  }
+
+                                  return (
                                     <Link
-                                      href={submenuItem.path}
-                                      key={i}
-                                      className={`block rounded px-4 py-[10px] text-sm ${
-                                        pathUrl === submenuItem.path
-                                          ? "text-primary"
-                                          : "text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
+                                      key={subIdx}
+                                      href={subItem.path || "#"}
+                                      onClick={() => {
+                                        setNavbarOpen(false);
+                                        setOpenIndex(null);
+                                      }}
+                                      className={`flex items-center justify-between rounded px-3 py-2 text-sm font-medium transition-colors ${
+                                        pathUrl === subItem.path
+                                          ? "text-primary bg-primary/10"
+                                          : "text-body-color hover:bg-primary/10 hover:text-primary dark:text-dark-6 dark:hover:bg-white/5 dark:hover:text-primary"
                                       }`}
                                     >
-                                      {submenuItem.title}
+                                      <span>{subItem.title}</span>
                                     </Link>
-                                  ),
-                                )}
+                                  );
+                                })}
                               </div>
                             </li>
-                          ),
-                        )}
+                          );
+                        })}
                     </ul>
                   </nav>
                 </div>

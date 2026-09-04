@@ -193,65 +193,72 @@ function getEquivalent(id: string) {
     "existing-branch": createEquivalent(
       "create#from-an-existing-branch",
       "Create a Git Worktree",
-      "create-worktree-from-branch.webp",
+      "13-create-worktree-from-local-branch.png",
       "Create a worktree from an existing branch in WorktreeWise",
       "Select an existing branch, choose its destination, and create the linked worktree visually.",
     ),
     "new-branch": createEquivalent(
       "create#from-head",
       "Create a Git Worktree",
-      "create-wt-from-head.webp",
+      "08-create-worktree-configured.png",
       "Create a new branch and worktree from HEAD in WorktreeWise",
       "Create a named branch and its worktree from HEAD, with the destination and hooks configured in one dialog.",
     ),
     "specific-commit": createEquivalent(
       "create#from-a-git-commit",
       "Create from a Git Commit",
-      "create-worktree-from-commit.webp",
+      "44-create-worktree-from-commit.png",
       "Create a worktree from a Git commit in WorktreeWise",
       "Locate the commit in Git Log and create a worktree directly from its context menu.",
     ),
     "list-worktrees": createEquivalent(
       "list",
       "List Git Worktrees",
-      "list-worktrees.webp",
+      "04-worktree-overview.png",
       "Worktree list in the WorktreeWise sidebar",
       "See every linked worktree and the total count in the Worktrees panel.",
     ),
     "move-worktree": createEquivalent(
       "move",
       "Move a Git Worktree",
-      "move-worktree.webp",
+      "21-worktree-move.png",
       "Change a worktree folder in WorktreeWise",
       "Choose Change Folder on the worktree, select the destination, and confirm the move.",
     ),
     "remove-worktree": createEquivalent(
       "delete",
       "Delete a Git Worktree",
-      "delete-worktree.webp",
+      "18b-worktree-actions-delete-options.png",
       "Delete a worktree in WorktreeWise",
       "Delete only the worktree or remove both the worktree and its branch from a clear confirmation dialog.",
     ),
     "lock-worktree": createEquivalent(
       "lock",
       "Lock a Git Worktree",
-      "lock-worktree.webp",
+      "22-worktree-lock.png",
       "Lock a worktree in WorktreeWise",
       "Use the Lock action on the selected worktree to protect it from changes.",
     ),
     "unlock-worktree": createEquivalent(
       "unlock",
       "Unlock a Git Worktree",
-      "unlock-worktree.webp",
+      "16-worktree-actions.png",
       "Unlock a worktree in WorktreeWise",
       "Use the documented Unlock action to make the protected worktree available again.",
     ),
     "prune-worktrees": createEquivalent(
       "prune",
       "Prune Git Worktrees",
-      "prune-worktrees.webp",
+      "25-prune-worktrees.png",
       "Prune invalid worktrees in WorktreeWise",
       "Use Prune Worktrees in the sidebar to scan for and remove invalid worktree entries.",
+    ),
+    "repair-worktrees": createEquivalent(
+      "repair",
+      "Repair a Damaged Worktree",
+      "39-repair-worktree.png",
+      "Repair action for a damaged Git worktree in WorktreeWise",
+      "Select a damaged worktree and use Repair to reconnect its current directory without deleting its files or branch.",
     ),
   };
 
@@ -276,7 +283,7 @@ function createEquivalent(
   return {
     docsUrl: `https://docs.worktreewise.com/git-worktrees/${docsPath}`,
     docsLabel,
-    image: `/images/cheatsheet/${imageFile}`,
+    image: `/images/v1.1.0/${imageFile}`,
     imageAlt,
     description,
   };
@@ -325,7 +332,7 @@ export function ComparisonSection() {
         </p>
         <div className="product-shot-frame relative overflow-hidden rounded-xl p-3">
           <img
-            src="/images/cheatsheet/create-worktree-with-hooks.webp"
+            src="/images/v1.1.0/09-create-worktree-hooks.png"
             alt="Create a Git worktree with hooks in WorktreeWise"
             width={1600}
             height={900}

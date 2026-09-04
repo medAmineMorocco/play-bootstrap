@@ -23,7 +23,7 @@ const additionalWorktreeWiseFeatures = [
     href: "https://docs.worktreewise.com/git-worktrees/rename",
     linkLabel: "Rename a Git Worktree",
     icon: "Aa",
-    image: "/images/cheatsheet/rename-git-worktree.webp",
+    image: "/images/v1.1.0/19-worktree-rename.png",
     imageAlt: "Rename a Git worktree in WorktreeWise",
   },
   {
@@ -33,7 +33,7 @@ const additionalWorktreeWiseFeatures = [
     href: "https://docs.worktreewise.com/git-worktrees/naming-pattern",
     linkLabel: "Git Worktree Naming Pattern",
     icon: "{}",
-    image: "/images/cheatsheet/add-custom-naming-pattern.webp",
+    image: "/images/v1.1.0/20-worktree-change-pattern.png",
     imageAlt: "Configure a custom Git worktree naming pattern",
   },
   {
@@ -43,7 +43,7 @@ const additionalWorktreeWiseFeatures = [
     href: "https://docs.worktreewise.com/integrations/ide",
     linkLabel: "Opening a Worktree in an IDE",
     icon: "IDE",
-    image: "/images/cheatsheet/open-worktree-in-editor.webp",
+    image: "/images/v1.1.0/17-worktree-actions-editors.png",
     imageAlt: "Open a WorktreeWise worktree in a configured editor",
   },
   {
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://www.worktreewise.com/images/home/worktrees-management.avif",
+        url: "https://www.worktreewise.com/images/v1.1.0/16-worktree-actions.png",
         width: 1200,
         height: 630,
         alt: "Git worktree cheat sheet by WorktreeWise",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     description:
       "Native Git worktree commands, examples, troubleshooting, and a command generator.",
     images: [
-      "https://www.worktreewise.com/images/home/worktrees-management.avif",
+      "https://www.worktreewise.com/images/v1.1.0/16-worktree-actions.png",
     ],
   },
 };
@@ -294,7 +294,7 @@ export default function GitWorktreeCheatSheetPage() {
               </h3>
               <p className="mt-2 text-slate-300">
                 Explore worktrees, integrations, workflows, Git operations, and
-                code generators.
+                AI-agent workspaces.
               </p>
             </div>
             <a
@@ -324,7 +324,7 @@ export default function GitWorktreeCheatSheetPage() {
               "Open the new worktree in your selected IDE",
               "Preserve the editor configuration and project context",
             ]}
-            image="/images/blog/worktree-add/create-worktree-with-hooks.png"
+            image="/images/v1.1.0/09-create-worktree-hooks.png"
             imageWidth={1920}
             imageHeight={991}
             imageAlt="WorktreeWise creating a Git worktree with automatic setup hooks"
@@ -347,8 +347,8 @@ export default function GitWorktreeCheatSheetPage() {
               "Run branch-specific initialization commands",
               "Repeat the same environment setup for every new worktree",
             ]}
-            image="/images/home/workflow.avif"
-            darkImage="/images/home/workflow-dark.avif"
+            image="/images/v1.1.0/05-workflows.png"
+            darkImage="/images/v1.1.0/05-workflows.png"
             imageWidth={3840}
             imageHeight={2160}
             imageAlt="WorktreeWise workflow automation used to prepare isolated Git worktree environments"
@@ -511,7 +511,7 @@ export default function GitWorktreeCheatSheetPage() {
           </div>
           <div className="product-shot-frame relative overflow-hidden rounded-2xl p-4">
             <Image
-              src="/images/home/dashboard-dark.avif"
+              src="/images/v1.1.0/24-multiple-ai-agents.png"
               alt="WorktreeWise dashboard for managing Git worktrees"
               width={1536}
               height={992}

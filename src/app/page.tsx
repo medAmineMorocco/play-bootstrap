@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "WorktreeWise",
     images: [
       {
-          url: "https://www.worktreewise.com/images/home/dashboard.avif",
+          url: "https://www.worktreewise.com/images/v1.1.0/01-git-log.png",
         width: 1200,
         height: 630,
         alt: "WorktreeWise Git worktree dashboard",
@@ -41,38 +41,62 @@ export const metadata: Metadata = {
     title: "WorktreeWise | Git Worktrees Manager & Productivity Tool",
     description:
       "Manage multiple git worktrees, run workflows, and open worktrees in your favorite IDE — all with WorktreeWise.",
-    images: ["https://www.worktreewise.com/images/home/dashboard-preview.png"],
+    images: ["https://www.worktreewise.com/images/v1.1.0/01-git-log.png"],
   },
 };
 
 const detailedFeatures1: Feature[] = [
   {
     title: "Managing Git Worktrees",
-    image: "worktrees-management",
-    description: "",
+    image: "/images/v1.1.0/16-worktree-actions.png",
+    description: "Create, inspect, protect, move, and clean up every linked worktree from one focused workspace.",
     features: ["List Git Worktrees", "Create Git Worktree", "Rename Git Worktree", "Move Git Worktree", "Delete Git Worktree", "Lock/Unlock Git Worktree", "Prune Git Worktrees", "Hooks Triggered When Creating a New Git Worktree"],
     alt: "Menu options displayed after selecting a Git worktree, including actions to add, remove, rename, and manage Git worktrees",
   },
   {
     title: "Opening Git Worktree in Terminal",
-    image: "terminal",
-    description: "Quickly open a Git worktree in your terminal for instant access to command-line operations and scripting.",
+    image: "/images/v1.1.0/23-multiple-terminals.png",
+    description: "Open several embedded terminals at once, each rooted in the correct worktree and arranged in a flexible grid.",
     features: [],
     alt: "WorktreeWise terminal opened in a Git worktree",
   },
   {
     title: "Workflow Automation",
-    image: "workflow",
+    image: "/images/v1.1.0/05-workflows.png",
     description: "Define and execute a series of commands across multiple Git worktrees, automating complex tasks to boost productivity.",
     features: ["List, create, edit, delete, and duplicate workflows", "Import Existing Workflows from Other Repositories", "Run Workflows in Sequence or Parallel Across All or Selected Git Worktrees", "Visualize Workflow Execution and Logs"],
     alt: "WorktreeWise executing workflows across multiple Git worktrees",
-  }
+  },
+  {
+    title: "Consistent Worktree Naming Patterns",
+    image: "/images/v1.1.0/20-worktree-change-pattern.png",
+    description: "Keep worktree folders predictable across repositories with reusable patterns based on repository and branch names.",
+    features: [
+      "Use {repo} and {branch} placeholders",
+      "Preview the generated worktree folder name",
+      "Change the naming pattern of an existing worktree",
+      "Save team-friendly conventions for future worktrees",
+    ],
+    alt: "WorktreeWise dialog for changing a Git worktree naming pattern",
+  },
 ];
 
 const detailedFeatures2 : Feature[] = [
   {
+    title: "Worktrees Overview",
+    image: "/images/v1.1.0/04-worktree-overview.png",
+    description: "See every worktree in one dashboard, understand repository health at a glance, and focus quickly on clean, dirty, detached, behind, ahead, or damaged worktrees.",
+    features: [
+      "Repository-wide worktree totals and status summary",
+      "Filters for clean, dirty, detached, ahead, behind, and pruneable worktrees",
+      "Working-tree size and recent activity visibility",
+      "Detailed health information for the selected worktree",
+    ],
+    alt: "WorktreeWise overview dashboard showing worktree health, status filters, activity, and disk usage",
+  },
+  {
     title: "Integration with your favourite IDE",
-    image: "editors",
+    image: "/images/v1.1.0/17-worktree-actions-editors.png",
     description: "Every time you open a worktree in WorktreeWise, your favourite IDE launches with all your main worktree settings automatically preserved : bookmarks, configs, scripts, everything. No setup, no repetition your perfect environment is instantly ready.",
     features: [],
     alt: "WorktreeWise displaying supported editors after clicking 'Open In' on a Git worktree, including options like WebStorm, VS Code, and more",
@@ -86,7 +110,7 @@ const detailedFeatures2 : Feature[] = [
   },
   {
     title: "Git Tools",
-    image: "diff",
+    image: "/images/v1.1.0/03-git-diff.png",
     description: "Access Git logs and perform detailed comparisons between Git worktrees, branches, tags, and commits for robust version control.",
     features: ["View Git Log", "Git Diff Between Git Worktrees, Branches, Tags, and Commits"],
     alt: "WorktreeWise showing a Git diff comparison between two Git worktrees, highlighting differences in files and changes",

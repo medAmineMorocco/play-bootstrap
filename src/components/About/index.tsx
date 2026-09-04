@@ -1,10 +1,20 @@
 
+import Image from "next/image";
+
 export type Feature = {
   title: string;
   description: string;
   image: string;
   features: string[];
   alt: string;
+};
+
+const featureImageSrc = (image: string, dark = false) => {
+  if (image.startsWith("/")) return image;
+  if (dark && image !== "worktreewise-for-jetbrains-plugin") {
+    return `/images/home/${image}-dark.avif`;
+  }
+  return `/images/home/${image}.avif`;
 };
 
 const ListItem = ({text}: { text: string }) => {
@@ -41,7 +51,7 @@ const About = ({ features }: {features: Feature[]}) => {
       id="about"
       className="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]"
     >
-      <div className="container">
+      <div className="container space-y-12 lg:space-y-16">
         {features?.map((feature: Feature) => {
             return <div key={feature.title} className="wow fadeInUp" data-wow-delay=".2s">
               <div className="-mx-4 flex flex-wrap">
@@ -69,10 +79,10 @@ const About = ({ features }: {features: Feature[]}) => {
                   <div className="-mx-2 flex flex-wrap sm:-mx-4 lg:-mx-2 xl:-mx-4">
                     <div className="w-full px-2 sm:px-4 lg:px-2 xl:px-4">
                       <div
-                        className="product-shot-frame relative mb-4 overflow-hidden rounded-2xl border p-4 sm:mb-8 sm:p-6"
+                        className="product-shot-frame relative mb-4 overflow-hidden rounded-2xl border p-4 sm:mb-8 lg:mb-0 sm:p-6"
                       >
-                        <img
-                          src={`/images/home/${feature.image}.avif`}
+                        <Image
+                          src={featureImageSrc(feature.image)}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="h-full w-full rounded-xl border border-white/80 object-cover object-center dark:[display:none]"
@@ -80,12 +90,8 @@ const About = ({ features }: {features: Feature[]}) => {
                           width={628}
                           height={353}
                         />
-                        <img
-                          src={`/images/home/${
-                            feature.image === "worktreewise-for-jetbrains-plugin"
-                              ? feature.image
-                              : `${feature.image}-dark`
-                          }.avif`}
+                        <Image
+                          src={featureImageSrc(feature.image, true)}
                           alt={feature.alt}
                           style={{ boxShadow: '0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.07),0 0.25rem 2rem 0 rgba(0, 0, 0, 0.03)'}}
                           className="relative z-10 h-full w-full rounded-xl object-cover object-center shadow-[0_28px_55px_-22px_rgba(0,0,0,0.95)] [display:none] dark:block"

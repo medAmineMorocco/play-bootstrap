@@ -111,32 +111,6 @@ const tutorials = {
       'duration': '01:33',
     },
   ],
-  'Code Generator': [
-    {
-      'title': 'Create & Run a Code Generator on a Git Worktree',
-      'description': 'In this video, we\'ll guide you through creating and running a code generator on a Git worktree using WorktreeWise. This feature lets you automate the generation of files within your worktree, based on specified parameters. Streamline your development process by quickly generating code and ensuring consistency across your projects.',
-      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
-      'duration': '01:33',
-    },
-    {
-      'title': 'Edit, Duplicate and Delete a Code Generator',
-      'description': 'In this video, we\'ll guide you through editing, duplicating, and deleting a code generator in WorktreeWise. This feature allows you to modify existing generators, create duplicates for reuse, or remove those no longer needed. Simplify your workflow by managing your code generators efficiently and maintaining flexibility in your development process.',
-      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
-      'duration': '01:33',
-    },
-    {
-      'title': 'Import Existing Code Generators',
-      'description': 'In this video, we\'ll guide you through importing existing code generators into WorktreeWise. This feature allows you to bring in code generators from other repositories, saving time and ensuring consistency across projects. Quickly integrate pre-defined generators into your workflow to streamline your development process.',
-      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
-      'duration': '01:33',
-    },
-    {
-      'title': 'Inject Code Generator',
-      'description': 'In this video, we\'ll guide you through injecting a code generator into a Git worktree using WorktreeWise. This feature allows you to seamlessly integrate and run code generators within your worktree environment. Enhance your development process by automating code generation directly in your workflow.',
-      'url': 'https://www.youtube.com/embed/tgbNymZ7vqY',
-      'duration': '01:33',
-    },
-  ],
   'Preferences': [
     {
       'title': 'Light & Dark Mode',

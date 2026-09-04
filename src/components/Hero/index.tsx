@@ -1,11 +1,9 @@
 "use client";
 
 import Download from "@/components/Hero/Download";
-import VideoModal from "@/components/Hero/VideoModal";
 import Image from "next/image";
 
 const SHOW_PRODUCTHUNT_WIDGET = process.env.NEXT_PUBLIC_SHOW_PRODUCTHUNT_WIDGET;
-const HERO_VIDEO_ID = process.env.NEXT_PUBLIC_HERO_VIDEO_ID;
 
 
 const Hero = () => {
@@ -58,27 +56,17 @@ const Hero = () => {
                 className="wow fadeInUp relative z-10 mx-auto max-w-[1180px]"
                 data-wow-delay=".25s"
               >
-                {HERO_VIDEO_ID ? (
-                  <div className="mt-12">
-                    <VideoModal
-                      thumbnailLight="/images/home/hero-marketing-v2.png"
-                      thumbnailDark="/images/home/hero-marketing-v2.png"
-                      videoId={HERO_VIDEO_ID}
-                    />
-                  </div>
-                ) : (
-                  <div className="mt-12">
-                    <Image
-                      src="/images/home/hero-marketing-v2.png"
-                      alt="WorktreeWise managing parallel Git worktrees and a successful automated workflow"
-                      className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
-                      width={1536}
-                      height={992}
-                      sizes="(max-width: 1280px) 94vw, 1180px"
-                      priority
-                    />
-                  </div>
-                )}
+                <div className="mt-12">
+                  <Image
+                    src="/images/v1.1.0/01-git-log.png"
+                    alt="WorktreeWise 1.1.0 Git Log with the author column hidden"
+                    className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
+                    width={1600}
+                    height={950}
+                    sizes="(max-width: 1280px) 94vw, 1180px"
+                    priority
+                  />
+                </div>
                 <div className="absolute -right-6 -top-6 z-[-1]">
                   <svg
                     width="134"

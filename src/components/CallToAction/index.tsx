@@ -1,4 +1,6 @@
 
+import Image from "next/image";
+
 const CallToAction = () => {
   return (
     <section className="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px]">
@@ -8,25 +10,26 @@ const CallToAction = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[570px] text-center">
                 <h2 className="mb-2.5 text-3xl font-bold text-white md:text-[38px] md:leading-[1.44]">
-                  <span>Tailor Your Experience with Dark Mode</span>
+                  <span>Run Multiple AI Agents in Parallel</span>
                 </h2>
                 <p className="mx-auto mb-6 max-w-[515px] text-base leading-[1.5] text-white">
-                  Reduce eye strain and improve focus with Night Mode, providing a comfortable visual experience for
-                  extended coding sessions.
+                  Give each Git worktree its own AI coding session, compare approaches side by side, and keep every
+                  agent focused on the correct branch and repository context.
                 </p>
               </div>
             </div>
-            <div
-              className="product-shot-frame product-shot-frame-dark mx-auto overflow-hidden rounded-2xl border p-4 sm:p-6"
-            >
-              <img
-                src="/images/home/dashboard-dark.avif"
-                alt="WorktreeWise dashboard in dark mode"
-                className="relative z-10 mx-auto max-w-full rounded-xl shadow-[0_28px_55px_-22px_rgba(0,0,0,0.95)]"
-                width={845}
-                height={316}
-                loading="lazy"
-              />
+            <div className="w-full px-4">
+              <div className="mx-auto max-w-[1180px]">
+                <Image
+                  src="/images/v1.1.0/24-multiple-ai-agents.png"
+                  alt="Three AI agents working in parallel across WorktreeWise worktrees"
+                  className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
+                  width={1600}
+                  height={950}
+                  sizes="(max-width: 1280px) 94vw, 1180px"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
