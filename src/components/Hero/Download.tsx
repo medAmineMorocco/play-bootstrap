@@ -85,7 +85,7 @@ const DropdownItem = ({ label, href, newTab} : { label: any, href: string, newTa
   return (
     <a
       href={href}
-      target={newTab ? "_blank" : ""}
+      target={newTab ? "_blank" : "_self"}
       className="text-body-color dark:text-dark-6 hover:bg-[#F5F7FD] dark:hover:bg-primary/5 hover:text-primary block px-5 py-2 text-base"
     >
       {label}
