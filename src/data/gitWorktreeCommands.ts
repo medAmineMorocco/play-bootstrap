@@ -209,8 +209,8 @@ export const TUTORIAL_CLUSTERS: TutorialCluster[] = [
     id: "troubleshooting",
     title: "Troubleshooting",
     description: "Fix branch already checked out, broken metadata, lock conflicts, and unremovable worktrees.",
-    badge: "Soon",
-    isSoon: true,
+    path: "/git-worktree/troubleshooting",
+    isSoon: false,
     topics: [
       "Branch already checked out in another worktree",
       "Cannot remove worktree with uncommitted changes",
@@ -223,8 +223,8 @@ export const TUTORIAL_CLUSTERS: TutorialCluster[] = [
     id: "ai-agent",
     title: "AI Agent",
     description: "Equip Claude Code, Cursor, Codex, and Gemini CLI with dedicated isolated Git worktrees.",
-    badge: "Soon",
-    isSoon: true,
+    path: "/ai-agents/git-worktrees",
+    isSoon: false,
     topics: [
       "Claude Code + Git worktree isolation",
       "Running multi-agent parallel coding workflows",
@@ -236,8 +236,8 @@ export const TUTORIAL_CLUSTERS: TutorialCluster[] = [
     id: "isolation",
     title: "Isolation",
     description: "Isolate local ports, environment variables (.env), node_modules, and Docker containers across branches.",
-    badge: "Soon",
-    isSoon: true,
+    path: "/git-worktree/environment-isolation",
+    isSoon: false,
     topics: [
       "Per-worktree .env and environment variable overrides",
       "Managing duplicate ports across dev servers",
@@ -249,8 +249,8 @@ export const TUTORIAL_CLUSTERS: TutorialCluster[] = [
     id: "comparisons",
     title: "Comparisons",
     description: "Compare Git worktree with git clone, git stash, sparse checkout, and native Git GUIs.",
-    badge: "Soon",
-    isSoon: true,
+    path: "/git-worktree/comparisons",
+    isSoon: false,
     topics: [
       "Git worktree vs git clone (disk & memory comparison)",
       "Git worktree vs branch switching & git stash",

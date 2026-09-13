@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import Faq from "@/components/Faq";
-import Pricing from "@/components/Pricing";
+import { FAQ, Pricing } from "@/components/landing/Home";
+import styles from "@/components/landing/landing.module.css";
+
 import { Metadata } from "next";
 
 const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_LANDING_PAGE_URL;
@@ -43,10 +44,11 @@ const PricingPage = () => {
   return (
     <>
       <Breadcrumb pageName="Plans & Pricing" />
-      <Pricing WORKTREES_BOOK_LANDING_PAGE_URL={WORKTREES_BOOK_LANDING_PAGE_URL} />
-      <Faq />
+      <div className={styles.landing}><Pricing checkout />
+      <FAQ /></div>
     </>
   );
 };
 
 export default PricingPage;
+

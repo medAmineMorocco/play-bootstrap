@@ -1,39 +1,7 @@
 import { Blog } from "@/types/blog";
 import { format } from "date-fns";
 import Link from "next/link";
-
-const SingleBlog = ({ blog }: { blog: Blog }) => {
+export default function SingleBlog({ blog }: { blog: Blog }) {
   const { title, coverImage, excerpt, date, slug } = blog;
-
-  return (
-    <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
-      <div className="mb-8 overflow-hidden rounded">
-        <Link href={`/blog/${slug}`} aria-label="blog cover" className="block">
-          <img
-            src={coverImage!}
-            alt="image"
-            className="w-full transition group-hover:rotate-6 group-hover:scale-125"
-            width={408}
-            height={272}
-          />
-        </Link>
-      </div>
-      <div>
-        <span className="mb-5 inline-block rounded bg-primary px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
-          {format(new Date(date), "dd MMM yyyy")}
-        </span>
-        <h3>
-          <Link
-            href={`/blog/${slug}`}
-            className="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
-          >
-            {title}
-          </Link>
-        </h3>
-        <p className="text-base text-body-color dark:text-dark-6">{excerpt}</p>
-      </div>
-    </div>
-  );
-};
-
-export default SingleBlog;
+  return <article className="editorial-article-card"><Link href={`/blog/${slug}`} target="_self" tabIndex={-1} aria-hidden="true" className="article-cover"><img src={coverImage!} alt="" loading="lazy" width={408} height={272} /></Link><time dateTime={date}>{format(new Date(date), "dd MMM yyyy")}</time><h3><Link href={`/blog/${slug}`} target="_self">{title}</Link></h3><p>{excerpt}</p><Link href={`/blog/${slug}`} target="_self" className="article-read" aria-label={`Read ${title}`}>Read article <span aria-hidden="true">↗</span></Link></article>;
+}

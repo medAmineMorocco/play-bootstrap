@@ -8,6 +8,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+}
+
 .sticky-menu .navbar-logo {
   @apply py-2;
 }

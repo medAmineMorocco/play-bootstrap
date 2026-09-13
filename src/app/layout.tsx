@@ -8,8 +8,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
 import ToasterContext from "./api/contex/ToasetContex";
-import { useEffect, useState } from "react";
-import PreLoader from "@/components/Common/PreLoader";
+import { useEffect } from "react";
 import Head from "@/app/head";
 
 const HOTJAR_ID = Number(process.env.NEXT_PUBLIC_HOTJAR_ID);
@@ -20,16 +19,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState<boolean>(true);
-
   useEffect(() => {
     Clarity.init("vvb5odkvib");
-    hotjar.initialize({ id: HOTJAR_ID, sv: HOTJAR_SV });
-    const loadingTimer = window.setTimeout(() => setLoading(false), 500);
-
-    return () => {
-      window.clearTimeout(loadingTimer);
-    };
+    if (HOTJAR_ID && HOTJAR_SV) hotjar.initialize({ id: HOTJAR_ID, sv: HOTJAR_SV });
   }, []);
 
   return (
@@ -39,9 +31,6 @@ export default function RootLayout({
       </head>
 
       <body>
-        {loading ? (
-          <PreLoader />
-        ) : (
           <ThemeProvider
             attribute="class"
             enableSystem={false}
@@ -53,7 +42,6 @@ export default function RootLayout({
             <Footer />
             <ScrollToTop />
           </ThemeProvider>
-        )}
       </body>
     </html>
   );

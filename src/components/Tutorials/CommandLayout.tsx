@@ -218,24 +218,58 @@ export function CommandSidebar() {
           </div>
         </div>
 
-        {/* Upcoming Clusters */}
+        {/* Topic Clusters */}
         <div className="pt-4 border-t border-stroke dark:border-dark-3/40">
-          <div className="mb-3 px-1 text-xs font-bold uppercase tracking-wider text-body-color dark:text-dark-6">
-            Upcoming Clusters
+          <div className="mb-2.5 flex items-center justify-between px-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-body-color dark:text-dark-6">
+              Topic Clusters
+            </span>
+            <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary dark:bg-primary/20">
+              4 Available
+            </span>
           </div>
-          <div className="space-y-1.5">
-            {TUTORIAL_CLUSTERS.filter((c) => c.isSoon).map((cluster) => (
-              <div
-                key={cluster.id}
-                aria-disabled="true"
-                className="flex items-center justify-between rounded-lg px-3 py-2 text-xs text-body-color/70 dark:text-dark-6/70 bg-gray-1/50 dark:bg-dark/30 select-none cursor-not-allowed"
-              >
-                <span className="font-medium">{cluster.title}</span>
-                <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-semibold text-amber-600 dark:text-amber-400">
-                  Soon
-                </span>
-              </div>
-            ))}
+          <div className="space-y-1">
+            {TUTORIAL_CLUSTERS.filter((c) => c.id !== "commands").map((cluster) => {
+              if (cluster.isSoon || !cluster.path) {
+                return (
+                  <div
+                    key={cluster.id}
+                    aria-disabled="true"
+                    className="flex items-center justify-between rounded-lg px-3 py-2 text-xs text-body-color/70 dark:text-dark-6/70 bg-gray-1/50 dark:bg-dark/30 select-none cursor-not-allowed"
+                  >
+                    <span className="font-medium">{cluster.title}</span>
+                    <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-semibold text-amber-600 dark:text-amber-400">
+                      Soon
+                    </span>
+                  </div>
+                );
+              }
+
+              const isActive = pathname === cluster.path;
+              return (
+                <Link
+                  key={cluster.id}
+                  href={cluster.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`group flex items-center justify-between rounded-lg px-3 py-2 text-xs transition-all ${
+                    isActive
+                      ? "bg-primary text-white font-medium shadow-sm"
+                      : "text-body-color hover:bg-primary/10 hover:text-primary dark:text-dark-6 dark:hover:bg-white/5 dark:hover:text-primary"
+                  }`}
+                >
+                  <span className="font-medium">{cluster.title}</span>
+                  <span
+                    className={`text-[11px] ${
+                      isActive
+                        ? "text-white/80"
+                        : "text-body-color/60 dark:text-dark-6/60 group-hover:text-primary"
+                    }`}
+                  >
+                    ↗
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
 

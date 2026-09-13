@@ -7,7 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
+const Modal = ({ SUBSCRIPTION_URL, label = "Try Now" }: { SUBSCRIPTION_URL: string; label?: string }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<Boolean | null>(null);
@@ -126,7 +126,7 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
           onClick={() => setModalOpen(true)}
           className={`rounded-md bg-primary px-6 py-3 text-base font-medium text-white`}
         >
-          Try Now
+          {label}
         </button>
         <div
           className={`fixed left-0 top-0 flex h-full min-h-screen w-full items-center justify-center bg-dark/90 px-4 py-5 z-[9999] ${
@@ -327,3 +327,4 @@ const Modal = ({ SUBSCRIPTION_URL }: { SUBSCRIPTION_URL: string }) => {
 };
 
 export default Modal;
+

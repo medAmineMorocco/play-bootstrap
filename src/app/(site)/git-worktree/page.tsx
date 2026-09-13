@@ -410,7 +410,11 @@ export default function GitWorktreePillarPage() {
                     href={cluster.path}
                     className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
                   >
-                    <span>Explore commands</span>
+                    <span>
+                      {cluster.id === "commands"
+                        ? "Explore commands"
+                        : `Explore ${cluster.title}`}
+                    </span>
                     <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
