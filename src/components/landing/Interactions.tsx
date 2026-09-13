@@ -26,7 +26,7 @@ export function WorkspaceExplorer() {
     </div>
     <div id="workspace-panel" role="tabpanel" aria-labelledby={`workspace-tab-${active}`} tabIndex={0} className={styles.workspacePanel}>
       <div className={styles.workspaceCaption}><strong>{view.title}</strong><p>{view.text}</p></div>
-      {view.image ? <div className={`${styles.workspaceImage} ${active === 0 ? styles.fullWorkspaceImage : styles.detailWorkspaceImage}`}><Image src={`/images/v1.1.0/${view.image}`} alt={view.alt} width={view.width} height={view.height} sizes="(max-width: 767px) 90vw, 1100px" /></div> : <div className={styles.workspaceConcept}><BranchIcon /><span>One worktree</span><i aria-hidden="true" /><strong>{view.name === "Files" ? "File explorer + terminal + agent" : "Development page + terminal + agent"}</strong><p>Part of the same development workspace.</p><a href="https://docs.worktreewise.com/" target="_blank" rel="noreferrer">Explore the documentation ↗</a></div>}
+      {view.image ? <div className={`${styles.workspaceImage} ${view.height >= 800 ? styles.fullWorkspaceImage : styles.detailWorkspaceImage}`}><Image src={`/images/v1.1.0/${view.image}`} alt={view.alt} width={view.width} height={view.height} sizes="(max-width: 767px) 90vw, 1100px" /></div> : <div className={styles.workspaceConcept}><BranchIcon /><span>One worktree</span><i aria-hidden="true" /><strong>{view.name === "Files" ? "File explorer + terminal + agent" : "Development page + terminal + agent"}</strong><p>Part of the same development workspace.</p><a href="https://docs.worktreewise.com/" target="_blank" rel="noreferrer">Explore the documentation ↗</a></div>}
     </div>
   </div>;
 }

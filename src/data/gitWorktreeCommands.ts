@@ -222,13 +222,14 @@ export const TUTORIAL_CLUSTERS: TutorialCluster[] = [
   {
     id: "ai-agent",
     title: "AI Agent",
-    description: "Equip Claude Code, Cursor, Codex, and Gemini CLI with dedicated isolated Git worktrees.",
+    description: "Equip Claude Code, Cursor, Codex, Antigravity, Qwen, Kimi, and OpenCode with dedicated isolated Git worktrees.",
     path: "/ai-agents/git-worktrees",
     isSoon: false,
     topics: [
       "Claude Code + Git worktree isolation",
       "Running multi-agent parallel coding workflows",
       "Cursor agent background tasks in separate worktrees",
+      "Antigravity, Codex, Qwen, Kimi, and OpenCode workflows",
       "Preventing AI merge conflicts via dedicated branch trees",
     ],
   },

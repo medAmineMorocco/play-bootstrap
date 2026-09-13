@@ -310,7 +310,7 @@ export default function GitWorktreePillarPage() {
             {/* Scenario 3: AI Coding Agents */}
             <div className="rounded-xl border border-stroke bg-gray-1/30 p-5 dark:border-dark-3/60 dark:bg-dark/20">
               <h3 className="text-lg font-bold text-dark dark:text-white">
-                3. AI coding agents (Claude Code, Cursor, Codex, Gemini CLI)
+                3. AI coding agents (Claude Code, Cursor, Codex, Antigravity, Qwen, Kimi, OpenCode)
               </h3>
               <p className="mt-2 text-sm text-body-color dark:text-dark-6 leading-relaxed">
                 Autonomous AI agents often perform aggressive refactors, install test packages, or modify configuration files. Running an AI agent in your primary working directory can overwrite your active work. By assigning each AI task its own worktree:
@@ -320,7 +320,7 @@ export default function GitWorktreePillarPage() {
                 comment="Isolate the AI agent in its own sandbox directory"
               />
               <p className="text-xs text-body-color dark:text-dark-6">
-                Point Claude Code or Cursor at <code className="font-mono text-xs">../agent-refactor</code>. You can continue writing code on your main branch without AI-generated file conflicts.
+                Point your coding agent (such as Claude Code, Cursor, Codex, Antigravity, Qwen, Kimi, or OpenCode) at <code className="font-mono text-xs">../agent-refactor</code>. You can continue writing code on your main branch without AI-generated file conflicts.
               </p>
             </div>
           </div>
