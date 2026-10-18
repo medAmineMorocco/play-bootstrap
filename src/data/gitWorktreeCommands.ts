@@ -41,7 +41,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 1,
     syntax: "git worktree add [-b <new-branch>] <path> [<commit-ish>]",
     worktreeWiseFeature: "Create Worktree",
-    worktreeWiseScreenshot: "/images/v1.1.0/13-create-worktree-from-local-branch.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/create-worktree-from-local-branch.png",
     worktreeWiseAlt: "Create a new Git worktree from a branch in WorktreeWise",
     keyFlags: [
       { flag: "-b <new-branch>", description: "Create and checkout a new branch in the new worktree" },
@@ -66,7 +66,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 2,
     syntax: "git worktree list [--porcelain] [-v | --verbose]",
     worktreeWiseFeature: "Worktree List & Overview",
-    worktreeWiseScreenshot: "/images/v1.1.0/04-worktree-overview.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/dashboard.png",
     worktreeWiseAlt: "Inspect all Git worktrees in the WorktreeWise dashboard",
     keyFlags: [
       { flag: "--porcelain", description: "Output in a stable, machine-readable format suitable for scripts" },
@@ -88,7 +88,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 3,
     syntax: "git worktree remove [-f | --force] <worktree>",
     worktreeWiseFeature: "Delete Worktree",
-    worktreeWiseScreenshot: "/images/v1.1.0/18b-worktree-actions-delete-options.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/delete-worktree.png",
     worktreeWiseAlt: "Delete a Git worktree safely with confirmation in WorktreeWise",
     keyFlags: [
       { flag: "-f, --force", description: "Force removal even if untracked or uncommitted changes exist" },
@@ -108,7 +108,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 4,
     syntax: "git worktree move <worktree> <new-path>",
     worktreeWiseFeature: "Move Worktree",
-    worktreeWiseScreenshot: "/images/v1.1.0/21-worktree-move.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/move-worktree.png",
     worktreeWiseAlt: "Relocate a Git worktree folder in WorktreeWise",
     keyFlags: [
       { flag: "-f, --force", description: "Force the move even if destination is locked or has issues" },
@@ -128,7 +128,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 5,
     syntax: "git worktree lock [--reason <string>] <worktree>",
     worktreeWiseFeature: "Lock Worktree",
-    worktreeWiseScreenshot: "/images/v1.1.0/22-worktree-lock.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/lock-worktree-reason.png",
     worktreeWiseAlt: "Lock a Git worktree against deletion in WorktreeWise",
     keyFlags: [
       { flag: "--reason <string>", description: "Record an explanation for why the worktree is locked" },
@@ -148,7 +148,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 6,
     syntax: "git worktree unlock <worktree>",
     worktreeWiseFeature: "Unlock Worktree",
-    worktreeWiseScreenshot: "/images/v1.1.0/42-worktree-unlock-action.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/unlock-worktree.png",
     worktreeWiseAlt: "Unlock action for a protected Git worktree in WorktreeWise",
     keyFlags: [],
   },
@@ -166,7 +166,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 7,
     syntax: "git worktree prune [-n | --dry-run] [-v | --verbose] [--expire <time>]",
     worktreeWiseFeature: "Prune Stale Worktrees",
-    worktreeWiseScreenshot: "/images/v1.1.0/25-prune-worktrees.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/prune-worktrees.png",
     worktreeWiseAlt: "Prune orphaned Git worktrees in WorktreeWise",
     keyFlags: [
       { flag: "-n, --dry-run", description: "Preview which stale worktrees would be pruned without deleting" },
@@ -188,7 +188,7 @@ export const WORKTREE_COMMANDS: WorktreeCommand[] = [
     order: 8,
     syntax: "git worktree repair [<path>...]",
     worktreeWiseFeature: "Repair Damaged Worktrees",
-    worktreeWiseScreenshot: "/images/v1.1.0/39-repair-worktree.png",
+    worktreeWiseScreenshot: "/images/v1.2.0/repair-worktree.png",
     worktreeWiseAlt: "Repair action for a damaged Git worktree in WorktreeWise",
     keyFlags: [
       { flag: "<path>...", description: "Optionally specify one or more worktree paths to repair" },

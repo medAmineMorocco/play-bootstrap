@@ -58,8 +58,8 @@ const Hero = () => {
               >
                 <div className="mt-12">
                   <Image
-                    src="/images/v1.1.0/01-git-log.png"
-                    alt="WorktreeWise 1.1.0 Git Log with the author column hidden"
+                    src="/images/v1.2.0/git-log-columns.png"
+                    alt="WorktreeWise Git Log with the author column hidden"
                     className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
                     width={1600}
                     height={950}

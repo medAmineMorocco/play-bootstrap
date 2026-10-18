@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: "WorktreeWise",
     images: [
       {
-        url: "https://www.worktreewise.com/images/v1.1.0/01-git-log.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.worktreewise.com/images/v1.2.0/dashboard.png",
+        width: 1746,
+        height: 901,
         alt: "WorktreeWise pricing for Git worktree management",
       },
     ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "WorktreeWise Pricing | Choose Your Plan",
     description:
       "Check WorktreeWise pricing for developers — manage Git worktrees smarter and boost your productivity.",
-    images: ["https://www.worktreewise.com/images/v1.1.0/01-git-log.png"],
+    images: ["https://www.worktreewise.com/images/v1.2.0/dashboard.png"],
   },
 };
 

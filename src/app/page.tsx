@@ -7,10 +7,11 @@ import { getAllPosts } from "@/utils/markdown";
 const title = "WorktreeWise | Git Worktree Manager for Parallel Development";
 const description = "Stop switching branches. Manage Git worktrees, terminals, IDEs, workflows, and parallel AI coding agents in one desktop workspace for Windows, macOS, and Linux.";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.worktreewise.com"),
   title, description,
   alternates: { canonical: "https://www.worktreewise.com/" },
-  openGraph: { title, description, url: "https://www.worktreewise.com/", siteName: "WorktreeWise", type: "website", locale: "en_US", images: [{ url: "https://www.worktreewise.com/images/v1.1.0/01-git-log.png", width: 1600, height: 950, alt: "WorktreeWise Git worktree manager and commit graph" }] },
-  twitter: { card: "summary_large_image", title, description, images: ["https://www.worktreewise.com/images/v1.1.0/01-git-log.png"] },
+  openGraph: { title, description, url: "https://www.worktreewise.com/", siteName: "WorktreeWise", type: "website", locale: "en_US", images: [{ url: "https://www.worktreewise.com/images/v1.2.0/dashboard.png", width: 1746, height: 901, alt: "WorktreeWise 1.2 Git worktree manager and commit graph" }] },
+  twitter: { card: "summary_large_image", title, description, images: ["https://www.worktreewise.com/images/v1.2.0/dashboard.png"] },
 };
 
 export default function Home() {

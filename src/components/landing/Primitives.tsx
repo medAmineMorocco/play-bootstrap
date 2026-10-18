@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -19,8 +22,96 @@ export function TextLink({ href, children }: { href: string; children: ReactNode
   return <Link href={href} target="_self" className={styles.textLink}>{children}<span aria-hidden="true">↗</span></Link>;
 }
 
-export function ProductImage({ file, alt, width = 1600, height = 950, priority = false }: { file: string; alt: string; width?: number; height?: number; priority?: boolean }) {
-  return <Image src={`/images/v1.1.0/${file}`} alt={alt} width={width} height={height} sizes="(max-width: 767px) 92vw, (max-width: 1199px) 90vw, 1160px" priority={priority} className={styles.productImage} />;
+export function ProductImage({
+  file,
+  alt,
+  width = 1800,
+  height = 980,
+  priority = false,
+}: {
+  file: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  priority?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [open]);
+
+  return (
+    <>
+      <button
+        type="button"
+        className={styles.imageTrigger}
+        onClick={() => setOpen(true)}
+        aria-label={`Enlarge image: ${alt}`}
+        title="Click to view full size"
+      >
+        <Image
+          src={`/images/v1.2.0/${file}`}
+          alt={alt}
+          width={width}
+          height={height}
+          quality={95}
+          sizes="(max-width: 767px) 100vw, (max-width: 1400px) 95vw, 1600px"
+          priority={priority}
+          className={styles.productImage}
+        />
+        <span className={styles.expandHint} aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
+          Enlarge
+        </span>
+      </button>
+
+      {open && (
+        <div
+          className={styles.lightboxOverlay}
+          onClick={() => setOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={alt}
+        >
+          <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.lightboxHeader}>
+              <span>{alt}</span>
+              <button
+                type="button"
+                className={styles.lightboxClose}
+                onClick={() => setOpen(false)}
+                aria-label="Close enlarged view"
+              >
+                ✕ Close
+              </button>
+            </div>
+            <div className={styles.lightboxImageWrap}>
+              <Image
+                src={`/images/v1.2.0/${file}`}
+                alt={alt}
+                width={width}
+                height={height}
+                quality={100}
+                className={styles.lightboxImage}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export function BranchPaths() {

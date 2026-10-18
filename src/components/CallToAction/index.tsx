@@ -21,7 +21,7 @@ const CallToAction = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[1180px]">
                 <Image
-                  src="/images/v1.1.0/24-multiple-ai-agents.png"
+                  src="/images/v1.2.0/multiple-ai-agents-public.png"
                   alt="Three AI agents working in parallel across WorktreeWise worktrees"
                   className="mx-auto w-full rounded-2xl border border-white/15 shadow-[0_35px_100px_-30px_rgba(30,20,100,0.8)]"
                   width={1600}

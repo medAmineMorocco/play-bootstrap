@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "WorktreeWise",
     images: [
       {
-        url: "https://www.worktreewise.com/images/v1.1.0/04-worktree-overview.png",
+        url: "https://www.worktreewise.com/images/v1.2.0/dashboard.png",
         width: 1200,
         height: 630,
         alt: "Git Worktree Complete Guide",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Git Worktree: Complete Guide & All Commands",
     description:
       "Everything you need to master Git worktrees: architecture, all 8 commands, AI agent workflows, and practical scenarios.",
-    images: ["https://www.worktreewise.com/images/v1.1.0/04-worktree-overview.png"],
+    images: ["https://www.worktreewise.com/images/v1.2.0/dashboard.png"],
   },
 };
 
@@ -323,6 +323,40 @@ export default function GitWorktreePillarPage() {
                 Point your coding agent (such as Claude Code, Cursor, Codex, Antigravity, Qwen, Kimi, or OpenCode) at <code className="font-mono text-xs">../agent-refactor</code>. You can continue writing code on your main branch without AI-generated file conflicts.
               </p>
             </div>
+
+            {/* Scenario 4: Automated directory naming patterns */}
+            <div className="rounded-xl border border-stroke bg-gray-1/30 p-5 dark:border-dark-3/60 dark:bg-dark/20">
+              <h3 className="text-lg font-bold text-dark dark:text-white">
+                4. Automated directory naming patterns
+              </h3>
+              <p className="mt-2 text-sm text-body-color dark:text-dark-6 leading-relaxed">
+                Manually typing destination paths when adding worktrees easily causes messy folder sprawl or typo collisions. Establishing a consistent naming convention keeps your project structure clean:
+              </p>
+              <TerminalSnippet
+                command="git worktree add ../$(basename $(git rev-parse --show-toplevel))_wt_feature-auth -b feature/auth"
+                comment="Standardize path naming with {repo}_wt_{branch}"
+              />
+              <p className="text-xs text-body-color dark:text-dark-6">
+                In WorktreeWise, you can configure templates like <code className="font-mono text-xs">{`{repo}_wt_{branch}`}</code> directly in settings to automatically resolve destination paths on every creation.
+              </p>
+            </div>
+
+            {/* Scenario 5: Per-worktree Git config */}
+            <div className="rounded-xl border border-stroke bg-gray-1/30 p-5 dark:border-dark-3/60 dark:bg-dark/20">
+              <h3 className="text-lg font-bold text-dark dark:text-white">
+                5. Per-worktree configuration & identity isolation
+              </h3>
+              <p className="mt-2 text-sm text-body-color dark:text-dark-6 leading-relaxed">
+                When working on client repositories or open source contributions from the same machine, you may need different committer identities without overriding your global Git configuration. Git supports worktree-scoped configuration:
+              </p>
+              <TerminalSnippet
+                command="git config extensions.worktreeConfig true && git config --worktree user.email 'contractor@client.com'"
+                comment="Enable worktree config extensions and isolate user email"
+              />
+              <p className="text-xs text-body-color dark:text-dark-6">
+                Each linked worktree can carry its own committer name, email, and signing settings without modifying <code className="font-mono text-xs">.git/config</code> for your other branches.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -351,12 +385,35 @@ export default function GitWorktreePillarPage() {
             While the Git CLI commands are powerful, visual tools eliminate path memorization, automate hooks, and manage IDE integration effortlessly:
           </p>
 
-          <WorktreeWiseFeatureCard
-            featureTitle="Central Worktree Dashboard"
-            description="WorktreeWise provides an intuitive visual interface to inspect all linked worktrees, switch IDE windows, run custom pre/post creation hooks, and repair broken links in 1-click."
-            imageSrc="/images/v1.1.0/04-worktree-overview.png"
-            imageAlt="WorktreeWise visual Git worktree management dashboard"
-          />
+          <div className="mt-6 space-y-8">
+            <WorktreeWiseFeatureCard
+              featureTitle="Central Worktree Dashboard"
+              description="WorktreeWise provides an intuitive visual interface to inspect all linked worktrees, switch IDE windows, run custom pre/post creation hooks, and repair broken links in 1-click."
+              imageSrc="/images/v1.2.0/dashboard.png"
+              imageAlt="WorktreeWise visual Git worktree management dashboard"
+            />
+
+            <WorktreeWiseFeatureCard
+              featureTitle="Dynamic Naming Patterns"
+              description="Configure automated directory templates such as {repo}_wt_{branch} to ensure all team worktrees follow predictable paths without manual folder management."
+              imageSrc="/images/v1.2.0/change-naming-pattern.png"
+              imageAlt="WorktreeWise naming pattern settings for automated folder paths"
+            />
+
+            <WorktreeWiseFeatureCard
+              featureTitle="Per-Worktree Git Config"
+              description="Isolate committer identities, user emails, and signing settings to individual worktrees using native Git extensions without polluting global settings."
+              imageSrc="/images/v1.2.0/per-gitworktree-config.png"
+              imageAlt="WorktreeWise per-worktree Git config dialog"
+            />
+
+            <WorktreeWiseFeatureCard
+              featureTitle="1-Click Repair & Safe Pruning"
+              description="Identify severed metadata pointers, heal broken paths in one click with git worktree repair, and safely prune stale administrative records leaving your Git repository clean."
+              imageSrc="/images/v1.2.0/prune-worktrees.png"
+              imageAlt="WorktreeWise pruning and repairing damaged Git worktrees"
+            />
+          </div>
         </section>
 
         {/* SECTION 9: Tutorials Cluster Roadmap */}

@@ -469,13 +469,15 @@ export function WorktreeWiseFeatureCard({
         {description}
       </p>
       {imageSrc && (
-        <div className="mt-5 relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-stroke shadow-sm dark:border-dark-3">
+        <div className="mt-5 w-full overflow-hidden rounded-xl border border-stroke shadow-md dark:border-dark-3 bg-dark/20">
           <Image
             src={imageSrc}
             alt={imageAlt || featureTitle}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 800px"
+            width={1800}
+            height={960}
+            quality={95}
+            className="w-full h-auto object-contain block"
+            sizes="(max-width: 1024px) 100vw, 1200px"
           />
         </div>
       )}

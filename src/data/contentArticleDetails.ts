@@ -72,7 +72,7 @@ export function getArticleDetails(hubKey: HubKey, article: HubArticle): ArticleC
       "Always inspect with `git worktree list` before making destructive changes.",
       "Worktrees keep parallel development safe and clean.",
     ],
-    image: "/images/v1.1.0/04-worktree-overview.png",
+    image: "/images/v1.2.0/dashboard.png",
     imageAlt: "WorktreeWise overview interface",
   };
 }

@@ -14,8 +14,8 @@ Follow the workspace instructions in `../AGENTS.md` and the release workflow in 
 
 ## Release Images and Feature Updates
 
-- Store current product captures in `public/images/v1.1.0`.
-- Prefer the newest approved 1.1 image throughout the home page, tutorials, pricing, cheat sheet, and articles.
+- Store current product captures in `public/images/v1.2.0`.
+- Prefer the newest approved 1.2 image throughout the home page, tutorials, pricing, cheat sheet, and articles.
 - Preserve an existing filename when a new capture is a direct replacement; this updates all references consistently.
 - Add a new stable filename when the image represents a distinct feature state.
 - Do not use screenshots containing visible Git author names, credentials, license data, or sensitive paths.

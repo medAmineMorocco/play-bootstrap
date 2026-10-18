@@ -62,11 +62,69 @@ const Download = () => {
                         : "top-[110%] invisible opacity-0"
                     }`}
                   >
-                    <DropdownItem newTab={false} label={<span><WindowsOutlined  style={{ fontSize: '24px'}}/> Windows</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> Mac (Intel)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><AppleOutlined  style={{ fontSize: '24px'}}/> Mac (Apple Silicon)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.deb)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL || ""} />
-                    <DropdownItem newTab={false} label={<span><LinuxOutlined  style={{ fontSize: '24px'}}/> (.rpm)</span>} href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL || ""} />
+                    {(process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_X64_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL) && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><WindowsOutlined style={{ fontSize: '24px'}}/> Windows {process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_ARM64_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_IA32_EXE_URL ? '(x64)' : ''}</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_X64_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL || ""}
+                      />
+                    )}
+                    {process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_ARM64_EXE_URL && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><WindowsOutlined style={{ fontSize: '24px'}}/> Windows (ARM64)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_ARM64_EXE_URL}
+                      />
+                    )}
+                    {(process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_IA32_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_32BIT_EXE_URL) && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><WindowsOutlined style={{ fontSize: '24px'}}/> Windows (32-bit)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_IA32_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_32BIT_EXE_URL || ""}
+                      />
+                    )}
+                    {process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><AppleOutlined style={{ fontSize: '24px'}}/> Mac (Apple Silicon)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL}
+                      />
+                    )}
+                    {process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><AppleOutlined style={{ fontSize: '24px'}}/> Mac (Intel)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL}
+                      />
+                    )}
+                    {(process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_DEB_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL) && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><LinuxOutlined style={{ fontSize: '24px'}}/> Linux .deb {process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL ? '(x64)' : ''}</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_DEB_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL || ""}
+                      />
+                    )}
+                    {process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><LinuxOutlined style={{ fontSize: '24px'}}/> Linux .deb (ARM64)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL}
+                      />
+                    )}
+                    {(process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_RPM_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL) && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><LinuxOutlined style={{ fontSize: '24px'}}/> Linux .rpm {process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL ? '(x64)' : ''}</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_RPM_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL || ""}
+                      />
+                    )}
+                    {process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL && (
+                      <DropdownItem
+                        newTab={false}
+                        label={<span><LinuxOutlined style={{ fontSize: '24px'}}/> Linux .rpm (ARM64)</span>}
+                        href={process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL}
+                      />
+                    )}
                     {process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL && <DropdownItem newTab={true} label="Older versions" href={process.env.NEXT_PUBLIC_DOWNLOAD_OLDER_VERSION_URL} />}
                   </div>
                 </div>
