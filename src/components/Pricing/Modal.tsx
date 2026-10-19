@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { SafetyCertificateOutlined } from "@ant-design/icons";
 import ReCAPTCHA from "react-google-recaptcha";
+import { trackAttributedBlogOutcome } from "@/components/Blog/BlogConversionAnalytics";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -86,6 +87,7 @@ const Modal = ({ SUBSCRIPTION_URL, label = "Try Now" }: { SUBSCRIPTION_URL: stri
       .then(() => {
         setIsSuccess(true);
         setLoading(false);
+        trackAttributedBlogOutcome("trial_activated");
       })
       .catch((error) => {
         setMessageError(error.message);

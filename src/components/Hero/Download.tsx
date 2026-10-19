@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AppleOutlined, LinuxOutlined, WindowsOutlined } from "@ant-design/icons";
+import { trackAttributedBlogOutcome } from "@/components/Blog/BlogConversionAnalytics";
 
 let useClickOutside = (handler: any) => {
   let domNode = useRef();
@@ -140,10 +141,12 @@ const Download = () => {
 export default Download;
 
 const DropdownItem = ({ label, href, newTab} : { label: any, href: string, newTab: boolean }) => {
+  const downloadFormat = href.match(/\.(exe|dmg|deb|rpm|zip)(?:\?|$)/i)?.[1]?.toLowerCase() || (newTab ? "older-versions" : "other");
   return (
     <a
       href={href}
       target={newTab ? "_blank" : "_self"}
+      onClick={() => trackAttributedBlogOutcome("download_click", { download_format: downloadFormat })}
       className="text-body-color dark:text-dark-6 hover:bg-[#F5F7FD] dark:hover:bg-primary/5 hover:text-primary block px-5 py-2 text-base"
     >
       {label}

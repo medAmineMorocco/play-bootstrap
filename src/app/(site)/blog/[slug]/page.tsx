@@ -1,6 +1,12 @@
 import PopularArticle from "@/components/Blog/PopularArticle";
 import SingleBlog from "@/components/Blog/SingleBlog";
-import BlogConversionCard from "@/components/Blog/BlogConversionCard";
+import {
+  BlogBeforeAfter,
+  BlogConversionCTA,
+  BlogEndCTA,
+  BlogProductShowcase,
+} from "@/components/Blog/BlogConversion";
+import { BlogArticleAnalytics } from "@/components/Blog/BlogConversionAnalytics";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { getAllPosts, getPostBySlug } from "@/utils/markdown";
 import markdownToHtml from "@/utils/markdownToHtml";
@@ -8,6 +14,11 @@ import { format } from "date-fns";
 import Link from "next/link";
 import Image from "next/image";
 import CheatSheetLink from "@/components/Blog/CheatSheetLink";
+import {
+  buildBlogConversionPlan,
+  splitArticleHtml,
+  type BlogConversionOverrides,
+} from "@/lib/blogConversion";
 
 type Props = {
   params: { slug: string };
@@ -108,11 +119,26 @@ export default async function Post({ params }: Props) {
     "content",
     "coverImage",
     "date",
+    "metadata",
   ]);
 
   const content = await markdownToHtml(post.content || "");
   const words = (post.content || "").trim().split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(1, Math.ceil(words / 220));
+  const articleMetadata = (post.metadata || {}) as {
+    category?: string;
+    tags?: string[];
+    conversion?: BlogConversionOverrides;
+  };
+  const conversionPlan = buildBlogConversionPlan({
+    title: post.title,
+    category: articleMetadata.category,
+    tags: articleMetadata.tags,
+    content: post.content || "",
+    wordCount: words,
+    overrides: articleMetadata.conversion,
+  });
+  const contentSegments = splitArticleHtml(content);
   const currentWords = new Set(
     post.title
       .toLowerCase()
@@ -133,6 +159,7 @@ export default async function Post({ params }: Props) {
 
   return (
     <>
+      <BlogArticleAnalytics slug={params.slug} intent={conversionPlan.intent} />
       <Breadcrumb pageName={post.title} />
 
       <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
@@ -189,19 +216,37 @@ export default async function Post({ params }: Props) {
                     <h1 className="mb-8 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-4xl">
                       {post.title}
                     </h1>
-                    <div dangerouslySetInnerHTML={{ __html: content }}></div>
+                    <div dangerouslySetInnerHTML={{ __html: contentSegments[0] }} />
+                    {conversionPlan.enabled && conversionPlan.placements.inline && (
+                      <BlogConversionCTA plan={conversionPlan} slug={params.slug} />
+                    )}
+                    {contentSegments[1] && <div dangerouslySetInnerHTML={{ __html: contentSegments[1] }} />}
+                    {conversionPlan.enabled && conversionPlan.placements.beforeAfter && (
+                      <BlogBeforeAfter plan={conversionPlan} slug={params.slug} />
+                    )}
+                    {contentSegments[2] && <div dangerouslySetInnerHTML={{ __html: contentSegments[2] }} />}
+                    {conversionPlan.enabled && conversionPlan.placements.showcase && (
+                      <BlogProductShowcase plan={conversionPlan} slug={params.slug} />
+                    )}
+                    {contentSegments.slice(3).map((segment, index) => (
+                      <div key={index} dangerouslySetInnerHTML={{ __html: segment }} />
+                    ))}
                     <div className="mt-12">
                       <div className="mb-6">
                         <CheatSheetLink />
                       </div>
-                      <BlogConversionCard source={params.slug} />
+                      {conversionPlan.enabled && conversionPlan.placements.end && (
+                        <BlogEndCTA plan={conversionPlan} slug={params.slug} />
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                   <div>
-                    <div className="mb-10">
-                      <BlogConversionCard compact source={params.slug} />
+                    <div className="mb-10 hidden lg:block">
+                      {conversionPlan.enabled && (
+                        <BlogConversionCTA compact position="sidebar" plan={conversionPlan} slug={params.slug} />
+                      )}
                     </div>
 
                     <div className="-mx-4 mb-8 flex flex-wrap">

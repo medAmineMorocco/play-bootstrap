@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackAttributedBlogOutcome } from "@/components/Blog/BlogConversionAnalytics";
 
 type PaddleEvent = Record<string, unknown>;
 
@@ -66,7 +67,12 @@ function initializePaddle(token: string): Promise<LoadedPaddleApi> {
         paddle.Environment?.set("sandbox");
       }
 
-      paddle.Initialize({ token });
+      paddle.Initialize({
+        token,
+        eventCallback: (response) => {
+          if (response.name === "checkout.completed") trackAttributedBlogOutcome("purchase_completed");
+        },
+      });
       return paddle;
     },
   );
