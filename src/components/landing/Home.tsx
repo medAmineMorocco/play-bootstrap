@@ -1,13 +1,16 @@
 import Link from "next/link";
+import AppleFilled from "@ant-design/icons/AppleFilled";
+import LinuxOutlined from "@ant-design/icons/LinuxOutlined";
+import WindowsOutlined from "@ant-design/icons/WindowsOutlined";
 import { pricingData } from "@/stripe/pricingData";
-import { BranchIcon, BranchPaths, Eyebrow, ProductImage, TextLink, TrialLink } from "./Primitives";
-import { ProCheckout, SavingsCalculator, TerminalStoryVisual, TrialButton, WorktreeLifecycleStory } from "./Interactions";
+import { BranchIcon, BranchPaths, Eyebrow, ProductImage, TextLink } from "./Primitives";
+import { HeroDownloadActions, ProCheckout, SavingsCalculator, TerminalStoryVisual, TrialButton, WorktreeLifecycleStory } from "./Interactions";
 import { faqs } from "./content";
 import styles from "./landing.module.css";
 
 function Hero() {
   return <section id="home" className={styles.hero}><BranchPaths /><div className={styles.container}>
-    <div className={styles.heroCopy}><a href="#product" target="_self" className={styles.release}><span />A little more room for every branch<span aria-hidden="true">↗</span></a><Eyebrow>The workspace for parallel development</Eyebrow><h1>Stop switching branches.<br /><em>Work in parallel.</em></h1><p>A Git worktree manager for everything you’re building.<br className={styles.desktopBreak} /> Create, organize, and open your branches. Keep every task in its own workspace.</p><div className={styles.actions}><TrialLink /><a className={styles.secondaryButton} href="#how-it-works" target="_self"><span aria-hidden="true">↓</span>See how it works</a></div><p className={styles.reassurance}>5-day free trial <span>·</span> No credit card <span>·</span> Windows, macOS & Linux</p></div>
+    <div className={styles.heroCopy}><a href="#product" target="_self" className={styles.release}><span />A little more room for every branch<span aria-hidden="true">↗</span></a><Eyebrow>The workspace for parallel development</Eyebrow><h1>Stop switching branches.<br /><em>Work in parallel.</em></h1><p>A Git worktree manager for everything you’re building.<br className={styles.desktopBreak} /> Create, organize, and open your branches. Keep every task in its own workspace.</p><HeroDownloadActions /><p className={styles.reassurance}>5-day free trial <span>·</span> No credit card <span>·</span> Windows, macOS & Linux</p></div>
     <div className={styles.heroProduct}><div className={styles.productLabel}><span><BranchIcon />ONE REPOSITORY. EVERY BRANCH IN REACH.</span><span>WORKTREEWISE / 1.2</span></div><div className={styles.heroImage}><ProductImage file="dashboard.png" alt="WorktreeWise dashboard showing the repository worktrees and commit graph" priority /></div><div className={styles.floatingDetail}><span className={styles.detailDot} /><div><strong>Your work stays right here.</strong><span>Separate branches. Separate working directories.</span></div><BranchIcon /></div></div>
     <ul className={styles.trustBar}><li><BranchIcon />Native Git</li><li>Windows · macOS · Linux</li><li>Your IDE, your choice</li><li>Parallel workspaces</li><li>No repository migration</li></ul>
   </div></section>;
@@ -256,37 +259,40 @@ function FinalCTA() {
   const hasMultipleLinuxDeb = Boolean(process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL);
   const hasMultipleLinuxRpm = Boolean(process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL);
 
-  const downloads = [
-    [
-      hasMultipleWindows ? "Windows · x64" : "Windows",
-      process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_X64_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL,
-    ],
-    ["Windows · ARM64", process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_ARM64_EXE_URL],
-    [
-      "Windows · 32-bit",
-      process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_IA32_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_32BIT_EXE_URL,
-    ],
-    [
-      "macOS · Apple Silicon",
-      process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL || process.env.NEXT_PUBLIC_DOWNLOAD_MAC_ARM64_URL,
-    ],
-    [
-      "macOS · Intel",
-      process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL || process.env.NEXT_PUBLIC_DOWNLOAD_MAC_X64_URL,
-    ],
-    [
-      hasMultipleLinuxDeb ? "Linux · .deb (x64)" : "Linux · .deb",
-      process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_DEB_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL,
-    ],
-    ["Linux · .deb (ARM64)", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL],
-    [
-      hasMultipleLinuxRpm ? "Linux · .rpm (x64)" : "Linux · .rpm",
-      process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_RPM_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL,
-    ],
-    ["Linux · .rpm (ARM64)", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL],
-  ].filter((entry): entry is [string, string] => Boolean(entry[1]));
+  const downloadGroups = [
+    {
+      id: "windows",
+      name: "Windows",
+      detail: "Windows 10 and later",
+      options: [
+        [hasMultipleWindows ? "x64 installer" : "Download installer", process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_X64_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_EXE_URL],
+        ["ARM64 installer", process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_ARM64_EXE_URL],
+        ["32-bit installer", process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_IA32_EXE_URL || process.env.NEXT_PUBLIC_DOWNLOAD_WINDOWS_32BIT_EXE_URL],
+      ],
+    },
+    {
+      id: "macos",
+      name: "macOS",
+      detail: "Choose the chip in your Mac",
+      options: [
+        ["Apple Silicon", process.env.NEXT_PUBLIC_DOWNLOAD_MAC_SILICON_URL || process.env.NEXT_PUBLIC_DOWNLOAD_MAC_ARM64_URL],
+        ["Intel", process.env.NEXT_PUBLIC_DOWNLOAD_MAC_INTEL_URL || process.env.NEXT_PUBLIC_DOWNLOAD_MAC_X64_URL],
+      ],
+    },
+    {
+      id: "linux",
+      name: "Linux",
+      detail: "Debian, Ubuntu, Fedora and more",
+      options: [
+        [hasMultipleLinuxDeb ? ".deb · x64" : "Download .deb", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_DEB_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_DEB_URL],
+        [".deb · ARM64", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_DEB_URL],
+        [hasMultipleLinuxRpm ? ".rpm · x64" : "Download .rpm", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_X64_RPM_URL || process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_RPM_URL],
+        [".rpm · ARM64", process.env.NEXT_PUBLIC_DOWNLOAD_LINUX_ARM64_RPM_URL],
+      ],
+    },
+  ].map(group => ({ ...group, options: group.options.filter((option): option is [string, string] => Boolean(option[1])) })).filter(group => group.options.length > 0);
 
-  return <section id="download" className={styles.finalCta}><BranchPaths /><div className={styles.container}><Eyebrow>Make room for what’s next</Eyebrow><h2>Stop switching.<br /><em>Start working in parallel.</em></h2><p>Your next branch deserves its own workspace.</p><TrialButton /><p className={styles.reassurance}>5-day free trial · No credit card required</p><div className={styles.downloadLinks} aria-label="Download WorktreeWise">{downloads.map(([name, href]) => <a href={href} key={name} target="_self">{name}<span aria-hidden="true">↓</span></a>)}</div></div></section>;
+  return <section id="download" className={styles.finalCta}><BranchPaths /><div className={styles.container}><Eyebrow>Ready when you are</Eyebrow><h2>Download WorktreeWise</h2><p>Choose your platform and start working with every branch in its own workspace.</p><div className={styles.downloadGrid} aria-label="Download WorktreeWise">{downloadGroups.map(group => <article id={`download-${group.id}`} className={styles.downloadCard} key={group.id}><div className={styles.downloadCardHeading}><span className={styles.platformMark} aria-hidden="true">{group.id === "windows" ? <WindowsOutlined /> : group.id === "macos" ? <AppleFilled /> : <LinuxOutlined />}</span><div><h3>{group.name}</h3><p>{group.detail}</p></div></div><div className={styles.downloadOptions}>{group.options.map(([name, href], index) => <a className={index === 0 ? styles.downloadPrimary : undefined} href={href} key={name} target="_self"><span>{name}</span><span aria-hidden="true">↓</span></a>)}</div></article>)}</div><p className={styles.downloadReassurance}>Every download includes a 5-day free trial · No credit card required</p></div></section>;
 }
 
 export default function LandingHome({ posts }: { posts: { title: string; slug: string; excerpt?: string }[] }) {

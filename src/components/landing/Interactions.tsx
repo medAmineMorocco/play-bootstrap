@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Modal from "@/components/Pricing/Modal";
 import PaddleCheckout from "@/components/Pricing/PaddleCheckout";
@@ -8,6 +8,29 @@ import { pricingData } from "@/stripe/pricingData";
 import { workspaceViews } from "./content";
 import { BranchIcon, Eyebrow, ProductImage, TextLink } from "./Primitives";
 import styles from "./landing.module.css";
+
+type DownloadPlatform = "windows" | "macos" | "linux";
+
+function detectDownloadPlatform(): DownloadPlatform | null {
+  const platform = navigator.platform.toLowerCase();
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (platform.includes("win") || userAgent.includes("windows")) return "windows";
+  if (platform.includes("mac") || userAgent.includes("macintosh")) return "macos";
+  if (platform.includes("linux") || userAgent.includes("linux")) return "linux";
+  return null;
+}
+
+export function HeroDownloadActions() {
+  const [platform, setPlatform] = useState<DownloadPlatform | null>(null);
+
+  useEffect(() => setPlatform(detectDownloadPlatform()), []);
+
+  const label = platform === "macos" ? "Download for macOS" : platform === "linux" ? "Download for Linux" : platform === "windows" ? "Download for Windows" : "Download WorktreeWise";
+  const href = platform ? `#download-${platform}` : "#download";
+
+  return <div className={styles.actions}><a className={styles.primaryButton} href={href} target="_self">{label}<span aria-hidden="true">↓</span></a><a className={styles.secondaryButton} href="#download" target="_self">All platforms<span aria-hidden="true">↓</span></a></div>;
+}
 
 export function WorkspaceExplorer() {
   const [active, setActive] = useState(0);
