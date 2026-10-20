@@ -9,15 +9,15 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Pricing | Choose Your Plan",
-  description: "Discover WorktreeWise pricing for developers. Choose the plan that fits your workflow and start managing Git worktrees faster and smarter.",
+    "WorktreeWise Pricing | Free Trial & One-Time Pro",
+  description: "Try every WorktreeWise Pro feature free for 5 days with no credit card. Buy once for 12 months of updates and keep your supported version forever.",
   alternates: {
     canonical: "https://www.worktreewise.com/pricing",
   },
   openGraph: {
-    title: "WorktreeWise Pricing | Choose Your Plan",
+    title: "WorktreeWise Pricing | Free Trial & One-Time Pro",
     description:
-      "Explore WorktreeWise pricing made for developers. Manage Git worktrees efficiently, run workflows, and open them in your favorite IDE.",
+      "Try every WorktreeWise Pro feature free for 5 days. Upgrade with one payment and keep your supported version forever.",
     url: "https://www.worktreewise.com/pricing",
     siteName: "WorktreeWise",
     images: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Pricing | Choose Your Plan",
+    title: "WorktreeWise Pricing | Free Trial & One-Time Pro",
     description:
-      "Check WorktreeWise pricing for developers — manage Git worktrees smarter and boost your productivity.",
+      "Start a 5-day free trial with no credit card, then upgrade with one payment if WorktreeWise fits your workflow.",
     images: ["https://www.worktreewise.com/images/v1.2.0/dashboard.png"],
   },
 };
