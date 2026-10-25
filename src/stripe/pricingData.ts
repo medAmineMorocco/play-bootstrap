@@ -1,4 +1,5 @@
 import { Price } from "@/types/price";
+import { FREE_TRIAL_DAYS } from "@/config/product";
 
 
 const PRO_PRODUCT_IDS = process.env.NEXT_PUBLIC_PRO_PRODUCT_IDS;
@@ -10,7 +11,7 @@ export const pricingData: Price[] = [
     original_amount: null,
     unit_amount: 0,
     nickname: "Free Trial",
-    periode: `${process.env.NEXT_PUBLIC_FREE_TRIAL_PERIOD} Days`,
+    periode: `${FREE_TRIAL_DAYS} Days`,
     remark: "No credit card required",
     offers: [
       "Manage Git Worktrees visually",

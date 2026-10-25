@@ -1,3 +1,5 @@
+import { FREE_TRIAL_DAYS } from "@/config/product";
+
 export const faqs = [
   { question: "What is WorktreeWise?", answer: "WorktreeWise is a desktop Git worktree manager and GUI for Windows, macOS, and Linux. Create and manage worktrees, open your IDE, run terminal and AI agent sessions, and automate commands across branches from one workspace." },
   { question: "Why use Git worktrees instead of switching branches or cloning again?", answer: "Git worktrees give each checked-out branch its own working directory while sharing the repository’s Git objects. Keep a feature, a bug fix, and a pull request review open at once without repeatedly stashing and restoring your work. Each worktree still uses disk space for its files, dependencies, and build output." },
@@ -7,7 +9,7 @@ export const faqs = [
   { question: "Does it work with my editor and operating system?", answer: "WorktreeWise runs on Windows, macOS, and Linux and can open a worktree in your configured IDE or terminal. The WorktreeWise JetBrains plugin helps preserve bookmarks, run configurations, and IDE context." },
   { question: "Is it useful for pull request reviews and QA?", answer: "Yes. Check out a pull request, tag, or commit in its own worktree. Review changes, run tests, compare versions, or try a different approach while your original branch remains open." },
   { question: "What happens after the included year of updates?", answer: "A one-time Pro purchase includes 12 months of updates and support. Keep using the latest version released during that window forever. Renew only if you want access to later updates and support." },
-  { question: "Can I try it before buying?", answer: "Yes. Start a 5-day free trial with no credit card required. Try WorktreeWise with your own repositories before purchasing. Purchases are non-refundable under the current refund policy." },
+  { question: "Can I try it before buying?", answer: `Yes. Start a ${FREE_TRIAL_DAYS}-day free trial with no credit card required. Try WorktreeWise with your own repositories before purchasing. Purchases are non-refundable under the current refund policy.` },
 ];
 
 export const workspaceViews = [

@@ -33,4 +33,4 @@ The components reuse the existing Google Analytics `gtag` integration and emit `
 
 Visitors are assigned deterministically to the control or demo-first copy using a random browser-local identifier. The control experience renders by default when local storage or analytics is unavailable. Product media is static, so `blog_demo_play` is not emitted.
 
-All trial links lead to the existing pricing/trial journey with article attribution preserved in UTM parameters. The experience states the verified five-day trial, no-card requirement, and Windows, macOS, and Linux support.
+All trial links lead to the existing pricing/trial journey with article attribution preserved in UTM parameters. The experience states the verified 10-day trial, no-card requirement, and Windows, macOS, and Linux support.

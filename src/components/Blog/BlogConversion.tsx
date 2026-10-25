@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { BlogConversionPlan } from "@/lib/blogConversion";
 import { buildBlogEvent, conversionHref } from "@/lib/blogConversion";
+import { FREE_TRIAL_DAYS } from "@/config/product";
 import { trackBlogConversion } from "./BlogConversionAnalytics";
 
 type Position = "inline" | "middle" | "end" | "sidebar";
@@ -73,7 +74,7 @@ export function BlogProductShowcase({ plan, slug }: { plan: BlogConversionPlan; 
       <ul className="mb-6 grid gap-3 text-sm text-body-color dark:text-dark-6 sm:grid-cols-3">{plan.benefits.map((benefit) => <li key={benefit} className="rounded-lg bg-gray-1 p-3 dark:bg-dark">✓ {benefit}</li>)}</ul>
       <details className="mb-6 rounded-lg border border-stroke p-4 text-sm dark:border-dark-3"><summary className="cursor-pointer font-semibold text-dark focus:outline-none focus:ring-2 focus:ring-primary dark:text-white">What this product view shows</summary><p className="mt-3 text-body-color dark:text-dark-6">{plan.image.alt}. WorktreeWise uses native Git and leaves the repository compatible with your existing tools.</p></details>
       <div className="flex flex-wrap items-center gap-3"><TrialLink plan={plan} slug={slug} position="middle" className={primary} /><Link href="/#product" target="_self" className={secondary} onClick={() => trackBlogConversion("blog_cta_click", buildBlogEvent(slug, plan.intent, "features", "middle", plan.variant))}>Explore features</Link></div>
-      <p className="mt-4 text-sm text-body-color dark:text-dark-6">5-day free trial · No credit card required · Windows, macOS, and Linux</p>
+      <p className="mt-4 text-sm text-body-color dark:text-dark-6">{FREE_TRIAL_DAYS}-day free trial · No credit card required · Windows, macOS, and Linux</p>
     </div>
   </TrackedRegion>;
 }
@@ -87,6 +88,6 @@ export function BlogBeforeAfter({ plan, slug }: { plan: BlogConversionPlan; slug
 
 export function BlogEndCTA({ plan, slug }: { plan: BlogConversionPlan; slug: string }) {
   return <TrackedRegion plan={plan} slug={slug} position="end" type="end" className="not-prose mt-12 rounded-2xl bg-dark p-7 text-white sm:p-10">
-    <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">Your next branch can have its own workspace</p><h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl">Put this workflow into practice.</h2><p className="mb-6 max-w-2xl text-dark-6">Use WorktreeWise with your own repositories for five days. No credit card required, and your repositories remain standard Git repositories.</p><div className="flex flex-wrap items-center gap-4"><TrialLink plan={plan} slug={slug} position="end" className={primary} /><span className="text-sm text-dark-6">Windows · macOS · Linux</span></div>
+    <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">Your next branch can have its own workspace</p><h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl">Put this workflow into practice.</h2><p className="mb-6 max-w-2xl text-dark-6">Use WorktreeWise with your own repositories for {FREE_TRIAL_DAYS} days. No credit card required, and your repositories remain standard Git repositories.</p><div className="flex flex-wrap items-center gap-4"><TrialLink plan={plan} slug={slug} position="end" className={primary} /><span className="text-sm text-dark-6">Windows · macOS · Linux</span></div>
   </TrackedRegion>;
 }
