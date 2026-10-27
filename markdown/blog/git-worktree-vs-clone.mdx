@@ -106,6 +106,10 @@ A worktree is:
 
 - A separate working directory attached to the same repository.
 
+![WorktreeWise overview showing several worktrees connected to one repository with separate status and disk information](/images/v1.2.0/overview.png)
+
+*One repository can support several visible worktree directories without duplicating its Git history.*
+
 # Git Worktree vs Clone: Core Differences
 
 1. **Storage**
@@ -172,6 +176,10 @@ Now you can:
 - Test features independently
 - Avoid git checkout switching
 
+![WorktreeWise v1.2.0 Create Worktree dialog with branch, directory, hooks, and repository checkout controls](/images/v1.2.0/create-worktree-from-head.png)
+
+*Create an additional workspace from a branch while keeping its location and setup explicit.*
+
 # Real-World Scenario
 
 Let’s say you're working on:
@@ -208,6 +216,10 @@ git worktree add ../login bugfix/login
 - Instant setup
 - Shared history
 - Cleaner workflow
+
+![WorktreeWise dashboard showing multiple active worktrees and branches in one repository](/images/v1.2.0/dashboard.png)
+
+*The shared repository stays central while each active task remains visible as its own worktree.*
 
 ## Common Mistakes
 
@@ -306,6 +318,10 @@ Learn more:
 
 <a href="https://docs.worktreewise.com/git-worktrees/create" class="link-in-post" >https://docs.worktreewise.com/git-worktrees/create</a>
 
+![WorktreeWise worktree list and action menu for opening, moving, locking, repairing, and deleting worktrees](/images/v1.2.0/worktrees-list-and-actions.png)
+
+*Manage the worktree lifecycle from one list instead of tracking commands and directories manually.*
+
 2. **Automatic Organization**
 
 WorktreeWise helps enforce naming conventions and structure:
@@ -328,6 +344,10 @@ Run commands across multiple worktrees:
 Learn more:
 
 <a href="https://docs.worktreewise.com/workflows/play" class="link-in-post" >https://docs.worktreewise.com/workflows/play</a>
+
+![WorktreeWise workflow runner showing repeatable steps across selected worktrees](/images/v1.2.0/workflow.png)
+
+*Use one repeatable workflow to prepare or validate several worktrees consistently.*
 
 4. **IDE Integration**
 
@@ -366,6 +386,10 @@ Without complex CLI commands.
 Learn more:
 
 <a href="https://docs.worktreewise.com/git-operations/diff" class="link-in-post" >https://docs.worktreewise.com/git-operations/diff</a>
+
+![WorktreeWise staged file diff showing code changes inside the selected worktree](/images/v1.2.0/diff-staged-file.png)
+
+*Inspect changes without losing sight of the worktree that produced them.*
 
 7. **Automatic Pruning**
 

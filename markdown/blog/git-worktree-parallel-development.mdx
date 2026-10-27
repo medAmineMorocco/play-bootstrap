@@ -76,7 +76,9 @@ Here are direct comparisons between native Git vs WorktreeWise:
 - **Native:** `git worktree add ../featureA feature/A` and similarly for other branches.
 - **WorktreeWise:** Click **New Worktree**, select branch `feature/A` (and `feature/B`, `main`, etc.) → worktrees are created instantly.
 
-![Create new Git Worktree](/images/v1.2.0/create-worktree-public.png)
+![WorktreeWise v1.2.0 Create Worktree dialog for starting a parallel branch workspace](/images/v1.2.0/create-worktree-from-head.png)
+
+*Choose the source, destination, hooks, and repository checkout options before creating the workspace.*
 
 
 ### Listing and navigating worktrees
@@ -142,6 +144,10 @@ state because Git worktrees isolate files—not external services.
 WorktreeWise can [apply naming patterns](https://docs.worktreewise.com/git-worktrees/naming-pattern)
 and [run workflows across selected worktrees](https://docs.worktreewise.com/workflows/play),
 so setup and validation remain consistent.
+
+![WorktreeWise workflow runner showing a repeatable pipeline across selected worktrees](/images/v1.2.0/workflow.png)
+
+*Run the same setup and validation steps across parallel worktrees from one workflow.*
 
 [Try parallel worktree management free](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=git-worktree-parallel-development).
 

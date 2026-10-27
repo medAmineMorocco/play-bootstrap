@@ -176,7 +176,7 @@ export default async function Post({ params }: Props) {
                   fill
                   priority
                   sizes="(max-width: 1280px) 100vw, 1288px"
-                  className="h-full w-full object-cover object-center"
+                  className={`h-full w-full object-cover ${params.slug === "git-worktree-gui-2026" ? "object-[center_35%]" : "object-center"}`}
                 />
                 <div className="absolute left-0 top-0 z-10 flex h-full w-full items-end bg-gradient-to-t from-dark-700 to-transparent">
                   <div className="flex flex-wrap items-center p-4 pb-4 sm:p-8">
@@ -232,12 +232,12 @@ export default async function Post({ params }: Props) {
                       <div key={index} dangerouslySetInnerHTML={{ __html: segment }} />
                     ))}
                     <div className="mt-12">
-                      <div className="mb-6">
-                        <CheatSheetLink />
-                      </div>
                       {conversionPlan.enabled && conversionPlan.placements.end && (
                         <BlogEndCTA plan={conversionPlan} slug={params.slug} />
                       )}
+                      <div className={conversionPlan.enabled && conversionPlan.placements.end ? "mt-6" : ""}>
+                        <CheatSheetLink />
+                      </div>
                     </div>
                   </div>
                 </div>

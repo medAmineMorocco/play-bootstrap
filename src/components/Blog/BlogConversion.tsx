@@ -57,6 +57,7 @@ function TrialLink({ plan, slug, position, className = "" }: { plan: BlogConvers
 
 const primary = "inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-3 font-semibold text-white transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2";
 const secondary = "inline-flex min-h-11 items-center justify-center rounded-md border border-primary px-5 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2";
+const endCtaBenefits = ["Every Pro feature", "No credit card", "Windows · macOS · Linux"];
 
 export function BlogConversionCTA({ plan, slug, position = "inline", compact = false }: { plan: BlogConversionPlan; slug: string; position?: Position; compact?: boolean }) {
   return <TrackedRegion plan={plan} slug={slug} position={position} type="contextual" className={`not-prose my-9 overflow-hidden rounded-xl border border-primary/20 bg-primary/5 ${compact ? "p-5" : "p-6 sm:p-7"}`}>
@@ -87,7 +88,20 @@ export function BlogBeforeAfter({ plan, slug }: { plan: BlogConversionPlan; slug
 }
 
 export function BlogEndCTA({ plan, slug }: { plan: BlogConversionPlan; slug: string }) {
-  return <TrackedRegion plan={plan} slug={slug} position="end" type="end" className="not-prose mt-12 rounded-2xl bg-dark p-7 text-white sm:p-10">
-    <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">Your next branch can have its own workspace</p><h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl">Put this workflow into practice.</h2><p className="mb-6 max-w-2xl text-dark-6">Use WorktreeWise with your own repositories for {FREE_TRIAL_DAYS} days. No credit card required, and your repositories remain standard Git repositories.</p><div className="flex flex-wrap items-center gap-4"><TrialLink plan={plan} slug={slug} position="end" className={primary} /><span className="text-sm text-dark-6">Windows · macOS · Linux</span></div>
+  return <TrackedRegion plan={plan} slug={slug} position="end" type="end" className="not-prose relative overflow-hidden rounded-2xl border border-white/10 bg-dark p-7 text-white shadow-[0_24px_70px_-35px_rgba(55,88,249,0.8)] sm:p-10">
+    <div aria-hidden="true" className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
+    <div aria-hidden="true" className="absolute -bottom-24 -left-16 h-52 w-52 rounded-full bg-primary/10 blur-3xl" />
+    <div className="relative">
+      <p className="!mb-3 text-xs font-bold uppercase tracking-[0.18em] !text-primary">Your next branch deserves its own workspace</p>
+      <h2 className="!mb-3 !mt-0 text-2xl font-bold leading-tight !text-white sm:text-3xl">Try WorktreeWise free.</h2>
+      <p className="!mb-6 max-w-2xl !text-dark-6">Use the complete WorktreeWise workspace with your own repositories for {FREE_TRIAL_DAYS} days. No credit card required, and your repositories remain standard Git repositories.</p>
+      <div className="flex flex-wrap items-center gap-4">
+        <TrialLink plan={plan} slug={slug} position="end" className={primary} />
+        <span className="text-sm text-dark-6">Start in minutes · Cancel nothing</span>
+      </div>
+      <ul className="!mb-0 mt-7 flex !list-none flex-wrap gap-x-6 gap-y-3 border-t border-white/10 !p-0 pt-5 text-sm text-dark-6" aria-label="Free trial benefits">
+        {endCtaBenefits.map((benefit) => <li key={benefit} className="flex items-center gap-2"><span aria-hidden="true" className="text-primary">✓</span>{benefit}</li>)}
+      </ul>
+    </div>
   </TrackedRegion>;
 }

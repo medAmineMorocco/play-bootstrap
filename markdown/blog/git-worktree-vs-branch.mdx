@@ -4,6 +4,9 @@ date: 2026-04-20
 coverImage: /images/blog/git-worktree-vs-branch.png
 author: AMMACH MOHAMED AMINE
 excerpt: Understand the real difference between git worktree and branch, when to use each, and how to optimize your workflow for parallel development.
+conversion:
+  end: true
+  buttonLabel: Try WorktreeWise free
 ---
 
 Most developers think they understand Git branches until they try to work on multiple features at the same time.
@@ -85,6 +88,10 @@ All sharing the same .git data.
 - True parallel development
 
 <Callout> Git worktrees let you work on multiple branches at the same time without duplicating repositories. </Callout>
+
+![WorktreeWise overview showing multiple worktrees, branches, status, upstream state, and disk usage](/images/v1.2.0/overview.png)
+
+*A branch identifies a line of development; each worktree gives one branch or commit its own visible workspace.*
 
 ## Git Worktree vs Branch: Core Differences
 
@@ -215,6 +222,10 @@ Now you can:
 - Develop features in isolated folders
 - Avoid context switching entirely
 
+![WorktreeWise v1.2.0 Create a worktree dialog for selecting a branch, directory, hooks, and workspace setup](/images/v1.2.0/create-worktree-from-head.png)
+
+*WorktreeWise keeps the branch and workspace decisions together when you create a worktree.*
+
 # Common Mistakes
 
 1. Thinking worktrees replace branches  
@@ -326,6 +337,10 @@ That’s where WorktreeWise comes in.
 
 <a href="https://docs.worktreewise.com/workflows/play" class="link-in-post" >https://docs.worktreewise.com/workflows/play</a>
 
+![WorktreeWise workflow runner with sequential and parallel execution across selected worktrees](/images/v1.2.0/workflow.png)
+
+*Reusable workflows can install dependencies, run checks, or start project commands consistently across worktrees.*
+
 3. IDE integration  
 
    Open any worktree instantly in:  
@@ -337,7 +352,9 @@ That’s where WorktreeWise comes in.
    - Run configs  
    - History
 
-![Open Git Worktree in IDE](/images/v1.2.0/open-in-ide.png)
+![WorktreeWise worktree action menu with editor, terminal, Git, rename, move, delete, lock, and repair actions](/images/v1.2.0/actions.png)
+
+*Open the selected workspace in a configured editor or terminal from the same worktree action menu.*
 
 
 4. Terminal per worktree  
@@ -345,9 +362,6 @@ That’s where WorktreeWise comes in.
    Each worktree has its own terminal context.  
 
    No more navigation overhead.
-
-![Open Git Worktree in Terminal](/images/v1.2.0/open-in-terminal.png)
-
 
 5. Git diff and logs across worktrees  
 
@@ -359,6 +373,10 @@ That’s where WorktreeWise comes in.
    Without manual commands.
 
 <a href="https://docs.worktreewise.com/git-operations/diff" class="link-in-post" >https://docs.worktreewise.com/git-operations/diff</a>
+
+![WorktreeWise staged file diff beside working-tree and staging controls](/images/v1.2.0/diff-staged-file.png)
+
+*Inspect a staged or unstaged file without leaving the workspace you are reviewing.*
 
 > WorktreeWise transforms git worktrees from a power-user feature into a standard workflow.
 
@@ -383,8 +401,6 @@ which a branch or commit is checked out. You normally use them together:
 If native commands are enough, keep using them. If paths, cleanup, and repeated
 setup become the bottleneck, [create and organize worktrees visually](https://docs.worktreewise.com/git-worktrees/create)
 with WorktreeWise.
-
-[Try WorktreeWise free—no credit card required](/pricing?utm_source=blog&utm_medium=content_cta&utm_campaign=git-worktree-vs-branch).
 
 # Conclusion
 
