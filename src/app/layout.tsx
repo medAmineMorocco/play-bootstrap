@@ -10,6 +10,7 @@ import "../styles/index.css";
 import ToasterContext from "./api/contex/ToasetContex";
 import { useEffect } from "react";
 import Head from "@/app/head";
+import { Analytics } from "@vercel/analytics/next";
 
 const HOTJAR_ID = Number(process.env.NEXT_PUBLIC_HOTJAR_ID);
 const HOTJAR_SV = Number(process.env.NEXT_PUBLIC_HOTJAR_SV);
@@ -21,7 +22,8 @@ export default function RootLayout({
 }) {
   useEffect(() => {
     Clarity.init("vvb5odkvib");
-    if (HOTJAR_ID && HOTJAR_SV) hotjar.initialize({ id: HOTJAR_ID, sv: HOTJAR_SV });
+    if (HOTJAR_ID && HOTJAR_SV)
+      hotjar.initialize({ id: HOTJAR_ID, sv: HOTJAR_SV });
   }, []);
 
   return (
@@ -31,17 +33,18 @@ export default function RootLayout({
       </head>
 
       <body>
-          <ThemeProvider
-            attribute="class"
-            enableSystem={false}
-            defaultTheme="light"
-          >
-            <ToasterContext />
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTop />
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          enableSystem={false}
+          defaultTheme="light"
+        >
+          <ToasterContext />
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
