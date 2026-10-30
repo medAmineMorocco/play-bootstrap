@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="tb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e131f"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+    <linearGradient id="tb-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182030"/>
+      <stop offset="100%" stop-color="#111622"/>
+    </linearGradient>
+    <linearGradient id="tb-primary" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3758f9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="tb-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#3758f9" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="480" rx="16" fill="url(#tb-bg)" stroke="#1e2738" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="960" height="48" rx="16" fill="#131926" stroke="#1e2738" stroke-width="1"/>
+  <rect x="0" y="32" width="960" height="16" fill="#131926"/>
+  <circle cx="24" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <text x="480" y="29" fill="#94a3b8" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.04em">TICKET-BASED GIT WORKTREE ARCHITECTURE (JIRA / ISSUES)</text>
+
+  <!-- Left: Ticket Hub Card -->
+  <g transform="translate(40, 80)">
+    <rect width="320" height="360" rx="14" fill="url(#tb-card)" stroke="#26334d" stroke-width="1.5"/>
+    
+    <!-- Ticket Badge -->
+    <rect x="20" y="20" width="100" height="26" rx="6" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-opacity="0.4"/>
+    <text x="70" y="37" fill="#60a5fa" font-size="12" font-weight="700" text-anchor="middle">PROJ-101</text>
+    
+    <rect x="130" y="20" width="90" height="26" rx="6" fill="#10b981" fill-opacity="0.15"/>
+    <text x="175" y="37" fill="#34d399" font-size="11.5" font-weight="600" text-anchor="middle">In Progress</text>
+
+    <!-- Ticket Title -->
+    <text x="20" y="80" fill="#f8fafc" font-size="16" font-weight="700">Migrate Authentication</text>
+    <text x="20" y="104" fill="#f8fafc" font-size="16" font-weight="700">to OAuth2 with PKCE</text>
+    
+    <text x="20" y="136" fill="#94a3b8" font-size="12.5" line-height="1.5">
+      Single task requiring architecture
+    </text>
+    <text x="20" y="154" fill="#94a3b8" font-size="12.5">
+      spikes, benchmarking, and QA.
+    </text>
+
+    <!-- Central Repository connection node -->
+    <rect x="20" y="180" width="280" height="74" rx="8" fill="#0c111a" stroke="#1f293d" stroke-width="1"/>
+    <text x="32" y="204" fill="#cbd5e1" font-size="11" font-weight="600">CENTRAL REPOSITORY</text>
+    <text x="32" y="222" fill="#38bdf8" font-size="13" font-family="ui-monospace, monospace">github.com/org/my-app</text>
+    <text x="32" y="240" fill="#64748b" font-size="11">Shared object database (.git)</text>
+
+    <!-- Folder path preview -->
+    <rect x="20" y="270" width="280" height="74" rx="8" fill="#080c14" stroke="#1e2738" stroke-width="1"/>
+    <text x="32" y="292" fill="#94a3b8" font-size="11" font-weight="600">DISPATCH DIRECTORY</text>
+    <text x="32" y="312" fill="#a855f7" font-size="12.5" font-family="ui-monospace, monospace">worktrees/PROJ-101/</text>
+    <text x="32" y="330" fill="#64748b" font-size="11">Groups all task branches under 1 ticket</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <path d="M 360 215 C 420 215, 430 140, 480 140" stroke="#3758f9" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+  <path d="M 360 215 C 420 215, 430 260, 480 260" stroke="#a855f7" stroke-width="2" fill="none"/>
+  <path d="M 360 215 C 420 215, 430 380, 480 380" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+
+  <!-- Right Branch Worktrees -->
+
+  <!-- Branch 1: Primary Implementation -->
+  <g transform="translate(480, 80)">
+    <rect width="440" height="110" rx="10" fill="url(#tb-card)" stroke="#26334d" stroke-width="1"/>
+    <rect x="16" y="16" width="30" height="30" rx="6" fill="#3758f9" fill-opacity="0.2"/>
+    <path d="M 31 22 L 31 34 M 25 28 L 31 34 L 37 28" stroke="#60a5fa" stroke-width="1.8" fill="none"/>
+    <text x="56" y="28" fill="#f8fafc" font-size="14" font-weight="700">worktrees/PROJ-101/implementation</text>
+    <text x="56" y="44" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="11">Branch: feat/PROJ-101-oauth-pkce</text>
+
+    <rect x="16" y="60" width="408" height="38" rx="6" fill="#0b1019" stroke="#1c2538" stroke-width="1"/>
+    <text x="28" y="77" fill="#94a3b8" font-size="11">Role: Primary production implementation</text>
+    <text x="28" y="91" fill="#4ade80" font-size="10.5">Port 3000 · Full test suite passing · Active editor</text>
+  </g>
+
+  <!-- Branch 2: Alternative Spike / Benchmark -->
+  <g transform="translate(480, 205)">
+    <rect width="440" height="110" rx="10" fill="url(#tb-card)" stroke="#3b2b52" stroke-width="1.5" filter="url(#tb-glow)"/>
+    <rect x="16" y="16" width="30" height="30" rx="6" fill="#a855f7" fill-opacity="0.2"/>
+    <circle cx="31" cy="31" r="5" stroke="#c084fc" stroke-width="1.8" fill="none"/>
+    <text x="56" y="28" fill="#f8fafc" font-size="14" font-weight="700">worktrees/PROJ-101/alternative-jwt</text>
+    <text x="56" y="44" fill="#c084fc" font-family="ui-monospace, monospace" font-size="11">Branch: spike/PROJ-101-jwt-session</text>
+
+    <rect x="16" y="60" width="408" height="38" rx="6" fill="#0b1019" stroke="#1c2538" stroke-width="1"/>
+    <text x="28" y="77" fill="#94a3b8" font-size="11">Role: Side-by-side architecture benchmarking</text>
+    <text x="28" y="91" fill="#c084fc" font-size="10.5">Port 3001 · Compare token payload latency vs OAuth</text>
+  </g>
+
+  <!-- Branch 3: QA / Review Workspace -->
+  <g transform="translate(480, 330)">
+    <rect width="440" height="110" rx="10" fill="url(#tb-card)" stroke="#1a3b30" stroke-width="1"/>
+    <rect x="16" y="16" width="30" height="30" rx="6" fill="#10b981" fill-opacity="0.2"/>
+    <path d="M 25 31 L 29 35 L 37 26" stroke="#34d399" stroke-width="2" fill="none"/>
+    <text x="56" y="28" fill="#f8fafc" font-size="14" font-weight="700">worktrees/PROJ-101/testing-e2e</text>
+    <text x="56" y="44" fill="#34d399" font-family="ui-monospace, monospace" font-size="11">Branch: test/PROJ-101-cypress</text>
+
+    <rect x="16" y="60" width="408" height="38" rx="6" fill="#0b1019" stroke="#1c2538" stroke-width="1"/>
+    <text x="28" y="77" fill="#94a3b8" font-size="11">Role: End-to-end regression validation</text>
+    <text x="28" y="91" fill="#34d399" font-size="10.5">Isolated mock server · No branch switching necessary</text>
+  </g>
+</svg>

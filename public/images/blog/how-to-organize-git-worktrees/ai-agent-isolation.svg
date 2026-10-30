@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="ai-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e131f"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+    <linearGradient id="ai-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182030"/>
+      <stop offset="100%" stop-color="#101522"/>
+    </linearGradient>
+    <linearGradient id="ai-claude" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="ai-codex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="ai-gemini" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="500" rx="16" fill="url(#ai-bg)" stroke="#1e2738" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="960" height="48" rx="16" fill="#131926" stroke="#1e2738" stroke-width="1"/>
+  <rect x="0" y="32" width="960" height="16" fill="#131926"/>
+  <circle cx="24" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <text x="480" y="29" fill="#94a3b8" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.04em">MULTI-AI CODING AGENT WORKTREE ISOLATION ARCHITECTURE</text>
+
+  <!-- Central Repository Node (Top Center) -->
+  <g transform="translate(320, 68)">
+    <rect width="320" height="74" rx="12" fill="#131a28" stroke="#3758f9" stroke-width="2"/>
+    <circle cx="36" cy="37" r="16" fill="#3758f9" fill-opacity="0.2"/>
+    <!-- Git Branch Icon -->
+    <path d="M 36 27 L 36 47 M 36 32 C 44 32, 46 36, 46 41" stroke="#60a5fa" stroke-width="2" fill="none"/>
+    <circle cx="36" cy="27" r="2.5" fill="#60a5fa"/>
+    <circle cx="36" cy="47" r="2.5" fill="#60a5fa"/>
+    <circle cx="46" cy="41" r="2.5" fill="#60a5fa"/>
+
+    <text x="64" y="32" fill="#f8fafc" font-size="14" font-weight="700">SHARED GIT REPOSITORY</text>
+    <text x="64" y="49" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="12">my-app/.git (Single Object Store)</text>
+    <text x="64" y="63" fill="#64748b" font-size="10.5">Unified commit history, refs, packs &amp; branches</text>
+  </g>
+
+  <!-- Branching Connectors from Central Repo -->
+  <path d="M 400 142 L 400 165 L 160 165 L 160 195" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+  <path d="M 480 142 L 480 195" stroke="#10b981" stroke-width="2" fill="none"/>
+  <path d="M 560 142 L 560 165 L 800 165 L 800 195" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+
+  <!-- Three Agent Columns -->
+
+  <!-- Column 1: Claude Code -->
+  <g transform="translate(32, 195)">
+    <rect width="280" height="225" rx="12" fill="url(#ai-card)" stroke="#78350f" stroke-width="1.5"/>
+    <rect x="14" y="14" width="252" height="32" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+    <circle cx="30" cy="30" r="6" fill="url(#ai-claude)"/>
+    <text x="44" y="34" fill="#fbbf24" font-size="13" font-weight="700">Claude Code</text>
+    <text x="210" y="34" fill="#d97706" font-size="10.5" font-weight="600">CLI Agent</text>
+
+    <text x="14" y="68" fill="#94a3b8" font-size="11" font-weight="600">ISOLATED WORKTREE FOLDER</text>
+    <rect x="14" y="74" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="93" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">worktrees/agents/claude/</text>
+
+    <text x="14" y="122" fill="#94a3b8" font-size="11" font-weight="600">INDEPENDENT BRANCH &amp; HEAD</text>
+    <rect x="14" y="128" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="147" fill="#fbbf24" font-family="ui-monospace, monospace" font-size="11.5">ai/claude-auth-refactor</text>
+
+    <!-- Status badge -->
+    <rect x="14" y="170" width="252" height="42" rx="6" fill="#17120a" stroke="#451a03" stroke-width="1"/>
+    <text x="24" y="187" fill="#fbbf24" font-size="11" font-weight="600">✓ Isolated filesystem index</text>
+    <text x="24" y="202" fill="#a1a1aa" font-size="10.5">Modifying 14 files · Zero main disruption</text>
+  </g>
+
+  <!-- Column 2: OpenAI Codex / Copilot -->
+  <g transform="translate(340, 195)">
+    <rect width="280" height="225" rx="12" fill="url(#ai-card)" stroke="#064e3b" stroke-width="1.5"/>
+    <rect x="14" y="14" width="252" height="32" rx="6" fill="#10b981" fill-opacity="0.15"/>
+    <circle cx="30" cy="30" r="6" fill="url(#ai-codex)"/>
+    <text x="44" y="34" fill="#34d399" font-size="13" font-weight="700">OpenAI Codex</text>
+    <text x="195" y="34" fill="#059669" font-size="10.5" font-weight="600">Background</text>
+
+    <text x="14" y="68" fill="#94a3b8" font-size="11" font-weight="600">ISOLATED WORKTREE FOLDER</text>
+    <rect x="14" y="74" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="93" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">worktrees/agents/codex/</text>
+
+    <text x="14" y="122" fill="#94a3b8" font-size="11" font-weight="600">INDEPENDENT BRANCH &amp; HEAD</text>
+    <rect x="14" y="128" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="147" fill="#34d399" font-family="ui-monospace, monospace" font-size="11.5">ai/codex-db-indexing</text>
+
+    <!-- Status badge -->
+    <rect x="14" y="170" width="252" height="42" rx="6" fill="#0a1712" stroke="#064e3b" stroke-width="1"/>
+    <text x="24" y="187" fill="#34d399" font-size="11" font-weight="600">✓ Parallel testing execution</text>
+    <text x="24" y="202" fill="#a1a1aa" font-size="10.5">Running pytest on port 5001 independently</text>
+  </g>
+
+  <!-- Column 3: Gemini CLI -->
+  <g transform="translate(648, 195)">
+    <rect width="280" height="225" rx="12" fill="url(#ai-card)" stroke="#1e3a8a" stroke-width="1.5"/>
+    <rect x="14" y="14" width="252" height="32" rx="6" fill="#3b82f6" fill-opacity="0.15"/>
+    <circle cx="30" cy="30" r="6" fill="url(#ai-gemini)"/>
+    <text x="44" y="34" fill="#60a5fa" font-size="13" font-weight="700">Gemini CLI</text>
+    <text x="215" y="34" fill="#2563eb" font-size="10.5" font-weight="600">Subagent</text>
+
+    <text x="14" y="68" fill="#94a3b8" font-size="11" font-weight="600">ISOLATED WORKTREE FOLDER</text>
+    <rect x="14" y="74" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="93" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">worktrees/agents/gemini/</text>
+
+    <text x="14" y="122" fill="#94a3b8" font-size="11" font-weight="600">INDEPENDENT BRANCH &amp; HEAD</text>
+    <rect x="14" y="128" width="252" height="30" rx="6" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+    <text x="22" y="147" fill="#60a5fa" font-family="ui-monospace, monospace" font-size="11.5">ai/gemini-unit-tests</text>
+
+    <!-- Status badge -->
+    <rect x="14" y="170" width="252" height="42" rx="6" fill="#0c1322" stroke="#1e3a8a" stroke-width="1"/>
+    <text x="24" y="187" fill="#60a5fa" font-size="11" font-weight="600">✓ Side-by-side human review</text>
+    <text x="24" y="202" fill="#a1a1aa" font-size="10.5">Developer compares diffs before merging</text>
+  </g>
+
+  <!-- Bottom Important Caveat Banner -->
+  <g transform="translate(32, 436)">
+    <rect width="896" height="48" rx="8" fill="#161b26" stroke="#2d3748" stroke-width="1"/>
+    <circle cx="28" cy="24" r="8" fill="#ef4444" fill-opacity="0.2"/>
+    <text x="28" y="28" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">!</text>
+    <text x="46" y="28" fill="#e2e8f0" font-size="12" font-weight="600">CRITICAL AGENT REALITY:</text>
+    <text x="210" y="28" fill="#94a3b8" font-size="12">Worktrees provide directory &amp; branch isolation. They do NOT provide a security sandbox or prevent Git merge conflicts.</text>
+  </g>
+</svg>

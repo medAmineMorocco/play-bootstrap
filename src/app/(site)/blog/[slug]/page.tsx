@@ -37,15 +37,20 @@ export async function generateMetadata({ params }: Props) {
 
   const siteName = process.env.SITE_NAME || "WorktreeWise";
   const authorName = process.env.AUTHOR_NAME || "Ammach Mohamed Amine";
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.worktreewise.com";
+  const baseUrl = (
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.worktreewise.com"
+  ).replace(/\/+$/, "");
   const url = `${baseUrl}/blog/${post.slug}`;
-  const imageUrl = `${baseUrl.replace(/\/$/, "")}/${post.coverImage.replace(/^\//, "")}`;
+  const imageUrl = `${baseUrl}/${post.coverImage.replace(/^\//, "")}`;
 
   if (post) {
     const metadata = {
       title: `${post.title || "Single Post Page"}`,
+      description: post.excerpt,
       author: authorName,
+      alternates: {
+        canonical: url,
+      },
       robots: {
         index: true,
         follow: true,
@@ -156,9 +161,74 @@ export default async function Post({ params }: Props) {
     }))
     .sort((a, b) => b.relevance - a.relevance)
     .slice(0, 3);
+  const baseUrl = (
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.worktreewise.com"
+  ).replace(/\/+$/, "");
+  const postUrl = `${baseUrl}/blog/${params.slug}`;
+  const imageUrl = `${baseUrl}/${(post.coverImage || "").replace(/^\//, "")}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: imageUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author || process.env.AUTHOR_NAME || "AMMACH MOHAMED AMINE",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: process.env.SITE_NAME || "WorktreeWise",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/images/logo/logo.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${baseUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: postUrl,
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <BlogArticleAnalytics slug={params.slug} intent={conversionPlan.intent} />
       <Breadcrumb pageName={post.title} />
 

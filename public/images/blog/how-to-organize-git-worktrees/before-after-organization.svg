@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="ba-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e131f"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+    <linearGradient id="ba-card-bad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1316"/>
+      <stop offset="100%" stop-color="#130b0d"/>
+    </linearGradient>
+    <linearGradient id="ba-card-good" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101c24"/>
+      <stop offset="100%" stop-color="#0a1217"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="480" rx="16" fill="url(#ba-bg)" stroke="#1e2738" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="960" height="48" rx="16" fill="#131926" stroke="#1e2738" stroke-width="1"/>
+  <rect x="0" y="32" width="960" height="16" fill="#131926"/>
+  <circle cx="24" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <text x="480" y="29" fill="#94a3b8" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.04em">GIT WORKTREE DIRECTORY HEALTH: BEFORE VS. AFTER</text>
+
+  <!-- Left: BEFORE (Messy / Disorganized) -->
+  <g transform="translate(36, 75)">
+    <rect width="424" height="370" rx="12" fill="url(#ba-card-bad)" stroke="#451a23" stroke-width="1.5"/>
+    <rect x="18" y="16" width="388" height="34" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+    <circle cx="34" cy="33" r="6" fill="#ef4444"/>
+    <text x="48" y="37" fill="#fca5a5" font-size="13" font-weight="700">BEFORE: AD-HOC &amp; UNSTRUCTURED</text>
+
+    <!-- Tree View -->
+    <g transform="translate(18, 62)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">
+      <rect x="0" y="0" width="388" height="210" rx="8" fill="#090506" stroke="#2d1217" stroke-width="1"/>
+      
+      <text x="14" y="24" fill="#94a3b8">projects/</text>
+      <path d="M 22 32 L 22 185" stroke="#4a1d24" stroke-width="1.2" fill="none"/>
+
+      <!-- Item 1 -->
+      <path d="M 22 48 L 36 48" stroke="#4a1d24" stroke-width="1.2"/>
+      <text x="44" y="52" fill="#e2e8f0">my-app/</text>
+      <text x="110" y="52" fill="#64748b" font-size="10.5">(original repository)</text>
+
+      <!-- Item 2 -->
+      <path d="M 22 82 L 36 82" stroke="#4a1d24" stroke-width="1.2"/>
+      <text x="44" y="86" fill="#f87171">test1/</text>
+      <text x="96" y="86" fill="#fca5a5" font-size="10.5">⚠️ Which repo? Which branch?</text>
+
+      <!-- Item 3 -->
+      <path d="M 22 116 L 36 116" stroke="#4a1d24" stroke-width="1.2"/>
+      <text x="44" y="120" fill="#f87171">my-app-copy/</text>
+      <text x="142" y="120" fill="#fca5a5" font-size="10.5">⚠️ Uncommitted edits from 3 months ago</text>
+
+      <!-- Item 4 -->
+      <path d="M 22 150 L 36 150" stroke="#4a1d24" stroke-width="1.2"/>
+      <text x="44" y="154" fill="#f87171">new-final-auth2/</text>
+      <text x="170" y="154" fill="#fca5a5" font-size="10.5">⚠️ Ambiguous naming</text>
+
+      <!-- Item 5 -->
+      <path d="M 22 184 L 36 184" stroke="#4a1d24" stroke-width="1.2"/>
+      <text x="44" y="188" fill="#f87171">temp/</text>
+      <text x="92" y="188" fill="#fca5a5" font-size="10.5">⚠️ Dangling metadata in .git/worktrees</text>
+    </g>
+
+    <!-- Consequences -->
+    <g transform="translate(18, 286)">
+      <text x="0" y="18" fill="#f87171" font-size="11.5" font-weight="600">✗ Accidental manual folder deletion breaks Git tracking</text>
+      <text x="0" y="38" fill="#f87171" font-size="11.5" font-weight="600">✗ Severe IDE tab confusion across multiple tasks</text>
+      <text x="0" y="58" fill="#f87171" font-size="11.5" font-weight="600">✗ Stale worktrees accumulate hundreds of gigabytes</text>
+    </g>
+  </g>
+
+  <!-- Right: AFTER (Structured & Categorized) -->
+  <g transform="translate(500, 75)">
+    <rect width="424" height="370" rx="12" fill="url(#ba-card-good)" stroke="#164e63" stroke-width="1.5"/>
+    <rect x="18" y="16" width="388" height="34" rx="6" fill="#10b981" fill-opacity="0.15"/>
+    <circle cx="34" cy="33" r="6" fill="#10b981"/>
+    <text x="48" y="37" fill="#6ee7b7" font-size="13" font-weight="700">AFTER: PREDICTABLE &amp; WORKTREEWISE-MANAGED</text>
+
+    <!-- Tree View -->
+    <g transform="translate(18, 62)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">
+      <rect x="0" y="0" width="388" height="210" rx="8" fill="#040d12" stroke="#0e2a38" stroke-width="1"/>
+      
+      <text x="14" y="24" fill="#94a3b8">worktrees/my-app/</text>
+      <path d="M 22 32 L 22 185" stroke="#164e63" stroke-width="1.2" fill="none"/>
+
+      <!-- Permanent -->
+      <path d="M 22 48 L 36 48" stroke="#164e63" stroke-width="1.2"/>
+      <text x="44" y="52" fill="#38bdf8" font-weight="600">permanent/</text>
+      <text x="134" y="52" fill="#64748b" font-size="11">main/ (production reference)</text>
+
+      <!-- Active -->
+      <path d="M 22 92 L 36 92" stroke="#164e63" stroke-width="1.2"/>
+      <text x="44" y="96" fill="#4ade80" font-weight="600">active/</text>
+      
+      <path d="M 52 102 L 52 135" stroke="#164e63" stroke-width="1" fill="none"/>
+      <path d="M 52 118 L 64 118" stroke="#164e63" stroke-width="1"/>
+      <text x="72" y="122" fill="#e2e8f0">feat-auth-pkce/</text>
+      <text x="195" y="122" fill="#34d399" font-size="10.5">Port 3000</text>
+
+      <path d="M 52 142 L 64 142" stroke="#164e63" stroke-width="1"/>
+      <text x="72" y="146" fill="#e2e8f0">fix-pay-timeout/</text>
+      <text x="200" y="146" fill="#34d399" font-size="10.5">Port 3001</text>
+
+      <!-- Temporary -->
+      <path d="M 22 176 L 36 176" stroke="#164e63" stroke-width="1.2"/>
+      <text x="44" y="180" fill="#c084fc" font-weight="600">temporary/</text>
+      <text x="134" y="180" fill="#a78bfa" font-size="11">pr-review-842/ (Safe for auto-cleanup)</text>
+    </g>
+
+    <!-- Benefits -->
+    <g transform="translate(18, 286)">
+      <text x="0" y="18" fill="#34d399" font-size="11.5" font-weight="600">✓ Every directory self-documents its repo, branch, and role</text>
+      <text x="0" y="38" fill="#34d399" font-size="11.5" font-weight="600">✓ Zero risk of dangling Git metadata or prune surprises</text>
+      <text x="0" y="58" fill="#34d399" font-size="11.5" font-weight="600">✓ 1-click prune &amp; automated folder naming in WorktreeWise</text>
+    </g>
+  </g>
+</svg>

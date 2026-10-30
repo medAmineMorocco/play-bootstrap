@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="lc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e131f"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+    <linearGradient id="lc-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182030"/>
+      <stop offset="100%" stop-color="#111622"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="460" rx="16" fill="url(#lc-bg)" stroke="#1e2738" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="960" height="48" rx="16" fill="#131926" stroke="#1e2738" stroke-width="1"/>
+  <rect x="0" y="32" width="960" height="16" fill="#131926"/>
+  <circle cx="24" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <text x="480" y="29" fill="#94a3b8" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.04em">LIFECYCLE-BASED WORKTREE MANAGEMENT WORKFLOW</text>
+
+  <!-- 3 Stages Grid -->
+
+  <!-- Stage 1: Permanent Worktrees -->
+  <g transform="translate(36, 75)">
+    <rect width="276" height="350" rx="12" fill="url(#lc-card)" stroke="#1e3a8a" stroke-width="1.5"/>
+    <rect x="16" y="16" width="244" height="32" rx="6" fill="#3b82f6" fill-opacity="0.15"/>
+    <circle cx="32" cy="32" r="6" fill="#3b82f6"/>
+    <text x="46" y="36" fill="#60a5fa" font-size="13" font-weight="700">1. Permanent Tier</text>
+
+    <text x="16" y="72" fill="#e2e8f0" font-size="13" font-weight="600">Stable Reference Workspaces</text>
+    <text x="16" y="90" fill="#94a3b8" font-size="11.5">Long-running, locked against accidental pruning or edits.</text>
+
+    <!-- Folder card -->
+    <rect x="16" y="110" width="244" height="120" rx="8" fill="#0b0f17" stroke="#1f293d" stroke-width="1"/>
+    <text x="28" y="132" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="11.5">worktrees/permanent/</text>
+    <text x="40" y="156" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">├── main/ (Production)</text>
+    <text x="40" y="180" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">└── develop/ (Staging)</text>
+    <rect x="40" y="196" width="180" height="22" rx="4" fill="#3b82f6" fill-opacity="0.2"/>
+    <text x="130" y="211" fill="#60a5fa" font-size="10.5" font-weight="600" text-anchor="middle">git worktree lock --reason</text>
+
+    <!-- Checklist -->
+    <text x="16" y="258" fill="#60a5fa" font-size="11" font-weight="600">CHARACTERISTICS</text>
+    <text x="16" y="278" fill="#cbd5e1" font-size="11">• Lifespan: Months to years</text>
+    <text x="16" y="298" fill="#cbd5e1" font-size="11">• Never deleted during sprint cleanup</text>
+    <text x="16" y="318" fill="#cbd5e1" font-size="11">• Baseline for bisecting &amp; diffing</text>
+  </g>
+
+  <!-- Stage 2: Active Worktrees -->
+  <g transform="translate(342, 75)">
+    <rect width="276" height="350" rx="12" fill="url(#lc-card)" stroke="#065f46" stroke-width="1.5"/>
+    <rect x="16" y="16" width="244" height="32" rx="6" fill="#10b981" fill-opacity="0.15"/>
+    <circle cx="32" cy="32" r="6" fill="#10b981"/>
+    <text x="46" y="36" fill="#34d399" font-size="13" font-weight="700">2. Active Tier</text>
+
+    <text x="16" y="72" fill="#e2e8f0" font-size="13" font-weight="600">Daily In-Flight Tasks</text>
+    <text x="16" y="90" fill="#94a3b8" font-size="11.5">Where code is authored, built, and tested actively.</text>
+
+    <!-- Folder card -->
+    <rect x="16" y="110" width="244" height="120" rx="8" fill="#0b0f17" stroke="#1f293d" stroke-width="1"/>
+    <text x="28" y="132" fill="#34d399" font-family="ui-monospace, monospace" font-size="11.5">worktrees/active/</text>
+    <text x="40" y="156" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">├── feat-payment-v2/</text>
+    <text x="40" y="180" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">└── bugfix-login-modal/</text>
+    <rect x="40" y="196" width="180" height="22" rx="4" fill="#10b981" fill-opacity="0.2"/>
+    <text x="130" y="211" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Local dev server running</text>
+
+    <!-- Checklist -->
+    <text x="16" y="258" fill="#34d399" font-size="11" font-weight="600">CHARACTERISTICS</text>
+    <text x="16" y="278" fill="#cbd5e1" font-size="11">• Lifespan: Hours to a sprint (1-2 wks)</text>
+    <text x="16" y="298" fill="#cbd5e1" font-size="11">• Hot dependencies (node_modules/venv)</text>
+    <text x="16" y="318" fill="#cbd5e1" font-size="11">• Frequent uncommitted changes</text>
+  </g>
+
+  <!-- Stage 3: Temporary Worktrees -->
+  <g transform="translate(648, 75)">
+    <rect width="276" height="350" rx="12" fill="url(#lc-card)" stroke="#701a75" stroke-width="1.5"/>
+    <rect x="16" y="16" width="244" height="32" rx="6" fill="#a855f7" fill-opacity="0.15"/>
+    <circle cx="32" cy="32" r="6" fill="#c084fc"/>
+    <text x="46" y="36" fill="#e879f9" font-size="13" font-weight="700">3. Ephemeral Tier</text>
+
+    <text x="16" y="72" fill="#e2e8f0" font-size="13" font-weight="600">Quick Reviews &amp; AI Spikes</text>
+    <text x="16" y="90" fill="#94a3b8" font-size="11.5">Spin up, validate, and tear down immediately.</text>
+
+    <!-- Folder card -->
+    <rect x="16" y="110" width="244" height="120" rx="8" fill="#0b0f17" stroke="#1f293d" stroke-width="1"/>
+    <text x="28" y="132" fill="#c084fc" font-family="ui-monospace, monospace" font-size="11.5">worktrees/temporary/</text>
+    <text x="40" y="156" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">├── pr-review-492/</text>
+    <text x="40" y="180" fill="#e2e8f0" font-family="ui-monospace, monospace" font-size="11.5">└── ai-codex-experiment/</text>
+    <rect x="40" y="196" width="180" height="22" rx="4" fill="#a855f7" fill-opacity="0.2"/>
+    <text x="130" y="211" fill="#e879f9" font-size="10.5" font-weight="600" text-anchor="middle">git worktree remove &amp; prune</text>
+
+    <!-- Checklist -->
+    <text x="16" y="258" fill="#c084fc" font-size="11" font-weight="600">CHARACTERISTICS</text>
+    <text x="16" y="278" fill="#cbd5e1" font-size="11">• Lifespan: Minutes to 1 day</text>
+    <text x="16" y="298" fill="#cbd5e1" font-size="11">• Safe for zero-guilt automated prune</text>
+    <text x="16" y="318" fill="#cbd5e1" font-size="11">• Eliminates folder sprawl permanently</text>
+  </g>
+</svg>

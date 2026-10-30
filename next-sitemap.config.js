@@ -9,6 +9,7 @@ const blogPosts = [
   { slug: "git-worktree-gui-2026" },
   { slug: "claude-git-worktrees" },
   { slug: "qa-git-worktrees" },
+  { slug: "how-to-organize-git-worktrees" },
 ];
 
 const tutorialCommands = [
