@@ -10,15 +10,15 @@ const WORKTREES_BOOK_LANDING_PAGE_URL = process.env.NEXT_PUBLIC_WORKTREES_BOOK_L
 
 export const metadata: Metadata = {
   title:
-    "WorktreeWise Pricing | Free Trial & One-Time Pro",
-  description: `Try every WorktreeWise Pro feature free for ${FREE_TRIAL_DAYS} days with no credit card. Buy once for 12 months of updates and keep your supported version forever.`,
+    "WorktreeWise Pricing | Black Friday Deal — $20 One-Time Pro (Save 49%)",
+  description: `Black Friday Special: Get WorktreeWise Pro for $20 instead of $39 until Black Friday. Try every Pro feature free for ${FREE_TRIAL_DAYS} days with no credit card, buy once for 12 months of updates, and keep your supported version forever.`,
   alternates: {
     canonical: "https://www.worktreewise.com/pricing",
   },
   openGraph: {
-    title: "WorktreeWise Pricing | Free Trial & One-Time Pro",
+    title: "WorktreeWise Pricing | Black Friday Deal — $20 One-Time Pro (Save 49%)",
     description:
-      `Try every WorktreeWise Pro feature free for ${FREE_TRIAL_DAYS} days. Upgrade with one payment and keep your supported version forever.`,
+      `Black Friday Special: Get WorktreeWise Pro for $20 instead of $39. Try every feature free for ${FREE_TRIAL_DAYS} days, upgrade with one payment, and keep your supported version forever.`,
     url: "https://www.worktreewise.com/pricing",
     siteName: "WorktreeWise",
     images: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorktreeWise Pricing | Free Trial & One-Time Pro",
+    title: "WorktreeWise Pricing | Black Friday Deal — $20 One-Time Pro (Save 49%)",
     description:
-      `Start a ${FREE_TRIAL_DAYS}-day free trial with no credit card, then upgrade with one payment if WorktreeWise fits your workflow.`,
+      `Black Friday Special: Get WorktreeWise Pro for $20 instead of $39 until Black Friday. Start a ${FREE_TRIAL_DAYS}-day free trial with no credit card.`,
     images: ["https://www.worktreewise.com/images/v1.2.0/dashboard.png"],
   },
 };

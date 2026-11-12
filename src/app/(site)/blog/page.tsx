@@ -1,3 +1,4 @@
+import Newsletter from "@/components/Blog/Newsletter";
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { getAllPosts } from "@/utils/markdown";
@@ -51,6 +52,9 @@ const Blog = () => {
                 <SingleBlog blog={blog} />
               </div>
             ))}
+          </div>
+          <div className="mt-8">
+            <Newsletter />
           </div>
         </div>
       </section>

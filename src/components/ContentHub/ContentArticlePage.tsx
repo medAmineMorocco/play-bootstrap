@@ -498,6 +498,52 @@ export default function ContentArticlePage({ hub, article }: { hub: ContentHub; 
             WorktreeWise eliminates the manual friction and mental overhead of CLI flags. It displays real-time branch states, uncommitted modifications, active terminals, and lock statuses across all worktrees on a single visual dashboard.
           </p>
 
+          {details.worktreewiseWorkflow && (
+            <div className="mt-7 rounded-2xl border border-primary/20 bg-white/70 p-5 dark:border-primary/30 dark:bg-dark-2/70 sm:p-6">
+              <h3 className="text-xl font-bold text-dark dark:text-white">
+                {details.worktreewiseWorkflow.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-body-color dark:text-dark-6">
+                {details.worktreewiseWorkflow.description}
+              </p>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {details.worktreewiseWorkflow.steps.map((step, idx) => (
+                  <div key={step.title} className="rounded-xl border border-stroke bg-white p-4 dark:border-dark-3 dark:bg-dark-2">
+                    <div className="flex items-start gap-3">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                        {idx + 1}
+                      </span>
+                      <div>
+                        <h4 className="font-bold text-dark dark:text-white">{step.title}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-body-color dark:text-dark-6">{step.description}</p>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex min-h-28 items-center justify-center rounded-lg border-2 border-dashed border-primary/25 bg-gray-1/70 px-4 py-5 text-center dark:border-primary/30 dark:bg-dark-3/40" aria-label={`Image placeholder for ${step.title}`}>
+                      <div>
+                        <svg className="mx-auto size-7 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M4 16l4.5-4.5a2 2 0 012.8 0L16 16m-2-2l1.5-1.5a2 2 0 012.8 0L20 14m-8-6h.01M5 20h14a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                        </svg>
+                        <p className="mt-2 text-xs font-semibold text-primary">Image placeholder</p>
+                        <p className="mt-1 text-[11px] text-body-color dark:text-dark-6">Add a screenshot for this step</p>
+                      </div>
+                    </div>
+                    {step.command && (
+                      <pre className="mt-4 overflow-x-auto rounded-lg bg-dark p-3 font-mono text-xs leading-5 text-gray-2">
+                        <code>{step.command}</code>
+                      </pre>
+                    )}
+                  </div>
+                ))}
+              </div>
+              {details.worktreewiseWorkflow.note && (
+                <p className="mt-5 rounded-lg bg-primary/[0.06] p-3 text-xs leading-relaxed text-body-color dark:bg-primary/10 dark:text-gray-2">
+                  <span className="font-bold text-primary">Note: </span>
+                  {details.worktreewiseWorkflow.note}
+                </p>
+              )}
+            </div>
+          )}
+
           {details.image && details.imageAlt && (
             <figure className="relative mt-7 overflow-hidden rounded-2xl border border-stroke bg-gray-1 p-3 shadow-lg dark:border-dark-3 dark:bg-dark-2 sm:p-5">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" aria-hidden="true" />

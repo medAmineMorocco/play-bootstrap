@@ -30,6 +30,22 @@ export type ComparisonTable = {
   rows: Array<[string, string, string]>;
 };
 
+export type WorktreeWiseWorkflow = {
+  title: string;
+  description: string;
+  steps: Array<{
+    title: string;
+    description: string;
+    command?: string;
+  }>;
+  note?: string;
+};
+
+export type ArticleImagePlaceholder = {
+  label: string;
+  description: string;
+};
+
 export type ArticleContent = {
   slug: string;
   title: string;
@@ -53,6 +69,8 @@ export type ArticleContent = {
   pitfalls: Pitfall[];
   checks: string[];
   proTips: string[];
+  worktreewiseWorkflow?: WorktreeWiseWorkflow;
+  imagePlaceholders?: ArticleImagePlaceholder[];
   keyTakeaways: string[];
   image?: string;
   imageAlt?: string;

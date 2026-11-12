@@ -1,3 +1,4 @@
+import Newsletter from "@/components/Blog/Newsletter";
 import PopularArticle from "@/components/Blog/PopularArticle";
 import SingleBlog from "@/components/Blog/SingleBlog";
 import {
@@ -308,11 +309,18 @@ export default async function Post({ params }: Props) {
                       <div className={conversionPlan.enabled && conversionPlan.placements.end ? "mt-6" : ""}>
                         <CheatSheetLink />
                       </div>
+                      <div className="mt-6">
+                        <Newsletter />
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                   <div>
+                    <div className="hidden lg:block">
+                      <Newsletter />
+                    </div>
+
                     <div className="mb-10 hidden lg:block">
                       {conversionPlan.enabled && (
                         <BlogConversionCTA compact position="sidebar" plan={conversionPlan} slug={params.slug} />

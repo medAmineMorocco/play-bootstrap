@@ -58,6 +58,7 @@ export const contentHubs: Record<HubKey, ContentHub> = {
       ["Codex + worktrees", "codex-worktrees", "codex git worktrees"],
       ["Cursor + worktrees", "cursor-worktrees", "cursor git worktrees"],
       ["Gemini CLI + worktrees", "gemini-cli-worktrees", "gemini cli worktrees"],
+      ["Antigravity + worktrees", "antigravity-worktrees", "antigravity git worktrees"],
       ["OpenCode + worktrees", "opencode-worktrees", "opencode git worktrees"],
       ["Multiple agents on one repository", "multiple-agents-same-repository", "multiple ai agents same repository"],
       ["Parallel coding agents", "parallel-coding-agents", "parallel coding agents"],

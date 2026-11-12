@@ -7,6 +7,30 @@ import { comparisonsArticles } from "./articles/comparisonsData";
 
 export type { ArticleContent as ArticleDetails };
 
+const defaultAiAgentWorkflow: ArticleContent["worktreewiseWorkflow"] = {
+  title: "Create in WorktreeWise, then connect the agent",
+  description: "WorktreeWise can create a named branch and Git worktree first. Import that existing folder into the AI agent's project or workspace picker, or open the worktree's terminal and launch the agent from there.",
+  steps: [
+    {
+      title: "Create the worktree in WorktreeWise",
+      description: "Choose the repository, base branch, task name, and optional agent profile. WorktreeWise creates the isolated folder without switching your active checkout.",
+    },
+    {
+      title: "Import the existing worktree into the agent",
+      description: "In the agent's project or workspace flow, add the WorktreeWise-created folder. For a CLI agent, open that folder in a terminal and start the agent there so it inherits the correct working directory.",
+    },
+    {
+      title: "Run multiple worktrees at the same time",
+      description: "Create one WorktreeWise worktree per task and keep each agent session attached to its own path and branch. You can continue coding in your primary checkout while the parallel tasks run.",
+    },
+    {
+      title: "Review everything from one place",
+      description: "Use WorktreeWise to compare status and diffs across the active worktrees, then merge the approved branch or remove the disposable checkout.",
+    },
+  ],
+  note: "Some AI agents, including Codex and Cursor, also provide native task-scoped worktree modes. WorktreeWise complements those features by letting you create, name, import, and manage multiple existing worktrees across different agents from one visual inventory.",
+};
+
 const articlesByHub: Record<HubKey, Record<string, ArticleContent>> = {
   troubleshooting: troubleshootingArticles,
   "ai-agents": aiAgentsArticles,
@@ -17,6 +41,9 @@ const articlesByHub: Record<HubKey, Record<string, ArticleContent>> = {
 export function getArticleDetails(hubKey: HubKey, article: HubArticle): ArticleContent {
   const match = articlesByHub[hubKey]?.[article.slug];
   if (match) {
+    if (hubKey === "ai-agents" && !match.worktreewiseWorkflow) {
+      return { ...match, worktreewiseWorkflow: defaultAiAgentWorkflow };
+    }
     return match;
   }
 
@@ -68,6 +95,7 @@ export function getArticleDetails(hubKey: HubKey, article: HubArticle): ArticleC
     proTips: [
       "Use WorktreeWise to visualize your worktrees and avoid manual CLI syntax errors.",
     ],
+    worktreewiseWorkflow: hubKey === "ai-agents" ? defaultAiAgentWorkflow : undefined,
     keyTakeaways: [
       "Always inspect with `git worktree list` before making destructive changes.",
       "Worktrees keep parallel development safe and clean.",

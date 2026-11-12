@@ -31,11 +31,11 @@ export const pricingData: Price[] = [
   {
     id: "PRO",
     productIds: PRO_PRODUCT_IDS ? PRO_PRODUCT_IDS.split(",") : null,
-    original_amount: Number(process.env.NEXT_PUBLIC_PRO_ORIGINAL_PRICE) || null,
-    unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE || 0),
+    original_amount: Number(process.env.NEXT_PUBLIC_PRO_ORIGINAL_PRICE) || 39,
+    unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE || 20),
     nickname: "Pro",
     periode: "One time Payment",
-    remark: "12 months of free updates",
+    remark: "Black Friday Deal · 12 months of free updates",
     offers: [
       "Manage Git Worktrees visually",
       "Pre & Post hooks",
