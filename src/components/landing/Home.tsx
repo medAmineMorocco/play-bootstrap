@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import AppleFilled from "@ant-design/icons/AppleFilled";
 import LinuxOutlined from "@ant-design/icons/LinuxOutlined";
@@ -10,6 +11,15 @@ import { faqs } from "./content";
 import { FREE_TRIAL_DAYS } from "@/config/product";
 import styles from "./landing.module.css";
 
+const HomepageMotionController = dynamic(
+  () => import("./ThreeWorktreeScene").then((mod) => mod.HomepageMotionController),
+  { ssr: false },
+);
+
+const ParallelWorktreesLiveBoard = dynamic(
+  () => import("./ThreeWorktreeScene").then((mod) => mod.ParallelWorktreesLiveBoard),
+);
+
 function Hero() {
   return <section id="home" className={styles.hero}><BranchPaths /><div className={styles.container}>
     <div className={styles.heroCopy}><a href="#product" target="_self" className={styles.release}><span />A little more room for every branch<span aria-hidden="true">↗</span></a><Eyebrow>The workspace for parallel development</Eyebrow><h1>Stop switching branches.<br /><em>Work in parallel.</em></h1><p>A Git worktree manager for everything you’re building.<br className={styles.desktopBreak} /> Create, organize, and open your branches. Keep every task in its own workspace.</p><HeroDownloadActions /><p className={styles.reassurance}>{FREE_TRIAL_DAYS}-day free trial <span>·</span> No credit card <span>·</span> Windows, macOS & Linux</p></div>
@@ -19,7 +29,7 @@ function Hero() {
 }
 
 function ParallelDevelopment() {
-  return <section id="how-it-works" className={styles.section}><div className={`${styles.container} ${styles.split}`}><div><Eyebrow>01 / A different way to branch</Eyebrow><h2>Development is parallel.<br /><span className={styles.mutedHeading}>Your workspace<br />should be, too.</span></h2><p className={styles.body}>A feature in progress. A bug that can’t wait. A pull request to review. Git worktrees give each one a separate directory, sharing the same repository.</p><p className={styles.body}>WorktreeWise keeps them all within reach. Pick up where you left off.</p><TextLink href="/git-worktree">Get to know Git worktrees</TextLink></div><div className={styles.comparison}><div className={styles.before}><p className={styles.mono}>ONE DIRECTORY / ONE THING AT A TIME</p><div className={styles.commandLoop}><span>stash</span>→<span>checkout</span>→<span>restore</span>↺</div><p>Put one task down to pick another up.</p></div><div className={styles.after}><p className={styles.mono}>WITH WORKTREEWISE / ROOM FOR EVERY TASK</p><div className={styles.branchRoot}><BranchIcon /><strong>your-repository</strong></div><ul className={styles.parallelRows}>{[["feature/auth", "Build the feature"], ["fix/payment", "Fix the bug"], ["review/pr-128", "Review the changes"], ["experiment/ui", "Try another approach"]].map(([branch, task]) => <li key={branch}><span className={styles.node} /><code>{branch}</code><span>{task}</span></li>)}</ul><div className={styles.diagramNote}><span />Separate directories. Open at the same time.</div></div></div></div></section>;
+  return <section id="how-it-works" className={styles.section}><div className={`${styles.container} ${styles.split}`}><div><Eyebrow>01 / A different way to branch</Eyebrow><h2>Development is parallel.<br /><span className={styles.mutedHeading}>Your workspace<br />should be, too.</span></h2><p className={styles.body}>A feature in progress. A bug that can’t wait. A pull request to review. Git worktrees give each one a separate directory, sharing the same repository.</p><p className={styles.body}>WorktreeWise keeps them all within reach. Pick up where you left off.</p><TextLink href="/git-worktree">Get to know Git worktrees</TextLink></div><div className={styles.comparison}><div className={styles.before}><p className={styles.mono}>ONE DIRECTORY / ONE THING AT A TIME</p><div className={styles.commandLoop}><span>stash</span>→<span>checkout</span>→<span>restore</span>↺</div><p>Put one task down to pick another up.</p></div><ParallelWorktreesLiveBoard /></div></div></section>;
 }
 
 function ProductStories() {
@@ -298,9 +308,9 @@ function FinalCTA() {
     },
   ].map(group => ({ ...group, options: group.options.filter((option): option is [string, string] => Boolean(option[1])) })).filter(group => group.options.length > 0);
 
-  return <section id="download" className={styles.finalCta}><BranchPaths /><div className={styles.container}><Eyebrow>Ready when you are</Eyebrow><h2>Download WorktreeWise</h2><p>Choose your platform and start working with every branch in its own workspace.</p><div className={styles.downloadGrid} aria-label="Download WorktreeWise">{downloadGroups.map(group => <article id={`download-${group.id}`} className={styles.downloadCard} key={group.id}><div className={styles.downloadCardHeading}><span className={styles.platformMark} aria-hidden="true">{group.id === "windows" ? <WindowsOutlined /> : group.id === "macos" ? <AppleFilled /> : <LinuxOutlined />}</span><div><h3>{group.name}</h3><p>{group.detail}</p></div></div><div className={styles.downloadOptions}>{group.options.map(([name, href], index) => <a className={index === 0 ? styles.downloadPrimary : undefined} href={href} key={name} target="_self"><span>{name}</span><span aria-hidden="true">↓</span></a>)}</div></article>)}</div><p className={styles.downloadReassurance}>Every download includes a {FREE_TRIAL_DAYS}-day free trial · No credit card required</p></div></section>;
+  return <section id="download" className={styles.finalCta}><BranchPaths dark /><div className={styles.container}><Eyebrow>Ready when you are</Eyebrow><h2>Download WorktreeWise</h2><p>Choose your platform and start working with every branch in its own workspace.</p><div className={styles.downloadGrid} aria-label="Download WorktreeWise">{downloadGroups.map(group => <article id={`download-${group.id}`} className={styles.downloadCard} key={group.id}><div className={styles.downloadCardHeading}><span className={styles.platformMark} aria-hidden="true">{group.id === "windows" ? <WindowsOutlined /> : group.id === "macos" ? <AppleFilled /> : <LinuxOutlined />}</span><div><h3>{group.name}</h3><p>{group.detail}</p></div></div><div className={styles.downloadOptions}>{group.options.map(([name, href], index) => <a className={index === 0 ? styles.downloadPrimary : undefined} href={href} key={name} target="_self"><span>{name}</span><span aria-hidden="true">↓</span></a>)}</div></article>)}</div><p className={styles.downloadReassurance}>Every download includes a {FREE_TRIAL_DAYS}-day free trial · No credit card required</p></div></section>;
 }
 
 export default function LandingHome({ posts }: { posts: { title: string; slug: string; excerpt?: string }[] }) {
-  return <div className={styles.landing}><Hero /><ParallelDevelopment /><ProductStories /><WorkspaceStories /><Capabilities /><SavingsCalculator /><Pricing /><FAQ /><Resources posts={posts} /><FinalCTA /></div>;
+  return <div className={styles.landing}><HomepageMotionController /><Hero /><ParallelDevelopment /><ProductStories /><WorkspaceStories /><Capabilities /><SavingsCalculator /><Pricing /><FAQ /><Resources posts={posts} /><FinalCTA /></div>;
 }

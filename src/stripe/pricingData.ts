@@ -32,7 +32,7 @@ export const pricingData: Price[] = [
     id: "PRO",
     productIds: PRO_PRODUCT_IDS ? PRO_PRODUCT_IDS.split(",") : null,
     original_amount: Number(process.env.NEXT_PUBLIC_PRO_ORIGINAL_PRICE) || 39,
-    unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE || 20),
+      unit_amount: Number(process.env.NEXT_PUBLIC_PRO_PRICE || 20),
     nickname: "Pro",
     periode: "One time Payment",
     remark: "Black Friday Deal · 12 months of free updates",
